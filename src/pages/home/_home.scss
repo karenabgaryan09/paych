@@ -1,0 +1,156 @@
+.home-page {
+    .showcase {
+        overflow: hidden;
+        // position: relative;
+
+        @include mq(1280px) {
+            padding-top: 260px;
+        }
+        .circle {
+            top: -126vh;
+            right: -150vh;
+            width: 250vh;
+            height: 250vh;
+        }
+     
+        &-content {
+            display: grid;
+            grid-gap: 80px;
+            align-items: center;
+        }
+        &-info {
+            position: relative;
+            z-index: 1;
+        }
+        &-title {
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            max-width: 700px;
+        }
+        &-description {
+            max-width: 600px;
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 3rem;
+            &::first-letter {
+                text-transform: uppercase;
+            }
+        }
+       
+        &-cover {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.1;
+            width: 100%;
+            top: 0;
+            height: 0;
+            padding-top: 80%;
+            cursor: pointer;
+
+            &:hover {
+                .play-btn {
+                    transform: translate(20%,-50%) scale(1.1);
+                    &:before {
+                        transform: scale(1.5);
+                        opacity: 0;
+                    }
+                }
+            }
+            &:active {
+                .play-btn {
+                    transform: translate(20%,-50%);
+                }
+            }
+            .wrapper {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 130%;
+                height: 100%;
+                background: url("../../assets/images/home-cover.jpg");
+                background-position: top;
+                background-repeat: no-repeat;
+                background-size: 100%;
+                border: 13px solid #ffffff;
+                box-shadow: 4px 9px 17px 18px rgba(0, 0, 0, 0.04);
+                border-radius: 21px;
+            }
+            .play-btn {
+                pointer-events: none;
+                display: none;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(20%,-50%);
+                z-index: 1;
+                width: 90px;
+                height: 90px;
+                border-radius: 50%;
+                background-color: color(primary);
+                border: none;
+                transition: transform .3s ease;
+                &::before {
+                    content: '';
+                    width: calc(100% + 25px);
+                    height: calc(100% + 25px);
+                    position: absolute;
+                    top: -12.5px;
+                    left: -12.5px;
+                    background-color: rgba(0,0,0,0.05);
+                    border-radius: 50%;
+                    transition: transform .3s ease,opacity .3s ease-out;
+                }
+                svg {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-40%,-50%);
+                    width: 40%;
+                    height: auto;
+                    path {
+                        fill: #fff;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+
+@include mq(768px){
+    .home-page {
+        .showcase {
+        
+            &-description {
+                font-size: 26px;
+            }
+        
+        }
+    }
+}
+@include mq(1200px){
+    .home-page {
+        .showcase {
+        min-height: 100vh;
+
+            &-content {
+                grid-template-columns: 1fr 1.5fr;
+            }
+            &-info {
+            // margin-top: 70px;
+
+            }
+         
+            &-cover {
+                position: relative;
+                opacity: 1;
+                pointer-events: auto;
+            }
+            .play-btn {
+                display: block;
+            }
+        }
+    }
+}
