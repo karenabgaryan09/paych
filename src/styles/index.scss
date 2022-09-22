@@ -8,9 +8,23 @@
 @import '../components/header/header';
 @import '../components/footer/footer';
 @import '../components/button/button';
+@import '../components/pricing-card/pricing-card';
+@import '../components/tracking-card/tracking-card';
+@import '../components/news-card/news-card';
+@import '../components/banner/banner';
 
 // PAGES
 @import '../pages/home/home';
 @import '../pages/about/about';
 @import '../pages/error/error';
+
+// SECTIONS 
+@import '../pages/home/sections/showcase/showcase';
+@import '../pages/home/sections/about/about';
+@import '../pages/home/sections/features/features';
+@import '../pages/home/sections/managment/managment';
+@import '../pages/home/sections/pricing/pricing';
+@import '../pages/home/sections/tracking/tracking';
+@import '../pages/home/sections/news/news';
+
 

@@ -23,6 +23,8 @@
 }
 
 html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
     // @include mq(1920px) {}//default 16px
 
     @include mq(2560px) {
@@ -46,7 +48,6 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-
 // DISPLAYS
 
 .display-1,
@@ -64,10 +65,12 @@ code {
     font-weight: 500;
 }
 .display-2 {
-    font-size: calc(1.575rem + 3.9vw);
+    font-size: calc(1rem + 2vw);
+    font-weight: 600;
 }
 .display-3 {
-    font-size: calc(1.525rem + 3.3vw);
+    font-size: calc(1rem + 2vw);
+    font-weight: 500;
 }
 .display-4 {
     font-size: calc(1.475rem + 2.7vw);
@@ -76,18 +79,28 @@ code {
     font-size: calc(1.425rem + 2.1vw);
 }
 .display-6 {
-    font-size: calc(1.375rem + 1.5vw);
+    font-weight: 600;
+    font-size: calc(0.8rem + 1.5vw);
+}
+.display-7 {
+    font-weight: 500;
+    font-size: 1rem;
+}
+.display-8 {
+    font-weight: 500;
+    font-size: 1rem;
 }
 
-@media (min-width: 1200px) {
+
+@media (min-width: 768px) {
     .display-1 {
-        font-size:65px;
+        font-size: 65px;
     }
     .display-2 {
-        font-size: 4.5rem;
+        font-size: 48px;
     }
     .display-3 {
-        font-size: 4rem;
+        font-size: 40px;
     }
     .display-4 {
         font-size: 3.5rem;
@@ -96,8 +109,15 @@ code {
         font-size: 3rem;
     }
     .display-6 {
-        font-size: 2.5rem;
+        font-size: 24px;
     }
+    .display-7 {
+        font-size: 24px;
+    }
+    .display-8 {
+        font-size: 26px;
+    }
+  
 }
 
 li {
@@ -121,15 +141,12 @@ img {
     padding-left: 0.75rem;
     margin-right: auto;
     margin-left: auto;
+    @include mq(768px){
+        padding-right: 80px;
+        padding-left: 80px;
+    }
 }
 
-@include mq(768px) {
-    .container,
-.container-fluid {
-    padding-right: 80px;
-    padding-left: 80px;
-}
-}
 
 .container {
     // @include mq(576px) {
@@ -141,9 +158,9 @@ img {
     // @include mq(992px) {
     //     max-width: 960px; // 32
     // }
-    // @include mq(1200px) {
-    //     max-width: calc(1140px + 80px * 2); // 60
-    // }
+    @include mq(1200px) {
+        max-width: calc(1140px + 80px * 2); // 60
+    }
     @include mq(1400px) {
         max-width: calc(1500px + 80px * 2); // 80
     }
@@ -160,7 +177,6 @@ img {
     //     max-width: 3700px; //4k
     // }
 }
-
 
 // BORDERS
 
@@ -300,6 +316,10 @@ img {
 
 // CONDITIONAL
 
+main {
+    min-height: 100vh;
+}
+
 section {
     padding: 2rem 0;
 }
@@ -313,9 +333,20 @@ section {
 .circle {
     pointer-events: none;
     position: absolute;
-    width: 100vh;
-    height: 100vh;
+    width: 100%;
+    height: 0;
+    padding-top: 100%;
     background-color: color(light);
     border-radius: 50%;
     z-index: -2;
 }
+
+.home-circle {
+    top: -8.5%;
+    right: -46%;
+}
+
+
+// .checkmark {
+
+// }

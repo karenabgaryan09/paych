@@ -31,6 +31,7 @@
         box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
         color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
         white-space: nowrap;
+        font-family: Montserrat;
         @include mq(992px){
             font-size: 21px;
             padding: 15px 42px;
@@ -40,8 +41,13 @@
         padding: 4px 10px;
     }
     &-lg {
-        font-size: 0.9375rem;
+        font-size: 1rem;
         padding: 8px 22px;
+        border-radius: 6px;
+        @include mq(992px){
+            font-size: 23px;
+            padding: 17px 42px ;
+        }
     }
     &-block {
         width: 100%;
@@ -110,7 +116,7 @@
         }
     }
     &-light {
-        color: color(dark);
+        color: color(primary);
         background-color: color(light);
         &:hover {
             background-color: color(light-hover);
@@ -124,8 +130,9 @@
         &-success,
         &-secondary,
         &-danger,
-        &-light {
-            padding: 5px 15px;
+        &-light,
+        &-dark {
+            // padding: 5px 15px;
             border: 1px solid;
             box-shadow: none;
             &:hover {
@@ -145,10 +152,11 @@
         }
 
         &-primary {
-            border-color: color(primary,0.5);
+            border-color: color(primary);
             color: color(primary);
             &:hover {
-                background-color: color(primary,0.04);
+                background-color: color(primary);
+                color: #fff;
             }
         }
         &-secondary {
@@ -186,6 +194,12 @@
                 background-color: color(light,0.04);
             }
         }
+        &-dark {
+        //   color: #fff;
+            &:hover {
+                background-color: color(primary,0.1);
+            }
+        }
 
     }
 
@@ -195,8 +209,9 @@
         &-success,
         &-secondary,
         &-danger,
-        &-light {
-            padding: 6px 8px;
+        &-light,
+        &-dark {
+            // padding: 6px 8px;
             border: none;
             &:hover {
                 border-color: none;

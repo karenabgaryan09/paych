@@ -1,0 +1,136 @@
+.managment {
+    background-color: color(primary);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: 0.75rem;
+    background-size: contain;
+    background-image: url("../../../../assets/images/icons/p.svg");
+    &-content {
+        display: grid;
+        align-items: center;
+        grid-gap: 40px;
+    }
+    &-info {
+        & > .wrapper {
+            max-width: 610px;
+        }
+    }
+    &-title {
+        line-height: 124.52%;
+        margin-bottom: 1rem;
+    }
+    &-subtitle {
+        margin-bottom: 1.3rem;
+    }
+    &-description {
+        margin-bottom: 2rem;
+        line-height: 25px;
+    }
+    //
+    &-cover {
+        position: absolute;
+        width: 50%;
+        right: 0.75rem;
+        height: 100%;
+        opacity: 0.1;
+    }
+    .phone-tablet {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    .phone-cover {
+        position: absolute;
+        width: 45%;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+    .phone-top {
+        display: none;
+        padding-top: 62.5%;
+
+        top: -1px;
+        left: 0;
+    }
+    .phone-middle {
+        padding-top: 95%;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+    }
+    .phone-bottom {
+        padding-top: 67%;
+        bottom: -1px;
+        left: 0;
+    }
+}
+
+@include mq(992px) {
+    .managment {
+        &-content {
+            grid-template-columns: 1.5fr 1fr;
+            justify-content: space-between;
+        }
+        &-cover {
+            position: relative;
+            right: 0;
+            opacity: 1;
+            height: 0;
+
+            width: 100%;
+            padding-top: 200%;
+        }
+        .phone-tablet {
+            display: block;
+        }
+        .phone-cover {
+            display: none;
+        }
+        &-title {
+            margin-bottom: 2.8rem;
+        }
+        &-subtitle {
+            margin-bottom: 3rem;
+        }
+        &-description {
+            line-height: 36.41px;
+
+            font-size: 24px;
+            margin-bottom: 4.7rem;
+        }
+    }
+}
+@include mq(1400px) {
+    .managment {
+        padding: 0;
+
+        &-content {
+            grid-template-columns: 1fr 1.13fr;
+        }
+
+        &-cover {
+            padding-top: 137%;
+        }
+        .phone-tablet {
+            display: none;
+        }
+        .phone-cover {
+            display: block;
+        }
+        .phone-top {
+            display: block;
+        }
+    }
+}

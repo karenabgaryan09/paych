@@ -1,0 +1,97 @@
+.tracking-card {
+    display: grid;
+    grid-gap: 40px;
+    
+    .wrapper {
+        max-width: 600px;
+    }
+    &:nth-child(even) {
+        .card-image {
+            // grid-column: 1/2;
+        }
+        .wrapper {
+        }
+    }
+    &:not(:last-of-type) {
+        margin-bottom: 80px;
+    }
+    .card {
+        &-image {
+            width: 100%;
+            padding-top: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+            background-color: color(light);
+            img {
+                position: absolute;
+                bottom: -13%;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 50%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+        &-title {
+            text-transform: capitalize;
+            margin-bottom: 1.2rem !important;
+        }
+        &-description {
+            font-weight: 400;
+            &::first-letter {
+                text-transform: uppercase;
+            }
+        }
+    }
+   
+}
+
+@media screen and (min-width: 576px) and (max-width: 992px) {
+    .tracking-card {
+        .card {
+            &-image {
+                width: 300px;
+                padding-top: 300px;
+            }
+        }
+    }
+}
+
+
+@include mq(992px) {
+    .tracking-card {
+        align-items: center;
+        // justify-content: space-between;
+        grid-template-columns: 1fr 1.2fr;
+        .wrapper {
+            margin-left: auto;
+        }
+        &:nth-child(even) {
+            grid-template-columns: 1.2fr 1fr;
+            .card-image {
+                grid-column: 2/3;
+                grid-row: 1/2;
+            }
+            .wrapper {
+                margin-left: 0;
+            }
+        }
+        &:not(:last-of-type) {
+            // margin-bottom: 260px;
+        }
+       
+        .card {
+            &-image {
+                // width: 750px;
+                // padding-top: 750px;
+            }
+            &-title {
+            }
+            &-description {
+                line-height: 36.73px;
+            }
+        }
+       
+    }
+}

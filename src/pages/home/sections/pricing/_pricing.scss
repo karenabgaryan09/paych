@@ -1,0 +1,51 @@
+.pricing {
+    &-content {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+       
+    }
+    &-title {
+        text-align: center;
+        margin-bottom: 2.2rem;
+    }
+    &-subtitle {
+        text-align: center;
+        font-weight: 400;
+        max-width: 1040px;
+        margin: 0 auto 3rem;
+        line-height: 25px;
+
+    }
+}
+
+@include mq(768px) {
+    .pricing {
+        padding: 135px 0 145px;
+        &-subtitle {
+            line-height: 36.73px;
+    
+                margin: 0 auto 7rem;
+            }
+    }
+
+}
+@include mq(1200px) {
+    .pricing {
+        &-content {
+            flex-wrap: nowrap;
+            .card {
+                flex: 1;
+            }
+        }
+       
+    }
+}
+@include mq(1400px) {
+    .pricing {
+        &-content {
+            gap: 50px;
+        }
+    }
+}

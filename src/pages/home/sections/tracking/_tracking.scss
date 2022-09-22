@@ -1,0 +1,9 @@
+.tracking {
+
+}
+
+@include mq(768px) {
+    .tracking {
+        padding: 130px 0;
+    }
+}

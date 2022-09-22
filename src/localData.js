@@ -1,7 +1,22 @@
 import ufo from "./assets/images/ufo.png";
 const images = {
     ufo,
-    // example: require("./assets/images/example.jpg"),
+    showcaseCover: require("./assets/images/home-cover.jpg"),
+    showcaseCoverSm: require("./assets/images/home-cover-sm.jpg"),
+    aboutCover: require("./assets/images/about.jpg"),
+    phoneTop: require("./assets/images/phones/phone-top.png"),
+    phoneMiddle: require("./assets/images/phones/phone-middle.png"),
+    phoneBottom: require("./assets/images/phones/phone-bottom.png"),
+    googlePlay: require("./assets/images/google-play.png"),
+    appStore: require("./assets/images/app-store.png"),
+    phone1: require("./assets/images/tracking/phone-1.png"),
+    phone2: require("./assets/images/tracking/phone-2.png"),
+    phone3: require("./assets/images/tracking/phone-3.png"),
+    phone4: require("./assets/images/tracking/phone-4.png"),
+    business: require("./assets/images/business.jpg"),
+    construction: require("./assets/images/construction.jpg"),
+    technology: require("./assets/images/technology.jpg"),
+    subscribe: require("./assets/images/subscribe.jpg"),
 };
 
 const localData = {
@@ -40,6 +55,35 @@ const localData = {
                 <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z" />
             </svg>
         ),
+        p: (
+            <svg width="829" height="1159" viewBox="0 0 829 1159" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    opacity="0.05"
+                    d="M774.579 200.539C738.286 138.606 688.847 89.7176 626.227 53.82C563.603 17.9488 492.526 0 413.009 0C335.48 0 265.638 17.6932 203.526 53.084C141.392 88.4749 92.1893 136.901 55.9134 198.327C19.6196 259.775 0.984767 328.825 0 405.503V1101.49C0 1119.18 5.21793 1133.19 15.6582 1143.51C26.0941 1153.84 40.2596 1159 58.1503 1159C75.0428 1159 88.7137 1153.84 99.154 1143.51C109.59 1133.19 114.808 1119.18 114.808 1101.49V667.97C147.613 714.189 191.085 751.285 245.269 779.303C299.436 807.317 359.823 821.326 426.431 821.326C502.962 821.326 571.544 803.399 632.189 767.502C692.808 731.635 740.781 682.716 776.077 620.787C811.346 558.854 829 489.064 829 411.399C829 332.765 810.855 262.468 774.579 200.539ZM714.526 440.263L590.432 652.824C579.743 671.143 559.98 682.425 538.596 682.425H290.408C269.024 682.425 249.262 671.143 238.568 652.824L114.478 440.263C103.784 421.949 103.784 399.382 114.478 381.063L238.568 168.502C249.262 150.183 269.024 138.902 290.408 138.902H538.596C559.98 138.902 579.743 150.183 590.432 168.502L714.526 381.063C725.221 399.382 725.221 421.949 714.526 440.263Z"
+                    fill="#C5C2C2"
+                />
+            </svg>
+        ),
+        checkmark: (
+            <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M2 9L8.66667 16L22 2"
+                    stroke="#9B392C"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                />
+            </svg>
+        ),
+        arrow: (
+            <svg width="25" height="15" viewBox="0 0 25 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M0.454615 12.1578L11.8185 0.315786C12.2226 -0.105262 12.7781 -0.105262 13.1821 0.315786L24.5454 12.1578C25.0474 12.681 25.1492 13.6707 24.7727 14.3683C24.5494 14.782 24.2082 15 23.8627 15C23.6255 15 23.3861 14.897 23.1818 14.6841L12.5002 3.5526L1.81824 14.6841C1.31605 15.2074 0.603857 15.0659 0.227345 14.3683C-0.149244 13.6707 -0.0474262 12.681 0.454615 12.1578Z"
+                    fill="#F5F5F5"
+                />
+            </svg>
+        ),
+
         togglerIcon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                 <path d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z" />

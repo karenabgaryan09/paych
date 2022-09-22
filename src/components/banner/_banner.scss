@@ -1,0 +1,88 @@
+.banner {
+    background-color: color(primary);
+    color: #fff;
+    padding: 4rem 0 3rem;
+    &-content {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    &-title {
+        font-size: 21px;
+        font-weight: 600;
+        text-transform: capitalize;
+        max-width: 600px;
+        text-align: center;
+        margin: 0 auto;
+    }
+    &-text {
+        text-align: center;
+        font-size: 20px;
+        font-weight: 500;
+        text-transform: capitalize;
+        margin-bottom: 1.3rem;
+    }
+
+    &-links {
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px 20px;
+        .btn {
+            padding: 5px;
+            min-width: auto;
+            border-radius: 16px;
+            // max-width: 180px;
+            img {
+                max-width: 260px;
+                width: 100%;
+            }
+        }
+    }
+}
+
+@include mq(768px) {
+    .banner {
+        padding: 100px 0 80px;
+
+        &-title {
+            font-size: 30px;
+        }
+        &-text {
+            font-size: 30px;
+        }
+        &-links {
+            flex-wrap: nowrap;
+        }
+    }
+}
+@include mq(1200px) {
+    .banner {
+        &-content {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        &-title {
+            text-align: left;
+            margin: 0;
+            max-width: 700px;
+        }
+        &-text {
+            text-align: left;
+        }
+        &-links {
+            justify-content: flex-start;
+        }
+    }
+}
+@include mq(1400px) {
+    .banner {
+        &-title {
+            font-size: 42px;
+            line-height: 52.3px;
+        }
+        &-text {
+        }
+    }
+}
