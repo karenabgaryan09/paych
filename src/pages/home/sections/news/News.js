@@ -14,14 +14,14 @@ export default function News() {
                         <h2 className="news-title display-2">Latest News & Blogs</h2>
                         <Button className="btn btn-light rounded-pill">view all</Button>
                     </div>
-                    <div className="news-content">
+                    <div className="card-group">
                         <NewsCard
                             news={{
                                 cover: technology,
                                 category: "Technology",
                                 date: "2022 SEPT 10",
                                 title: "4 signs your team needs construction technology",
-                                link: "#/",
+                               slug: 'blog-1'
                             }}
                         />
                         <NewsCard
@@ -30,7 +30,7 @@ export default function News() {
                                 category: "Construction",
                                 date: "2022 SEPT 10",
                                 title: "Construction Delivery Method Training",
-                                link: "#/",
+                               slug: 'blog-2'
                             }}
                         />
                         <NewsCard
@@ -39,7 +39,7 @@ export default function News() {
                                 category: "Business",
                                 date: "2022 SEPT 10",
                                 title: "How to be a better construction project manager",
-                                link: "#/",
+                               slug: 'blog-3'
                             }}
                         />
                     </div>

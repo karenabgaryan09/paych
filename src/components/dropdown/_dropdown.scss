@@ -23,7 +23,7 @@
     z-index: 1000;
     // display: none;
     min-width: 10rem;
-    padding-top: 25px;
+    padding: 25px;
     margin: 0;
     font-size: 1rem;
     color: #212529;
@@ -32,7 +32,7 @@
     background-color: #fff;
     background-clip: padding-box;
     // border: 1px solid rgba(0, 0, 0, 0.15);
-    border-radius: 0.25rem;
+    border-radius: 20px;
     transition: opacity 0.3s ease, transform 0.3s ease;
 
     font-size: 24px;

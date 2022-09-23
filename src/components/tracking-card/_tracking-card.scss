@@ -1,7 +1,9 @@
 .tracking-card {
     display: grid;
     grid-gap: 40px;
-    
+    b {
+        font-weight: 500;
+    }
     .wrapper {
         max-width: 600px;
     }

@@ -26,7 +26,7 @@ html {
     scroll-behavior: smooth;
     overflow-x: hidden;
     // @include mq(1920px) {}//default 16px
-
+    
     @include mq(2560px) {
         font-size: calc(16 * 100 / (1920 * 100 / 2560)) + px; //2k
     }
@@ -42,9 +42,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
-    // @include mq(1200px) {
-    //     padding-top: 260px;
-    // }
+   
 }
 
 code {
@@ -97,10 +95,10 @@ code {
 
 @media (min-width: 768px) {
     .display-1 {
-        font-size: 65px;
+        font-size: 45px;
     }
     .display-2 {
-        font-size: 48px;
+        font-size: 40px;
     }
     .display-3 {
         font-size: 40px;
@@ -120,6 +118,16 @@ code {
     .display-8 {
         font-size: 26px;
     }
+  
+}
+@media (min-width: 1280px) {
+    .display-1 {
+        font-size: 65px;
+    }
+    .display-2 {
+        font-size: 48px;
+    }
+
   
 }
 

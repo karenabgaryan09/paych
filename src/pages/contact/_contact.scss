@@ -1,5 +1,157 @@
 .contact-page {
     .showcase {
+        padding-top: 0;
+        padding-bottom: 284px;
 
+        &-title {
+            text-align: center;
+            max-width: 1020px;
+            margin: 0 auto;
+            text-transform: capitalize;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        &-subtitle {
+            text-align: center;
+            max-width: 1320px;
+            margin: 0 auto;
+            margin-bottom: 2rem;
+        }
+        &-btn {
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 70px;
+        }
+
+        &-content {
+            display: flex;
+            flex-direction: column;
+            gap: 50px 8%;
+        }
+
+        .info {
+            flex: 1;
+            &-title {
+                font-weight: 600;
+                text-transform: capitalize;
+                margin-bottom: 1.3rem;
+            }
+            &-description {
+                font-weight: 400;
+                font-size: 24px;
+                max-width: 750px;
+                margin-bottom: 3rem;
+            }
+            .details {
+                &-item {
+                    max-width: 400px;
+                    display: grid;
+                    grid-template-columns: 1fr 3fr;
+                    align-items: center;
+                    gap: 30px;
+                    margin-bottom: 2.5rem;
+                }
+                &-icon {
+                    // width: 100px;
+                    // height: 100px;
+                    // display: flex;
+                    // align-items: center;
+                    // justify-content: center;
+                    border-radius: 50%;
+                    background-color: rgba(249, 249, 249, 1);
+                    position: relative;
+                    width: 100%;
+                    height: 0;
+                    padding-top: 100%;
+                    svg {
+                        // width: 58px;
+                        // height: 58px;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 50%;
+                        height: 50%;
+                    }
+                }
+                &-title {
+                    font-weight: 400;
+                    font-size: 20px;
+                    line-height: 139.52%;
+                    text-transform: capitalize;
+                }
+                &-link {
+                    font-weight: 600;
+                    font-size: 24px;
+                    line-height: 146.52%;
+                    text-transform: capitalize;
+                    max-width: 250px;
+                    display: block;
+                }
+            }
+        }
+        .form {
+            flex: 1;
+            &-title {
+                font-weight: 600;
+                text-transform: capitalize;
+                margin-bottom: 1.3rem;
+            }
+            &-description {
+                font-weight: 400;
+                font-size: 24px;
+                max-width: 750px;
+                margin-bottom: 3rem;
+            }
+            .textarea {
+                margin-bottom: 2rem;
+                & + .valid-feedback {
+                    margin-top: -1.8rem;
+                    margin-bottom: 1rem;
+
+                    & + .invalid-feedback {
+                        margin-top: -1.8rem;
+                        margin-bottom: 1rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @include mq(768px) {
+        .showcase {
+            &-title {
+                margin-bottom: 2rem;
+            }
+            &-subtitle {
+                margin-bottom: 4rem;
+                line-height: 39.78px;
+            }
+            &-btn {
+                margin-bottom: 220px;
+            }
+
+            .info {
+                &-description {
+                    font-size: 30px;
+                    line-height: 45.9px;
+                }
+            }
+            .form {
+                &-description {
+                    font-size: 30px;
+                    line-height: 45.9px;
+                }
+            }
+        }
+    }
+
+    @include mq(1200px) {
+        .showcase {
+            padding-top: 0;
+            &-content {
+                flex-direction: row;
+            }
+        }
     }
 }

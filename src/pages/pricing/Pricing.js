@@ -16,8 +16,8 @@ export default function Pricing() {
                     <div className="circle" data-lazy="scale"></div>
                 </div>
                 <Showcase />
-                <Banner2/>
-                <Questions/>
+                <Banner2 />
+                <Questions />
             </motion.main>
             <Footer />
         </>

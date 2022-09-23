@@ -12,7 +12,7 @@ export default function NewsCard({news}) {
                 <div className="card-date">{news.date}</div>
             </div>
             <h4 className="card-title">{news.title}</h4>
-            <Link to={news.link}  className='link link-primary card-link'>read more</Link>
+            <Link to={`/blogs/${news.slug}`}  className='link link-primary card-link'>read more</Link>
         </div>
         </div>
     </div>

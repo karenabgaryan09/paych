@@ -174,7 +174,7 @@ export default function Navbar() {
                         <li className="nav-item">
                             <Link
                                 to="/blogs"
-                                className={`nav-link ${"/blogs" === location.pathname ? "active" : ""}`}
+                                className={`nav-link ${location.pathname.includes('/blogs') ? "active" : ""}`}
                                 aria-current="page"
                             >
                                 blogs
