@@ -9,13 +9,14 @@
 .navbar {
     background-color: transparent !important;
     border-top: 6px solid color(primary);
+    position: relative;
     z-index: 1;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-top: 20px;
+    padding-bottom: 50px;
     .target {
         position: absolute;
         border-bottom: 2px solid transparent;
@@ -100,6 +101,9 @@
             display: inline-block;
         }
     }
+    .trial-btn {
+        display: none;
+    }
 }
 
 .navbar {
@@ -157,6 +161,13 @@
     transition: height 0.3s ease;
 }
 
+@media (min-width: 390px) {
+    .navbar {
+        .trial-btn {
+            display: block;
+        }
+    }
+}
 @media (min-width: 768px) {
     .navbar {
         &-brand {
@@ -169,15 +180,17 @@
         }
     }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1200px) {
     .navbar-expand-lg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        // width: 100%;
         flex-wrap: nowrap;
         justify-content: flex-start;
         padding-top: 85px;
+        padding-bottom: 110px;
+        // padding-bottom: 85px;
         .navbar {
             &-toggler {
                 display: none;

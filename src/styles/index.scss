@@ -2,6 +2,7 @@
 @import "./partials/fonts";
 @import "./partials/features";
 @import './partials/basic';
+@import './partials/lazy-load';
 
 // COMPONENTS
 @import '../components/navbar/navbar';
@@ -11,11 +12,15 @@
 @import '../components/pricing-card/pricing-card';
 @import '../components/tracking-card/tracking-card';
 @import '../components/news-card/news-card';
+@import '../components/builder-card/builder-card';
 @import '../components/banner/banner';
+@import '../components/banner-2/banner-2';
+@import '../components/dropdown/dropdown';
 
 // PAGES
 @import '../pages/home/home';
-@import '../pages/about/about';
+@import '../pages/features/features';
+@import '../pages/plan/plan';
 @import '../pages/error/error';
 
 // SECTIONS 
@@ -26,5 +31,14 @@
 @import '../pages/home/sections/pricing/pricing';
 @import '../pages/home/sections/tracking/tracking';
 @import '../pages/home/sections/news/news';
+
+// SECTIONS FEATURES
+@import '../pages/features/sections/builder/builder';
+@import '../pages/features/sections/estimating/estimating';
+
+// SECTIONS PLAN
+@import '../pages/plan/sections/showcase/showcase';
+@import '../pages/plan/sections/questions/questions';
+
 
 

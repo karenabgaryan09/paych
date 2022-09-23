@@ -1,0 +1,39 @@
+.questions {
+    padding-top: 70px;
+    padding-bottom: 200px;
+    &-title {
+        text-align: center;
+        font-weight: 600;
+        margin-bottom: 2rem;
+    }
+    &-content {
+        .dropdown-group {
+            width: 100%;
+            max-width: 740px;
+        }
+    }
+}
+
+@include mq(768px) {
+    .questions {
+        &-title {
+            margin-bottom: 7.5rem;
+        }
+        padding: 170px 0 230px;
+    }
+}
+@include mq(992px) {
+    .questions {
+        &-content {
+            gap: 40px;
+            display: flex;
+        }
+    }
+}
+@include mq(1500px) {
+    .questions {
+        &-content {
+            gap: 114px;
+        }
+    }
+}

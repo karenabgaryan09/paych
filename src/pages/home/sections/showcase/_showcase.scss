@@ -1,12 +1,11 @@
 .home-page {
-  
     .showcase {
         overflow: hidden;
         position: relative;
 
-        @include mq(1280px) {
-            padding-top: 260px;
-        }
+        // @include mq(1280px) {
+        //     padding-top: 260px;
+        // }
        
 
         &-content {
@@ -116,6 +115,7 @@
 @include mq(768px) {
     .home-page {
         .showcase {
+
             &-description {
                 font-size: 26px;
             }
@@ -125,7 +125,9 @@
 @include mq(1200px) {
     .home-page {
         .showcase {
-            min-height: 100vh;
+        padding-top: 0;
+
+            // min-height: calc(100vh - 260px);
             position: relative;
             padding-bottom: 200px;
 

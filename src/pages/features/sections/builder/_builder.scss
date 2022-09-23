@@ -1,0 +1,96 @@
+.builder {
+    padding-bottom: 50px;
+
+    &-title {
+        text-align: center;
+        max-width: 1020px;
+        margin: 0 auto;
+        text-transform: capitalize;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+    &-subtitle {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    & > .wrapper {
+        padding: 70px 0 140px;
+        background-color: rgba(249, 249, 249, 1);
+    }
+    &-description {
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 30px;
+        max-width: 1350px;
+        text-align: center;
+        margin: 0 auto;
+        &::first-letter {
+            text-transform: uppercase;
+        }
+    }
+    .btn {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 70px;
+    }
+    .cards-group {
+        // transform: translateY(-27%);
+        margin-top: -80px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px 0;
+        .card {
+            width: calc(100% / 2);
+            .card-title {
+                font-size: 5vw;
+            }
+            @include mq(576px) {
+                width: calc(100% / 3);
+                .card-title {
+                    font-size: 3vw;
+                }
+            }
+            @include mq(768px) {
+                width: calc(100% / 4);
+                .card-title {
+                    font-size: 2vw;
+                }
+            }
+            @include mq(1200px) {
+                width: calc(100% / 7);
+                .card-title {
+                    font-size: 1.4vw;
+                }
+            }
+        }
+    }
+}
+
+@include mq(768px) {
+    .builder {
+        &-title {
+            margin-bottom: 2rem;
+        }
+        &-subtitle {
+            margin-bottom: 4rem;
+            line-height: 39.78px;
+        }
+        .btn {
+            margin-bottom: 160px;
+        }
+        & > .wrapper {
+            padding: 145px 0;
+        }
+        &-description {
+            line-height: 53.21px;
+            font-size: 38px;
+        }
+    }
+}
+@include mq(1200px) {
+    .builder {
+        padding-top: 0;
+        padding-bottom: 200px;
+    }
+}

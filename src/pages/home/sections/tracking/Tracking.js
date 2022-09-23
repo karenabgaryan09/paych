@@ -13,6 +13,7 @@ export default function Tracking() {
                         description:
                             "Store all of your client information securely in one place, accessible from your mobile device and the web.",
                         image: phone1,
+                        isReversed:false
                     }}
                 />
                 <TrackingCard
@@ -21,6 +22,7 @@ export default function Tracking() {
                         description:
                             "Store all of your project details securely in one place, accessible from your mobile device and the web.",
                         image: phone2,
+                        isReversed:true
                     }}
                 />
                 <TrackingCard
@@ -29,6 +31,7 @@ export default function Tracking() {
                         description:
                             "Store all of your client information securely in one place, accessible from your mobile device and the web.",
                         image: phone3,
+                        isReversed:false
                     }}
                 />
                 <TrackingCard
@@ -37,6 +40,7 @@ export default function Tracking() {
                         description:
                             "Store all of your project details securely in one place, accessible from your mobile device and the web.",
                         image: phone4,
+                        isReversed:true
                     }}
                 />
             </div>
