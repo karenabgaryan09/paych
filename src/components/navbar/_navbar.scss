@@ -168,7 +168,7 @@
         }
     }
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
     .navbar {
         &-brand {
             svg {
@@ -180,17 +180,12 @@
         }
     }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1480px) { //1200
     .navbar-expand-lg {
-        // position: absolute;
-        // top: 0;
-        // left: 0;
-        // width: 100%;
         flex-wrap: nowrap;
         justify-content: flex-start;
         padding-top: 85px;
         padding-bottom: 110px;
-        // padding-bottom: 85px;
         .navbar {
             &-toggler {
                 display: none;
@@ -199,13 +194,9 @@
                 flex-direction: row;
                 margin-top: 0;
                 margin-left: auto;
-                // width: 100%;
-                // max-width: 730px;
-                // justify-content: space-between;
                 .nav-link {
                     padding-right: 15px;
                     padding-left: 15px;
-                    // margin: 0 19px;
                 }
             }
             &-collapse {

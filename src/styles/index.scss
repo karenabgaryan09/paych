@@ -20,7 +20,8 @@
 // PAGES
 @import '../pages/home/home';
 @import '../pages/features/features';
-@import '../pages/plan/plan';
+@import '../pages/pricing/pricing';
+@import '../pages/contact/contact';
 @import '../pages/error/error';
 
 // SECTIONS 
@@ -36,9 +37,12 @@
 @import '../pages/features/sections/builder/builder';
 @import '../pages/features/sections/estimating/estimating';
 
-// SECTIONS PLAN
-@import '../pages/plan/sections/showcase/showcase';
-@import '../pages/plan/sections/questions/questions';
+// SECTIONS PRICING
+@import '../pages/pricing/sections/showcase/showcase';
+@import '../pages/pricing/sections/questions/questions';
+
+
+
 
 
 

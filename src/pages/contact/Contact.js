@@ -1,23 +1,19 @@
 import React, { useEffect } from "react";
-import { Footer, Banner2 } from "../../components";
+import { Footer } from "../../components";
 import { motion } from "framer-motion";
 import { useGlobalContext } from "../../context";
 import FadeOnScreen from "../../utils/fadeOnScreen";
-import Showcase from "./sections/showcase/Showcase";
-import Questions from "./sections/questions/Questions";
 
-export default function Plan() {
+export default function Contact() {
     const { fade } = useGlobalContext().animations;
     useEffect(() => FadeOnScreen.createObserver(), []);
     return (
         <>
-            <motion.main {...fade} className="plan-page">
+            <motion.main {...fade} className='contact-page'>
                 <div data-lazy-block>
                     <div className="circle" data-lazy="scale"></div>
                 </div>
-                <Showcase />
-                <Banner2/>
-                <Questions/>
+                <section className="showcase">showcase</section>
             </motion.main>
             <Footer />
         </>

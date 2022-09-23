@@ -618,7 +618,7 @@ section {
     display: block;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .navbar-brand svg {
     width: 100% !important;
   }
@@ -626,7 +626,7 @@ section {
     gap: 0 50px;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1480px) {
   .navbar-expand-lg {
     flex-wrap: nowrap;
     justify-content: flex-start;
@@ -2320,11 +2320,11 @@ section {
     margin: 170px 0;
   }
 }
-.plan-page .showcase {
+.pricing-page .showcase {
   padding-top: 0;
   padding-bottom: 70px;
 }
-.plan-page .showcase-title {
+.pricing-page .showcase-title {
   text-align: center;
   max-width: 1020px;
   margin: 0 auto;
@@ -2332,49 +2332,49 @@ section {
   font-weight: 600;
   margin-bottom: 1rem;
 }
-.plan-page .showcase-subtitle {
+.pricing-page .showcase-subtitle {
   text-align: center;
   max-width: 1320px;
   margin: 0 auto;
   margin-bottom: 2rem;
 }
-.plan-page .showcase-btn {
+.pricing-page .showcase-btn {
   display: block;
   margin: 0 auto;
   margin-bottom: 70px;
 }
-.plan-page .showcase .card-group {
+.pricing-page .showcase .card-group {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
 }
 @media screen and (min-width: 768px) {
-  .plan-page .showcase-title {
+  .pricing-page .showcase-title {
     margin-bottom: 2rem;
   }
-  .plan-page .showcase-subtitle {
+  .pricing-page .showcase-subtitle {
     margin-bottom: 4rem;
     line-height: 39.78px;
   }
-  .plan-page .showcase-btn {
+  .pricing-page .showcase-btn {
     margin-bottom: 115px;
   }
 }
 @media screen and (min-width: 1200px) {
-  .plan-page .showcase {
+  .pricing-page .showcase {
     padding-top: 0;
     padding-bottom: 144px;
   }
-  .plan-page .showcase .card-group {
+  .pricing-page .showcase .card-group {
     flex-wrap: nowrap;
   }
-  .plan-page .showcase .card-group .card {
+  .pricing-page .showcase .card-group .card {
     flex: 1;
   }
 }
 @media screen and (min-width: 1400px) {
-  .plan-page .showcase .card-group {
+  .pricing-page .showcase .card-group {
     gap: 50px;
   }
 }

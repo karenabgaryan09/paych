@@ -1,5 +1,5 @@
 import React from "react";
-import { Home, Features,Plan, Error } from "./pages";
+import { Home, Features,Pricing,Contact, Error } from "./pages";
 import { Header } from "./components";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
@@ -15,7 +15,8 @@ export default function App() {
                 <Routes location={location} key={location.pathname}>
                     <Route path="/" element={<Home />} />
                     <Route path="/features" element={<Features />} />
-                    <Route path="/plan" element={<Plan />} />
+                    <Route path="/pricing" element={<Pricing />} />
+                    <Route path="/contact" element={<Contact />} />
 
                     <Route path="*" element={<Error />} />
                 </Routes>
