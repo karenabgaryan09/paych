@@ -186,7 +186,7 @@ code {
 }
 
 .display-1 {
-  font-size: calc(1.3rem + 2vw);
+  font-size: calc(1.5rem + 2vw);
   font-weight: 500;
 }
 
@@ -220,18 +220,18 @@ code {
 
 .display-8 {
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 @media (min-width: 768px) {
   .display-1 {
-    font-size: 40px;
+    font-size: 45px;
   }
   .display-2 {
-    font-size: 38px;
+    font-size: 40px;
   }
   .display-3 {
-    font-size: 38px;
+    font-size: 40px;
   }
   .display-4 {
     font-size: 3.5rem;
@@ -453,7 +453,7 @@ section {
   right: -830px;
 }
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 1400px) {
   .circle {
     display: block;
   }
@@ -2194,42 +2194,50 @@ label {
   font-size: 5vw;
 }
 
+.home-page .home-circle {
+  left: 0px;
+  top: 0px;
+  border-radius: 0;
+}
 .home-page .showcase {
   overflow: hidden;
   position: relative;
+  display: flex;
+}
+.home-page .showcase > .container {
+  flex: 1;
 }
 .home-page .showcase-content {
+  height: 100%;
   display: grid;
-  grid-gap: 80px;
+  grid-gap: 40px 80px;
 }
 .home-page .showcase-info {
   position: relative;
   z-index: 1;
+  width: 100%;
+  max-width: 620px;
+  align-self: center;
 }
 .home-page .showcase-title {
   line-height: 1.1;
   max-width: 700px;
-  margin-bottom: 0.7rem;
+  margin-bottom: 1.5rem;
 }
 .home-page .showcase-description {
   max-width: 600px;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.5;
-  margin-bottom: 1.5rem;
+  margin-bottom: 3rem;
 }
 .home-page .showcase-description::first-letter {
   text-transform: uppercase;
 }
 .home-page .showcase-cover {
-  position: absolute;
+  position: relative;
   pointer-events: none;
-  opacity: 0.1;
   width: 100%;
-  top: 0;
-  left: 0;
   height: 0;
-  padding-top: 80%;
+  padding-top: 50%;
   cursor: pointer;
 }
 .home-page .showcase-cover:hover .play-btn {
@@ -2243,10 +2251,12 @@ label {
   transform: translate(20%, -50%);
 }
 .home-page .showcase-cover .wrapper {
+  -o-object-fit: cover;
+     object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
-  width: 130%;
+  width: 100%;
   height: 100%;
   background: url("../../../../assets/images/home-cover.jpg");
   background-position: top;
@@ -2258,14 +2268,13 @@ label {
 }
 .home-page .showcase-cover .play-btn {
   pointer-events: none;
-  display: none;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(20%, -50%);
+  transform: translate(-50%, -50%);
   z-index: 1;
-  width: 90px;
-  height: 90px;
+  width: 10%;
+  padding-top: 10%;
   border-radius: 50%;
   background-color: rgba(155, 57, 44,1);
   border: none;
@@ -2295,6 +2304,12 @@ label {
 }
 
 @media screen and (min-width: 768px) {
+  .home-page .showcase {
+    min-height: calc(100vh - 179px);
+  }
+  .home-page .showcase-content {
+    grid-gap: 60px 80px;
+  }
   .home-page .showcase-description {
     font-size: 26px;
   }
@@ -2303,27 +2318,39 @@ label {
   .home-page .showcase {
     padding-top: 0;
     position: relative;
-    padding-bottom: 200px;
   }
   .home-page .showcase-content {
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: auto 1fr;
   }
   .home-page .showcase-cover {
     position: relative;
     opacity: 1;
-    pointer-events: auto;
+  }
+  .home-page .showcase-cover .wrapper {
+    width: 1128px;
+    height: 70vh;
   }
   .home-page .showcase .play-btn {
     display: block;
+    transform: translate(20%, -50%);
   }
 }
-@media screen and (min-width: 1400px) {
-  .home-page .showcase-title {
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
+@media screen and (min-width: 1480px) {
+  .home-page .home-circle {
+    left: auto;
+    top: -700px;
+    border-radius: 50%;
   }
-  .home-page .showcase-description {
-    margin-bottom: 3rem;
+  .home-page .showcase {
+    min-height: auto;
+    padding-bottom: 400px;
+  }
+  .home-page .showcase .wrapper {
+    width: 1190px;
+    height: 755px;
+  }
+  .home-page .showcase-title {
+    line-height: 1.2;
   }
 }
 .about {
@@ -2761,7 +2788,7 @@ label {
 }
 .builder-title {
   text-align: center;
-  max-width: 1020px;
+  max-width: 820px;
   margin: 0 auto;
   text-transform: capitalize;
   font-weight: 600;
@@ -2852,6 +2879,11 @@ label {
   .builder {
     padding-top: 0;
     padding-bottom: 200px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .builder-title {
+    max-width: 1020px;
   }
 }
 .estimating {

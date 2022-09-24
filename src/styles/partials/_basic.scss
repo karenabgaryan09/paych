@@ -62,7 +62,7 @@ code {
 }
 
 .display-1 {
-    font-size: calc(1.3rem + 2vw);
+    font-size: calc(1.5rem + 2vw);
     font-weight: 500;
 }
 .display-2 {
@@ -89,19 +89,19 @@ code {
 }
 .display-8 {
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 
 @media (min-width: 768px) {
     .display-1 {
-        font-size: 40px;
+        font-size: 45px;
     }
     .display-2 {
-        font-size: 38px;
+        font-size: 40px;
     }
     .display-3 {
-        font-size: 38px;
+        font-size: 40px;
     }
     .display-4 {
         font-size: 3.5rem;
@@ -368,7 +368,7 @@ section {
     right: -830px;
 }
 
-@include mq(576px){
+@include mq(1400px){
     .circle {
         display: block;
     }

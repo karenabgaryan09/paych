@@ -1,48 +1,61 @@
 .home-page {
+    .home-circle {
+        left: 0px;
+        top: 0px;
+        border-radius: 0;
+        // right: auto;
+    }
     .showcase {
         overflow: hidden;
         position: relative;
-        // min-height: 100vh;
+        display: flex;
+        // min-height: calc(100vh - 129px);
 
-        // @include mq(1280px) {
-        //     padding-top: 260px;
-        // }
-       
+        & > .container {
+            flex: 1;
+        }
 
         &-content {
+            height: 100%;
             display: grid;
-            grid-gap: 80px;
+            grid-gap: 40px 80px;
             // align-items: center;
         }
         &-info {
             position: relative;
             z-index: 1;
+            width: 100%;
+            max-width: 620px;
+            align-self: center;
         }
         &-title {
             line-height: 1.1;
             max-width: 700px;
-            margin-bottom: 0.7rem;
+            margin-bottom: 1.5rem;
+
         }
         &-description {
             max-width: 600px;
             font-weight: 400;
-            font-size: 1rem;
-            line-height: 1.5;
-            margin-bottom: 1.5rem;
+            margin-bottom: 3rem;
+
             &::first-letter {
                 text-transform: uppercase;
             }
         }
 
         &-cover {
-            position: absolute;
+            position: relative;
             pointer-events: none;
-            opacity: 0.1;
+            // opacity: 0.1;
             width: 100%;
-            top: 0;
-            left: 0;
             height: 0;
-            padding-top: 80%;
+            padding-top: 50%;
+            
+            // top: 0;
+            // left: 0;
+            // height: 0;
+            // padding-top: 80%;
             cursor: pointer;
 
             &:hover {
@@ -60,10 +73,11 @@
                 }
             }
             .wrapper {
+                object-fit: cover;
                 position: absolute;
                 top: 0;
                 left: 0;
-                width: 130%;
+                width: 100%;
                 height: 100%;
                 background: url("../../../../assets/images/home-cover.jpg");
                 background-position: top;
@@ -75,14 +89,16 @@
             }
             .play-btn {
                 pointer-events: none;
-                display: none;
+                // display: none;
                 position: absolute;
                 top: 50%;
                 left: 50%;
-                transform: translate(20%, -50%);
+                transform: translate(-50%, -50%);
                 z-index: 1;
-                width: 90px;
-                height: 90px;
+                // width: 90px;
+                // height: 90px;
+                width: 10%;
+                padding-top: 10%;
                 border-radius: 50%;
                 background-color: color(primary);
                 border: none;
@@ -116,7 +132,12 @@
 @include mq(768px) {
     .home-page {
         .showcase {
-
+            min-height: calc(100vh - 179px);
+            &-content {
+                grid-gap: 60px 80px;
+            }
+            &-cover {
+            }
             &-description {
                 font-size: 26px;
             }
@@ -126,14 +147,13 @@
 @include mq(1200px) {
     .home-page {
         .showcase {
-        padding-top: 0;
+            padding-top: 0;
+            // padding-bottom: 150px;
 
             // min-height: calc(100vh - 260px);
             position: relative;
-            padding-bottom: 200px;
-
             &-content {
-                grid-template-columns: 1fr 1.5fr;
+                grid-template-columns: auto 1fr;
             }
             &-info {
                 // margin-top: 70px;
@@ -142,26 +162,40 @@
             &-cover {
                 position: relative;
                 opacity: 1;
-                pointer-events: auto;
+                // pointer-events: auto;
+                .wrapper {
+                    width: 1128px;
+                    height: 70vh;
+                }
             }
             .play-btn {
                 display: block;
+                transform: translate(20%, -50%);
             }
         }
     }
 }
-@include mq(1400px) {
+@include mq(1480px) {
     .home-page {
+        .home-circle {
+            left: auto;
+            top: -700px;
+            border-radius: 50%;
+            // right: auto;
+        }
         .showcase {
- 
+            min-height: auto;
+            padding-bottom: 400px;
 
-           &-title {
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-           }
-           &-description {
-            margin-bottom: 3rem;
-           }
+            .wrapper {
+                width: 1190px;
+                height: 755px;
+            }
+            &-title {
+                line-height: 1.2;
+            }
+            &-description {
+            }
         }
     }
 }

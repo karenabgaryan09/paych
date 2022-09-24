@@ -12,7 +12,7 @@ export default function Showcase() {
                         <h1 className="showcase-title display-1">
                             The Leader of <span className="text-primary">Construction Management</span> Software
                         </h1>
-                        <p className="showcase-description">
+                        <p className="showcase-description display-8">
                             All-in-one construction software for home building and remodeling teams ready to take their
                             business to the next level.
                         </p>
