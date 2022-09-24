@@ -249,7 +249,7 @@ code {
     font-size: 26px;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
   .display-1 {
     font-size: 65px;
   }
@@ -2201,23 +2201,22 @@ label {
 .home-page .showcase-content {
   display: grid;
   grid-gap: 80px;
-  align-items: center;
 }
 .home-page .showcase-info {
   position: relative;
   z-index: 1;
 }
 .home-page .showcase-title {
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
+  line-height: 1.1;
   max-width: 700px;
+  margin-bottom: 0.7rem;
 }
 .home-page .showcase-description {
   max-width: 600px;
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
 }
 .home-page .showcase-description::first-letter {
   text-transform: uppercase;
@@ -2316,6 +2315,15 @@ label {
   }
   .home-page .showcase .play-btn {
     display: block;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .home-page .showcase-title {
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+  .home-page .showcase-description {
+    margin-bottom: 3rem;
   }
 }
 .about {

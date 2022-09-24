@@ -18,6 +18,7 @@ const images = {
     construction: require("./assets/images/construction.jpg"),
     technology: require("./assets/images/technology.jpg"),
     subscribe: require("./assets/images/subscribe.jpg"),
+    underConstruction: require("./assets/images/under-construction.png"),
 
     // BUILDER
     calculator: require("./assets/images/icons/builder/calculator.png"),

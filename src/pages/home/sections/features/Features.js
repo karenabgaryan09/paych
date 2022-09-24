@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import localData from "../../../../localData";
 
 export default function Features() {
-    const { showcaseCoverSm } = localData.images;
+    const { showcaseCoverSm,underConstruction } = localData.images;
 
     const [activeTab, setActiveTab] = useState("tools");
     const [nextActiveTab, setNextActiveTab] = useState("tools");
@@ -93,16 +93,8 @@ export default function Features() {
                                 setActiveTab(nextActiveTab);
                             }}
                         >
-                            <h3 className="display-3">Sales process</h3>
-                            <p className="display-8">
-                                <strong>This is some placeholder content the Profile tab's associated content.</strong>{" "}
-                                Clicking another tab will toggle the visibility of this one for the next. The tab
-                                JavaScript swaps classes to control the content visibility and styling. You can use it
-                                with tabs, pills, and any other <code>.nav</code>-powered navigation. Lorem, ipsum dolor
-                                sit amet consectetur adipisicing elit. Et, perspiciatis voluptatum nihil ullam molestias
-                                eligendi sint modi dolor sit pariatur quos inventore magni ipsam laboriosam aperiam,
-                                aliquid earum, similique voluptate.
-                            </p>
+                            <h3 className="display-3" style={{textAlign:'center'}}>Sales process</h3>
+                            <img src={underConstruction} alt="" style={{margin: '0 auto',display: 'block'}} />
                         </div>
                         <div
                             className={`tab-pane fade ${activeTab === "managment" ? "active" : ""}  ${
@@ -114,12 +106,8 @@ export default function Features() {
                                 setActiveTab(nextActiveTab);
                             }}
                         >
-                             <h3 className="display-3">Project management</h3>
-                            <p className="display-8">
-                                <strong>This is some placeholder content the Profile tab's associated content.</strong>{" "}
-                                Clicking another tab will toggle the visibility of this one for the next. The tab
-                                JavaScript swaps classes to control the content visibility and styling.
-                            </p>
+                             <h3 className="display-3" style={{textAlign:'center'}}>Project management</h3>
+                           <img src={underConstruction} alt="" style={{margin: '0 auto',display: 'block'}} />
                         </div>
                         <div
                             className={`tab-pane fade ${activeTab === "tools" ? "active" : ""}  ${
@@ -169,16 +157,8 @@ export default function Features() {
                                 setActiveTab(nextActiveTab);
                             }}
                         >
-                            <h3 className="display-3">Communication</h3>
-                            <p className="display-8">
-                                <strong>This is some placeholder content the Profile tab's associated content.</strong>{" "}
-                                Clicking another tab will toggle the visibility of this one for the next. The tab
-                                JavaScript swaps classes to control the content visibility and styling. You can use it
-                                with tabs, pills, and any other <code>.nav</code>-powered navigation. Lorem, ipsum dolor
-                                sit amet consectetur adipisicing elit. Et, perspiciatis voluptatum nihil ullam molestias
-                                eligendi sint modi dolor sit pariatur quos inventore magni ipsam laboriosam aperiam,
-                                aliquid earum, similique voluptate.
-                            </p>
+                            <h3 className="display-3" style={{textAlign:'center'}}>Communication</h3>
+                            <img src={underConstruction} alt="" style={{margin: '0 auto',display: 'block'}} />
                         </div>
                     </div>
                 </div>

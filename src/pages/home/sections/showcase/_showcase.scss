@@ -11,23 +11,23 @@
         &-content {
             display: grid;
             grid-gap: 80px;
-            align-items: center;
+            // align-items: center;
         }
         &-info {
             position: relative;
             z-index: 1;
         }
         &-title {
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
+            line-height: 1.1;
             max-width: 700px;
+            margin-bottom: 0.7rem;
         }
         &-description {
             max-width: 600px;
             font-weight: 400;
             font-size: 1rem;
             line-height: 1.5;
-            margin-bottom: 3rem;
+            margin-bottom: 1.5rem;
             &::first-letter {
                 text-transform: uppercase;
             }
@@ -146,6 +146,21 @@
             .play-btn {
                 display: block;
             }
+        }
+    }
+}
+@include mq(1400px) {
+    .home-page {
+        .showcase {
+ 
+
+           &-title {
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+           }
+           &-description {
+            margin-bottom: 3rem;
+           }
         }
     }
 }
