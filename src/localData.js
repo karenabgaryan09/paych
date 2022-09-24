@@ -1,6 +1,6 @@
-import ufo from "./assets/images/ufo.png";
+import notFound from "./assets/images/not-found.png";
 const images = {
-    ufo,
+    notFound,
     showcaseCover: require("./assets/images/home-cover.jpg"),
     showcaseCoverSm: require("./assets/images/home-cover-sm.jpg"),
     aboutCover: require("./assets/images/about.jpg"),
@@ -120,6 +120,14 @@ const localData = {
                 />
             </svg>
         ),
+        search: (
+            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M28.6345 26.933L20.314 18.5997C21.9543 16.6309 22.9409 14.1149 22.9409 11.3668C22.9409 5.09753 17.8 0 11.4764 0C5.15278 0 0 5.10348 0 11.3728C0 17.6421 5.1409 22.7396 11.4645 22.7396C14.1508 22.7396 16.6232 21.8177 18.5845 20.2771L26.9347 28.6342C27.4221 29.1219 28.1471 29.1219 28.6345 28.6342C29.1218 28.1464 29.1218 27.4208 28.6345 26.933ZM2.43673 11.3728C2.43673 6.44775 6.49001 2.44467 11.4645 2.44467C16.439 2.44467 20.4923 6.44775 20.4923 11.3728C20.4923 16.2978 16.439 20.3009 11.4645 20.3009C6.49001 20.3009 2.43673 16.2919 2.43673 11.3728Z"
+                    fill="#D0D0D0"
+                />
+            </svg>
+        ),
 
         togglerIcon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -162,13 +170,13 @@ const localData = {
 
     error: {
         "not-found": {
-            message: "nothing exist here",
-            cover: ufo,
+            message: "not found",
+            cover: notFound,
             status: 404,
         },
         "connection-error": {
             message: "connection error",
-            cover: ufo,
+            cover: notFound,
             status: 400,
         },
     },

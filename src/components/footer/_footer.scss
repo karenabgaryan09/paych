@@ -16,7 +16,7 @@
         // padding-top: 150px;
         padding-bottom: 50px;
         display: flex;
-        gap: 50px 30px;
+        gap: 50px 70px;
         flex-wrap: wrap;
         justify-content: space-between;
         .btn {
@@ -138,6 +138,9 @@
             width: 100%;
             max-width: 530px;
         }
+        form {
+            width: 100%;
+        }
         .form-group {
             width: 100%;
             border-radius: 50rem;
@@ -194,6 +197,7 @@
             // padding-top: 250px;
             padding-top: 0px;
             padding-bottom: 120px;
+            gap: 50px 30px;
         }
         &-bottom {
             &-text {

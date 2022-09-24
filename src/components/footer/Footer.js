@@ -20,10 +20,12 @@ export default function Footer() {
                             Get notified about updates and be the first to get early access to new episodes.
                         </p>
                     </div>
-                    <div className="form-group">
-                        <input type="text" className="form-control"  placeholder="You email address here"/>
-                        <Button className="btn btn-primary rounded-pill">subscribe</Button>
-                    </div>
+                    <form onSubmit={(e)=>e.preventDefault()}>
+                        <label className="form-group">
+                            <input type="text" className="form-control"  placeholder="You email address here"/>
+                            <Button className="btn btn-primary rounded-pill">subscribe</Button>
+                        </label>
+                    </form>
                 </div>
                 <div className="footer-content">
                     <Link className="footer-brand" to="/">
@@ -68,7 +70,7 @@ export default function Footer() {
                         <h4 className="footer-subtitle  quick-links-title">quick links</h4>
                         <ul className="quick-links-list">
                             <li className="quick-links-item">
-                                <Link to="/about" className="quick-links-link btn btn-text-dark">
+                                <Link to="#/" className="quick-links-link btn btn-text-dark">
                                     about us
                                 </Link>
                             </li>
@@ -88,7 +90,7 @@ export default function Footer() {
                                 </Link>
                             </li>
                             <li className="quick-links-item">
-                                <Link to="/careers" className="quick-links-link btn btn-text-dark">
+                                <Link to="#/" className="quick-links-link btn btn-text-dark">
                                     careers
                                 </Link>
                             </li>

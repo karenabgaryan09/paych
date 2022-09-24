@@ -25,16 +25,17 @@ export default function Error() {
         <motion.main className="error-page" {...fade}>
             <section className="error">
                 <div className="container">
-                    <a onClick={() => navigate(-1)} className="btn btn-primary">
-                        <span className="startIcon">{angleLeft}</span>
-                        return to home page
-                    </a>
+                    <h2 className="error-title">{data.message}</h2>
+                 
                     <div className="wrapper">
                         <div className="error-img">
                             <img src={data.cover} alt={data.cover} />
                         </div>
                     </div>
-                    <h2 className="error-title">{data.message}</h2>
+                    <a onClick={() => navigate(-1)} className="btn btn-primary">
+                        <span className="startIcon">{angleLeft}</span>
+                        return to home page
+                    </a>
                 </div>
             </section>
         </motion.main>

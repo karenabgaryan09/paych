@@ -120,7 +120,7 @@ code {
     }
   
 }
-@media (min-width: 1280px) {
+@media (min-width: 1200px) {
     .display-1 {
         font-size: 65px;
     }
@@ -328,7 +328,7 @@ img {
 // CONDITIONAL
 
 main {
-    min-height: 100vh;
+    // min-height: 100vh;
 }
 
 section {

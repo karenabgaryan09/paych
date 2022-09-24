@@ -145,7 +145,7 @@ export default function Navbar() {
                         </li>
                         <li className="nav-item">
                             <Link
-                                to="/about"
+                                to="#/"
                                 className={`nav-link ${"/about" === location.pathname ? "active" : ""}`}
                                 aria-current="page"
                             >
