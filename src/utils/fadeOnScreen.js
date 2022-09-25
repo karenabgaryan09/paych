@@ -50,7 +50,7 @@ const FadeOnScreen = (function () {
     };
 
     // createObserver();
-    setEvents();
+    // setEvents();
 
     return { createObserver };
 })();

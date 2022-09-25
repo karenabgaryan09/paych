@@ -17,7 +17,7 @@ export default function Features() {
     }, [activeTab]);
 
     return (
-        <section className="features">
+        <section className="features" >
             <div className="container">
                 <h2 className="display-2 features-title text-primary">
                     All the features builders need, under one login.
@@ -26,7 +26,7 @@ export default function Features() {
                     Our construction management software helps with every step of the build – from the sales process and
                     project planning to financial tracking and client communication.
                 </p>
-                <div className="tabs">
+                <div className="tabs" data-lazy-block>
                     <ul className="nav nav-tabs" id="myTab" role="tablist">
                         <li className="nav-item" role="presentation">
                             <button
@@ -94,7 +94,7 @@ export default function Features() {
                             }}
                         >
                             <h3 className="display-3" style={{textAlign:'center'}}>Sales process</h3>
-                            <img src={underConstruction} alt="" style={{margin: '0 auto',display: 'block'}} />
+                            <img src={underConstruction} alt="" style={{margin: '0 auto',display: 'block'}}  />
                         </div>
                         <div
                             className={`tab-pane fade ${activeTab === "managment" ? "active" : ""}  ${
@@ -121,7 +121,7 @@ export default function Features() {
                             }}
                         >
                             <div className="financial-tools">
-                                <div className="financial-tools-cover">
+                                <div className="financial-tools-cover" data-lazy='fade-right'>
                                     <img src={showcaseCoverSm} alt="" />
                                 </div>
 

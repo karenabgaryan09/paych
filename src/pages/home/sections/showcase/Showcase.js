@@ -5,7 +5,7 @@ import localData from "../../../../localData";
 export default function Showcase() {
     const { play } = localData.svgs;
     return (
-        <section className="showcase">
+        <section className="showcase" data-lazy-block>
             <div className="container ">
                 <div className="showcase-content">
                     <div className="showcase-info">
@@ -19,7 +19,7 @@ export default function Showcase() {
                         <Button className="btn btn-primary rounded-pill">get started now</Button>
                     </div>
                     <div className="showcase-cover">
-                        <div className="wrapper">
+                        <div className="wrapper video" data-lazy='rotate'>
                             <Button className="play-btn">{play}</Button>
                         </div>
                     </div>

@@ -5,7 +5,7 @@ import localData from "../../localData";
 export default function BuilderCard({ builder }) {
 
     return (
-        <div className="card builder-card">
+        <div className="card builder-card" data-lazy='scale'>
          <div className="card-image">
           <img src={builder.image} alt="" />
          </div>

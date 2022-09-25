@@ -3,8 +3,8 @@ import { Dropdown } from "../../../../components";
 
 export default function Questions() {
     return (
-        <section className="questions">
-            <div className="container">
+        <section className="questions" data-lazy-block>
+            <div className="container" >
                 <h2 className="questions-title display-2">Frequntly Asked questions</h2>
                 <div className="questions-content">
                     <div className="dropdown-group">

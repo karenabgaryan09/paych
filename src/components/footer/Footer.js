@@ -11,9 +11,9 @@ export default function Footer() {
     const { logo, arrow } = localData.svgs;
     const { googlePlay, appStore } = localData.images;
     return (
-        <motion.footer {...fade} className="footer bg-dark">
+        <motion.footer {...fade} className="footer bg-dark" data-lazy-block>
             <div className="container">
-                <div className="subscribe">
+                <div className="subscribe" data-lazy='fade'>
                     <div className="wrapper">
                         <h2 className="subscribe-title">Subscribe to Our Newsletter</h2>
                         <p className="subscribe-description">

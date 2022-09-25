@@ -5,7 +5,7 @@ import localData from "../../../../localData";
 export default function Managment() {
     const { phoneTop, phoneMiddle, phoneBottom } = localData.images;
     return (
-        <section className="managment">
+        <section className="managment" data-lazy-block>
             <div className="container">
                 <div className="managment-content">
                     <div className="managment-info">
@@ -26,13 +26,13 @@ export default function Managment() {
                     </div>
                     <div className="managment-cover">
                         <img className="phone-tablet" src={phoneMiddle} alt="" />
-                        <div className="phone-cover phone-top">
+                        <div className="phone-cover phone-top" data-lazy='fade-down-long' data-lazy-delay='0'>
                             <img className="" src={phoneTop} alt="" />
                         </div>
-                        <div className="phone-cover phone-middle">
+                        <div className="phone-cover phone-middle" data-lazy='fade' data-lazy-delay='0'>
                             <img className="" src={phoneMiddle} alt="" />
                         </div>
-                        <div className="phone-cover phone-bottom">
+                        <div className="phone-cover phone-bottom" data-lazy='fade-up-long' data-lazy-delay='0'>
                             <img className="" src={phoneBottom} alt="" />
                         </div>
                     </div>

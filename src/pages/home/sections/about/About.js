@@ -6,10 +6,10 @@ export default function About() {
     const { aboutCover } = localData.images;
 
     return (
-        <section className="about">
+        <section className="about" data-lazy-block>
             <div className="container">
                 <div className="about-content">
-                    <div className="about-cover">
+                    <div className="about-cover" data-lazy='fade-right'>
                         <img src={aboutCover} alt="" />
                     </div>
                     <div className="about-info">

@@ -11,7 +11,7 @@ export default function Pricing() {
                     everything you need to build uninterrupted.
                 </h3>
 
-                <div className="pricing-content">
+                <div className="pricing-content" data-lazy-block>
                     <PricingCard
                         pricing={{
                             title: "personal",

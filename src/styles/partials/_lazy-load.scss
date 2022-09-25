@@ -14,14 +14,33 @@
     [data-lazy="fade-up"] {
         transform: translate3d(0, 100px, 0);
     }
+    [data-lazy="fade-up-long"] {
+        transform: translate3d(0, 300px, 0);
+    }
+    [data-lazy="fade-up-full"] {
+        transform: translate3d(0, 100%, 0);
+    }
+ 
     [data-lazy="fade-down"] {
         transform: translate3d(0, -100px, 0);
+    }
+    [data-lazy="fade-down-long"] {
+        transform: translate3d(0, -300px, 0);
     }
     [data-lazy="fade-left"] {
         transform: translate3d(100px, 0, 0);
     }
+    [data-lazy="fade-right"] {
+        transform: translate3d(-100px, 0, 0);
+    }
+    [data-lazy="fade-right-long"] {
+        transform: translate3d(-700px, 0, 0);
+    }
     [data-lazy="scale"] {
         transform: scale(0.3);
+    }
+    [data-lazy="rotate"] {
+        transform: scale(0.3) rotateZ(180deg);
     }
 
     .lazy-animate {
@@ -34,6 +53,10 @@
         transition-timing-function: ease-in, ease-out !important;
         transition-duration: 0.7s !important;
         // transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
+        &.video {
+            transition-duration: 2s !important;
+
+        }
     }
 }
 

@@ -2,8 +2,8 @@ import React from "react";
 
 export default function TrackingCard({ tracking }) {
     return (
-        <div className={`card tracking-card ${tracking.isReversed ? 'reversed' : ''}`}>
-             <div className="card-image">
+        <div className={`card tracking-card ${tracking.isReversed ? 'reversed' : ''}`} data-lazy-block>
+             <div className="card-image" data-lazy='scale'>
                 <img src={tracking.image} alt="" />
             </div>
             <div className="card-info">

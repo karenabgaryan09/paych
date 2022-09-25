@@ -12,7 +12,7 @@ export default function Showcase() {
                 </p>
                 <Button className="btn btn-primary rounded-pill showcase-btn">get started now</Button>
 
-                <div className="card-group">
+                <div className="card-group" data-lazy-block>
                     <PricingCard
                         pricing={{
                             title: "personal",

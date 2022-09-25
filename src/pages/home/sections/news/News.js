@@ -6,7 +6,7 @@ export default function News() {
     const {technology,construction,business} = localData.images
 
     return (
-        <section className="news">
+        <section className="news" data-lazy-block>
             <div className="news-top-half"></div>
             <div className="news-bottom-half">
                 <div className="container">

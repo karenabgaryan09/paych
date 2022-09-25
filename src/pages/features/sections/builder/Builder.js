@@ -7,12 +7,12 @@ export default function Builder() {
 
     return (
         <section className="builder">
-            <div className="container">
-                <h1 className="builder-title display-1">All the features builders need, under one login.</h1>
-                <p className="builder-subtitle display-8">
+            <div className="container" >
+                <h1 className="builder-title display-1" >All the features builders need, under one login.</h1>
+                <p className="builder-subtitle display-8" >
                     Estimate, Invoice, Collect Payments, and Manage Projects from Anywhere.
                 </p>
-                <Button className="btn btn-primary rounded-pill">get started now</Button>
+                <Button className="btn btn-primary rounded-pill" >get started now</Button>
             </div>
             <div className="wrapper">
                 <div className="container">
@@ -22,7 +22,7 @@ export default function Builder() {
                     </h2>
                 </div>
             </div>
-            <div className="container">
+            <div className="container" data-lazy-block>
                 <div className="cards-group">
                     <BuilderCard builder={{ image: calculator, title: "Estimates" }} />
                     <BuilderCard builder={{ image: track, title: "Track Project" }} />
