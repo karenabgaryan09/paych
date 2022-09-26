@@ -186,7 +186,7 @@ code {
 }
 
 .display-1 {
-  font-size: calc(1.5rem + 2vw);
+  font-size: calc(1rem + 2vw);
   font-weight: 500;
 }
 
@@ -1284,17 +1284,20 @@ section {
 .tracking-card {
   display: grid;
   grid-gap: 40px;
+  text-align: center;
 }
 .tracking-card b {
   font-weight: 500;
 }
 .tracking-card .wrapper {
   max-width: 600px;
+  margin: 0 auto;
 }
 .tracking-card:not(:last-of-type) {
   margin-bottom: 80px;
 }
 .tracking-card .card-image {
+  margin: 0 auto;
   width: 100%;
   padding-top: 100%;
   border-radius: 50%;
@@ -1333,6 +1336,7 @@ section {
   .tracking-card {
     align-items: center;
     grid-template-columns: 1fr 1.2fr;
+    text-align: left;
   }
   .tracking-card .wrapper {
     margin-left: auto;
@@ -2019,6 +2023,7 @@ label {
 .contact-page .showcase {
   padding-top: 0;
   padding-bottom: 284px;
+  text-align: center;
 }
 .contact-page .showcase-title {
   text-align: center;
@@ -2055,7 +2060,14 @@ label {
 .contact-page .showcase .info-description {
   font-weight: 400;
   max-width: 750px;
+  margin: 0 auto;
   margin-bottom: 3rem;
+}
+.contact-page .showcase .info .details {
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin: 0 auto;
 }
 .contact-page .showcase .info .details-item {
   max-width: 400px;
@@ -2106,6 +2118,7 @@ label {
 .contact-page .showcase .form-description {
   font-weight: 400;
   max-width: 750px;
+  margin: 0 auto;
   margin-bottom: 3rem;
 }
 .contact-page .showcase .form .textarea {
@@ -2130,7 +2143,11 @@ label {
 }
 @media screen and (min-width: 1200px) {
   .contact-page .showcase {
+    text-align: left;
     padding-top: 0;
+  }
+  .contact-page .showcase .info .details {
+    max-width: none;
   }
   .contact-page .showcase-content {
     flex-direction: row;
@@ -2426,6 +2443,7 @@ label {
 .home-page .showcase {
   position: relative;
   display: flex;
+  text-align: center;
 }
 .home-page .showcase > .container {
   flex: 1;
@@ -2439,16 +2457,16 @@ label {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 620px;
+  margin: 0 auto;
   align-self: center;
 }
 .home-page .showcase-title {
   line-height: 1.1;
   max-width: 700px;
+  margin: 0 auto;
   margin-bottom: 1.5rem;
 }
 .home-page .showcase-description {
-  max-width: 600px;
   font-weight: 400;
   margin-bottom: 3rem;
 }
@@ -2535,11 +2553,15 @@ label {
 }
 @media screen and (min-width: 1200px) {
   .home-page .showcase {
+    text-align: left;
     padding-top: 0;
     position: relative;
   }
   .home-page .showcase-content {
     grid-template-columns: auto 1fr;
+  }
+  .home-page .showcase-info {
+    max-width: 620px;
   }
   .home-page .showcase-cover {
     position: relative;
@@ -2584,6 +2606,7 @@ label {
 }
 .about {
   background-color: rgba(249, 249, 249,1);
+  text-align: center;
 }
 .about-content {
   display: grid;
@@ -2622,6 +2645,7 @@ label {
 
 @media screen and (min-width: 992px) {
   .about {
+    text-align: left;
     padding: 145px 0;
   }
   .about-content {
@@ -2696,6 +2720,9 @@ label {
     padding: 0.5rem 1.8rem;
   }
 }
+.features {
+  text-align: center;
+}
 .features-title {
   text-align: center;
   max-width: 600px;
@@ -2711,6 +2738,13 @@ label {
 }
 .features-description::first-letter {
   text-transform: uppercase;
+}
+.features .list {
+  text-align: left;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin: 0 auto;
 }
 .features .financial-tools {
   display: grid;
@@ -2745,7 +2779,9 @@ label {
 }
 .features .financial-tools-description {
   font-weight: 400;
+  margin: 0 auto;
   margin-bottom: 2rem;
+  max-width: 600px;
 }
 .features .financial-tools .list-item {
   font-weight: 500;
@@ -2755,6 +2791,7 @@ label {
 
 @media screen and (min-width: 992px) {
   .features {
+    text-align: left;
     padding: 135px 0 185px;
   }
   .features .wrapper {
@@ -2764,10 +2801,16 @@ label {
   .features-description {
     margin-bottom: 2rem;
   }
+  .features .list {
+    max-width: none;
+  }
   .features .financial-tools {
     grid-template-columns: 1fr 1.08fr;
     align-items: center;
     justify-content: space-between;
+  }
+  .features .financial-tools-description {
+    max-width: none;
   }
   .features .financial-tools-cover {
     order: 1;
@@ -2803,6 +2846,7 @@ label {
   background-position: 0.75rem;
   background-size: contain;
   background-image: url("../../../../assets/images/icons/p.svg");
+  text-align: center;
 }
 .managment-content {
   display: grid;
@@ -2811,6 +2855,7 @@ label {
 }
 .managment-info > .wrapper {
   max-width: 610px;
+  margin: 0 auto;
 }
 .managment-title {
   line-height: 124.52%;
@@ -2875,6 +2920,9 @@ label {
 }
 
 @media screen and (min-width: 992px) {
+  .managment-info > .wrapper {
+    text-align: left;
+  }
   .managment-content {
     grid-template-columns: 1.5fr 1fr;
     justify-content: space-between;

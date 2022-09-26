@@ -2,6 +2,7 @@
     .showcase {
         padding-top: 0;
         padding-bottom: 284px;
+        text-align: center;
 
         &-title {
             text-align: center;
@@ -40,9 +41,12 @@
                 font-weight: 400;
                 // font-size: 24px;
                 max-width: 750px;
+                margin: 0 auto;
                 margin-bottom: 3rem;
             }
             .details {
+                max-width: fit-content;
+    margin: 0 auto;
                 &-item {
                     max-width: 400px;
                     display: grid;
@@ -101,6 +105,7 @@
                 font-weight: 400;
                 // font-size: 24px;
                 max-width: 750px;
+                margin: 0 auto;
                 margin-bottom: 3rem;
             }
             .textarea {
@@ -148,7 +153,13 @@
 
     @include mq(1200px) {
         .showcase {
+            text-align: left;
             padding-top: 0;
+            .info {
+                .details {
+                    max-width: none;
+                }
+            }
             &-content {
                 flex-direction: row;
             }

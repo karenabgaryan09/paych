@@ -9,7 +9,7 @@
         // overflow: hidden;
         position: relative;
         display: flex;
-        // min-height: calc(100vh - 129px);
+     text-align: center;
 
         & > .container {
             flex: 1;
@@ -25,19 +25,20 @@
             position: relative;
             z-index: 1;
             width: 100%;
-            max-width: 620px;
+            margin: 0 auto;
             align-self: center;
         }
         &-title {
             line-height: 1.1;
             max-width: 700px;
+            margin: 0 auto;
             margin-bottom: 1.5rem;
             span {
                 // display: inline-block;
             }
         }
         &-description {
-            max-width: 600px;
+            // max-width: 600px;
             font-weight: 400;
             margin-bottom: 3rem;
 
@@ -149,6 +150,8 @@
 @include mq(1200px) {
     .home-page {
         .showcase {
+            text-align: left;
+
             padding-top: 0;
             // padding-bottom: 150px;
 
@@ -159,6 +162,8 @@
             }
             &-info {
                 // margin-top: 70px;
+            max-width: 620px;
+
             }
 
             &-cover {

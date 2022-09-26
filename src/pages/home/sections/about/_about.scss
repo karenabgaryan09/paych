@@ -1,5 +1,6 @@
 .about {
     background-color: color(light);
+    text-align: center;
     &-content {
         display: grid;
         grid-gap: 30px;
@@ -42,6 +43,7 @@
 
 @include mq(992px) {
     .about {
+        text-align: left;
         padding: 145px 0;
         &-content {
             grid-template-columns: 1fr 1.18fr;

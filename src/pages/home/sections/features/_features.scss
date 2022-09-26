@@ -55,14 +55,14 @@
 @include mq(992px) {
     .tabs {
         .nav-tabs {
-       display: flex;
+            display: flex;
         }
     }
 }
 @include mq(1200px) {
     .tabs {
         .nav-tabs {
-        padding-bottom: 1.2rem;
+            padding-bottom: 1.2rem;
 
             margin-bottom: 5rem;
             .nav-link {
@@ -76,6 +76,7 @@
 ////////////////////////////////
 
 .features {
+    text-align: center;
     &-title {
         text-align: center;
         max-width: 600px;
@@ -94,6 +95,11 @@
         &::first-letter {
             text-transform: uppercase;
         }
+    }
+    .list {
+        text-align: left;
+        max-width: fit-content;
+        margin: 0 auto;
     }
     .financial-tools {
         display: grid;
@@ -121,13 +127,15 @@
         &-info {
             order: 1;
         }
-        
+
         &-title {
             margin-bottom: 1rem;
         }
         &-description {
             font-weight: 400;
+            margin: 0 auto;
             margin-bottom: 2rem;
+            max-width: 600px;
         }
         .list {
             &-item {
@@ -141,6 +149,7 @@
 
 @include mq(992px) {
     .features {
+        text-align: left;
         padding: 135px 0 185px;
         .wrapper {
             max-width: 690px;
@@ -149,10 +158,16 @@
         &-description {
             margin-bottom: 2rem;
         }
+        .list {
+            max-width: none;
+        }
         .financial-tools {
             grid-template-columns: 1fr 1.08fr;
             align-items: center;
             justify-content: space-between;
+            &-description {
+                max-width: none;
+            }
             &-cover {
                 order: 1;
             }
@@ -170,8 +185,7 @@
         }
         &-description {
             margin-bottom: 5.3rem;
-        // line-height: 36.41px;
-
+            // line-height: 36.41px;
         }
         .financial-tools {
             &-title {

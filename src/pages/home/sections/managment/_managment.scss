@@ -7,6 +7,7 @@
     background-position: 0.75rem;
     background-size: contain;
     background-image: url("../../../../assets/images/icons/p.svg");
+    text-align: center;
     &-content {
         display: grid;
         align-items: center;
@@ -15,6 +16,7 @@
     &-info {
         & > .wrapper {
             max-width: 610px;
+            margin: 0 auto;
         }
     }
     &-title {
@@ -81,6 +83,11 @@
 
 @include mq(992px) {
     .managment {
+        &-info {
+             & > .wrapper {
+                text-align: left;
+             }
+        }
         &-content {
             grid-template-columns: 1.5fr 1fr;
             justify-content: space-between;
