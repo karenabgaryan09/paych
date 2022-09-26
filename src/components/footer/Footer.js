@@ -66,28 +66,7 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    <div className="quick-links">
-                        <h4 className="footer-subtitle  quick-links-title">quick links</h4>
-                        <ul className="quick-links-list">
-                         
-                            <li className="quick-links-item">
-                                <Link to="/contact" className="quick-links-link btn btn-text-dark">
-                                    contact us
-                                </Link>
-                            </li>
-                            <li className="quick-links-item">
-                                <Link to="/blogs/blog" className="quick-links-link btn btn-text-dark">
-                                    blog
-                                </Link>
-                            </li>
-                            <li className="quick-links-item">
-                                <Link to="/pricing" className="quick-links-link btn btn-text-dark">
-                                    pricing
-                                </Link>
-                            </li>
-                          
-                        </ul>
-                    </div>
+                    
 
                     <div className="features-links">
                         <h4 className="footer-subtitle  features-links-title">features</h4>
@@ -117,6 +96,29 @@ export default function Footer() {
                                     Mobile app
                                 </a>
                             </li>
+                        </ul>
+                    </div>
+
+                    <div className="quick-links">
+                        <h4 className="footer-subtitle  quick-links-title">quick links</h4>
+                        <ul className="quick-links-list">
+                         
+                            <li className="quick-links-item">
+                                <Link to="/contact" className="quick-links-link btn btn-text-dark">
+                                    contact us
+                                </Link>
+                            </li>
+                            <li className="quick-links-item">
+                                <Link to="/blogs/blog" className="quick-links-link btn btn-text-dark">
+                                    blog
+                                </Link>
+                            </li>
+                            <li className="quick-links-item">
+                                <Link to="/pricing" className="quick-links-link btn btn-text-dark">
+                                    pricing
+                                </Link>
+                            </li>
+                          
                         </ul>
                     </div>
 

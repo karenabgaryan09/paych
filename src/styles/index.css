@@ -752,6 +752,9 @@ section {
   background-color: rgb(245, 245, 245);
   min-height: 300px;
 }
+.footer-brand {
+  display: none;
+}
 .footer-subtitle {
   padding: 0 15px;
   text-transform: capitalize;
@@ -764,10 +767,9 @@ section {
 .footer-content {
   margin-top: -100px;
   padding-bottom: 50px;
-  display: flex;
-  gap: 50px 70px;
-  flex-wrap: wrap;
+  display: grid;
   justify-content: space-between;
+  grid-gap: 40px 70px;
 }
 .footer-content .btn {
   padding: 3px 15px;
@@ -913,11 +915,6 @@ section {
   min-width: 150px;
 }
 
-@media screen and (min-width: 980px) and (max-width: 1120px) {
-  .footer .contact-info {
-    order: 4;
-  }
-}
 @media screen and (min-width: 576px) {
   .footer .subscribe-title {
     line-height: 43.58px;
@@ -927,16 +924,26 @@ section {
   .footer-content {
     padding-top: 0px;
     padding-bottom: 120px;
-    gap: 50px 30px;
+    grid-gap: 70px 30px;
+    grid-template-columns: repeat(2, auto);
   }
   .footer-bottom-text {
     font-size: 18px;
   }
 }
+@media screen and (min-width: 992px) {
+  .footer-content {
+    padding-top: 0px;
+    padding-bottom: 120px;
+    grid-gap: 70px 30px;
+    grid-template-columns: repeat(3, auto);
+  }
+}
 @media screen and (min-width: 1200px) {
   .footer-content {
     margin-top: 0;
-    gap: 50px 0px;
+    grid-gap: 0;
+    grid-template-columns: repeat(5, auto);
   }
   .footer-subtitle {
     margin-bottom: 2.3rem;
@@ -953,8 +960,12 @@ section {
   }
 }
 @media screen and (min-width: 1700px) {
+  .footer-content {
+    grid-template-columns: repeat(6, auto);
+  }
   .footer-brand {
     width: auto;
+    display: block;
   }
 }
 .btn {

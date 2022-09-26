@@ -2,6 +2,9 @@
     padding: 0;
     background-color: rgba(245, 245, 245, 1);
     min-height: 300px;
+    &-brand {
+        display: none;
+    }
     &-subtitle {
         padding: 0 15px;
         text-transform: capitalize;
@@ -15,10 +18,12 @@
         margin-top: -100px;
         // padding-top: 150px;
         padding-bottom: 50px;
-        display: flex;
-        gap: 50px 70px;
-        flex-wrap: wrap;
+        display: grid;
         justify-content: space-between;
+        // gap: 50px 70px;
+        grid-gap: 40px 70px;
+        // flex-wrap: wrap;
+        // justify-content: space-between;
         .btn {
             padding: 3px 15px;
             font-size: 16px;
@@ -178,7 +183,7 @@
 @media screen and (min-width: 980px) and (max-width: 1120px) {
     .footer {
         .contact-info {
-            order: 4;
+            // order: 4;
         }
     }
 }
@@ -197,7 +202,9 @@
             // padding-top: 250px;
             padding-top: 0px;
             padding-bottom: 120px;
-            gap: 50px 30px;
+            grid-gap: 70px 30px;
+
+            grid-template-columns: repeat(2, auto);
         }
         &-bottom {
             &-text {
@@ -206,13 +213,28 @@
         }
     }
 }
+@include mq(992px) {
+    .footer {
+        &-content {
+            // padding-top: 250px;
+            padding-top: 0px;
+            padding-bottom: 120px;
+            grid-gap: 70px 30px;
+
+            grid-template-columns: repeat(3, auto);
+        }
+     
+    }
+}
 
 
 @include mq(1200px) {
     .footer {
         &-content {
             margin-top: 0;
-            gap: 50px 0px;
+            grid-gap: 0;
+            grid-template-columns: repeat(5,auto);
+            
         }
         &-subtitle {
         margin-bottom: 2.3rem;
@@ -238,8 +260,13 @@
 }
 @include mq(1700px) {
     .footer {
+        &-content {
+
+            grid-template-columns: repeat(6,auto);
+        }
         &-brand {
             width: auto;
+            display: block;
         }
     }
 }
