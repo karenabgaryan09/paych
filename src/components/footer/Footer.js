@@ -69,11 +69,7 @@ export default function Footer() {
                     <div className="quick-links">
                         <h4 className="footer-subtitle  quick-links-title">quick links</h4>
                         <ul className="quick-links-list">
-                            <li className="quick-links-item">
-                                <Link to="#/" className="quick-links-link btn btn-text-dark">
-                                    about us
-                                </Link>
-                            </li>
+                         
                             <li className="quick-links-item">
                                 <Link to="/contact" className="quick-links-link btn btn-text-dark">
                                     contact us
@@ -89,11 +85,7 @@ export default function Footer() {
                                     pricing
                                 </Link>
                             </li>
-                            <li className="quick-links-item">
-                                <Link to="#/" className="quick-links-link btn btn-text-dark">
-                                    careers
-                                </Link>
-                            </li>
+                          
                         </ul>
                     </div>
 

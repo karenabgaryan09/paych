@@ -35,7 +35,6 @@
     }
     &-description {
         font-weight: 400;
-        line-height: 27px;
 
         margin-bottom: 2rem;
     }
@@ -57,7 +56,7 @@
         &-subtitle {
         }
         &-description {
-            font-size: 18px;
+            // font-size: 18px;
         }
         &-info {
             .wrapper {
@@ -70,12 +69,12 @@
     }
 }
 
-@include mq(1200px) {
+@include mq(1400px) {
     .about {
     
         &-description {
-            font-size: 24px;
-        line-height: 36.73px;
+            // font-size: 24px;
+        // line-height: 36.73px;
 
         }
     }

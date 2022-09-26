@@ -33,11 +33,10 @@
     @include mq(768px) {
         .showcase {
             &-title {
-                margin-bottom: 2rem;
+                // margin-bottom: 2rem;
             }
             &-subtitle {
                 margin-bottom: 4rem;
-                line-height: 39.78px;
             }
             &-btn {
                 margin-bottom: 115px;

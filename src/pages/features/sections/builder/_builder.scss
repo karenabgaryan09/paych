@@ -19,7 +19,7 @@
         background-color: rgba(249, 249, 249, 1);
     }
     &-description {
-        font-size: 24px;
+        font-size: 18px;
         font-weight: 500;
         line-height: 30px;
         max-width: 1350px;
@@ -71,7 +71,7 @@
 @include mq(768px) {
     .builder {
         &-title {
-            margin-bottom: 2rem;
+            // margin-bottom: 2rem;
         }
         &-subtitle {
             margin-bottom: 4rem;
@@ -84,8 +84,8 @@
             padding: 145px 0;
         }
         &-description {
-            line-height: 53.21px;
-            font-size: 38px;
+            
+            font-size: 24px;
         }
     }
 }
@@ -99,6 +99,10 @@
     .builder {
         &-title {
             max-width: 1020px;
+        }
+        &-description {
+            line-height: 53.21px;
+            font-size: 38px;
         }
     }
 }

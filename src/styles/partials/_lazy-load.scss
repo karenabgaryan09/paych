@@ -53,10 +53,7 @@
         transition-timing-function: ease-in, ease-out !important;
         transition-duration: 0.7s !important;
         // transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
-        &.video {
-            transition-duration: 2s !important;
-
-        }
+      
     }
 }
 

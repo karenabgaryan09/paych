@@ -14,7 +14,6 @@ export default function App() {
     return (
         <>
             <div id="top"></div>
-            {/* <div className={`circle ${location.pathname === '/' ? 'home-circle' : ''}`}></div> */}
             <Header />
             <AnimatePresence exitBeforeEnter>
                 <Routes location={location} key={location.pathname}>

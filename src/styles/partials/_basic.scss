@@ -26,7 +26,7 @@ html {
     scroll-behavior: smooth;
     overflow-x: hidden;
     // @include mq(1920px) {}//default 16px
-    
+
     @include mq(2560px) {
         font-size: calc(16 * 100 / (1920 * 100 / 2560)) + px; //2k
     }
@@ -42,7 +42,6 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
-   
 }
 
 code {
@@ -68,6 +67,7 @@ code {
 .display-2 {
     font-size: calc(1rem + 2vw);
     font-weight: 600;
+    line-height: 1.05;
 }
 .display-3 {
     font-size: calc(1rem + 2vw);
@@ -81,27 +81,29 @@ code {
 }
 .display-6 {
     font-weight: 600;
-    font-size: calc(0.8rem + 1.5vw);
+    font-size: 1rem;
+    line-height: 27px;
 }
 .display-7 {
     font-weight: 500;
     font-size: 1rem;
+    line-height: 27px;
 }
 .display-8 {
     font-weight: 500;
-    font-size: 1.5rem;
+    line-height: 27px;
+    font-size: 18px;
 }
-
 
 @media (min-width: 768px) {
     .display-1 {
-        font-size: 45px;
+        font-size: 40px;
     }
     .display-2 {
-        font-size: 40px;
+        font-size: 37px;
     }
     .display-3 {
-        font-size: 40px;
+        font-size: 37px;
     }
     .display-4 {
         font-size: 3.5rem;
@@ -109,16 +111,15 @@ code {
     .display-5 {
         font-size: 3rem;
     }
-    .display-6 {
-        font-size: 24px;
-    }
-    .display-7 {
-        font-size: 24px;
-    }
-    .display-8 {
-        font-size: 26px;
-    }
-  
+    // .display-6 {
+    //     font-size: 21px;
+    // }
+    // .display-7 {
+    //     font-size: 24px;
+    // }
+    // .display-8 {
+    //     font-size: 18px;
+    // }
 }
 @media (min-width: 1400px) {
     .display-1 {
@@ -126,9 +127,20 @@ code {
     }
     .display-2 {
         font-size: 48px;
+        line-height: 1.25;
     }
-
-  
+    .display-6 {
+        font-size: 21px;
+        line-height: 36.73px;
+    }
+    .display-7 {
+        font-size: 24px;
+        line-height: 36.73px;
+    }
+    .display-8 {
+        font-size: 26px;
+        line-height: 36.73px;
+    }
 }
 
 li {
@@ -152,12 +164,11 @@ img {
     padding-left: 0.75rem;
     margin-right: auto;
     margin-left: auto;
-    @include mq(768px){
+    @include mq(768px) {
         padding-right: 80px;
         padding-left: 80px;
     }
 }
-
 
 .container {
     // @include mq(576px) {
@@ -368,7 +379,7 @@ section {
     right: -830px;
 }
 
-@include mq(1400px){
+@include mq(1400px) {
     .circle {
         display: block;
     }

@@ -19,6 +19,8 @@ export default function Provider({ children }) {
         },
     });
 
+    const [isModalShown, setIsModalShown] = useState(false);
+
     return (
         <Context.Provider
             value={{
@@ -28,6 +30,8 @@ export default function Provider({ children }) {
                 isLoggedIn,
                 setIsLoggedIn,
                 animations,
+                isModalShown,
+                setIsModalShown
             }}
         >
             {children}

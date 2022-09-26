@@ -7,7 +7,7 @@ export default function Questions() {
             <div className="container" >
                 <h2 className="questions-title display-2">Frequntly Asked questions</h2>
                 <div className="questions-content">
-                    <div className="dropdown-group">
+                    <div className="dropdown-group" data-lazy='fade-right'>
                         <Dropdown
                             title="How does the Free plan work?"
                             text={`
@@ -64,7 +64,7 @@ export default function Questions() {
                  `}
                         />
                     </div>
-                    <div className="dropdown-group">
+                    <div className="dropdown-group" data-lazy='fade-left'>
                         <Dropdown
                             title="What if I hit a limit on my free plan?"
                             text={`

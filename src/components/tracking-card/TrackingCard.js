@@ -9,7 +9,7 @@ export default function TrackingCard({ tracking }) {
             <div className="card-info">
               <div className="wrapper">
                   <h4 className="card-title display-2">{tracking.title}</h4>
-                  <p className="card-description display-6" dangerouslySetInnerHTML={{__html: tracking.description}}>
+                  <p className="card-description display-7" dangerouslySetInnerHTML={{__html: tracking.description}}>
                       {/* {tracking.description} */}
 
                   </p>

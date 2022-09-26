@@ -38,7 +38,7 @@
             }
             &-description {
                 font-weight: 400;
-                font-size: 24px;
+                // font-size: 24px;
                 max-width: 750px;
                 margin-bottom: 3rem;
             }
@@ -99,7 +99,7 @@
             }
             &-description {
                 font-weight: 400;
-                font-size: 24px;
+                // font-size: 24px;
                 max-width: 750px;
                 margin-bottom: 3rem;
             }
@@ -121,7 +121,7 @@
     @include mq(768px) {
         .showcase {
             &-title {
-                margin-bottom: 2rem;
+                // margin-bottom: 2rem;
             }
             &-subtitle {
                 margin-bottom: 4rem;
@@ -133,14 +133,14 @@
 
             .info {
                 &-description {
-                    font-size: 30px;
-                    line-height: 45.9px;
+                    // font-size: 30px;
+                    // line-height: 45.9px;
                 }
             }
             .form {
                 &-description {
-                    font-size: 30px;
-                    line-height: 45.9px;
+                    // font-size: 30px;
+                    // line-height: 45.9px;
                 }
             }
         }

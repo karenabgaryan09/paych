@@ -32,7 +32,7 @@
         color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
         white-space: nowrap;
         font-family: Montserrat;
-        @include mq(992px){
+        @include mq(1400px){
             font-size: 21px;
             padding: 15px 42px;
         }

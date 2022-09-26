@@ -48,7 +48,7 @@
 
         &-cover {
             position: relative;
-            pointer-events: none;
+            // pointer-events: none;
             // opacity: 0.1;
             width: 100%;
             height: 0;
@@ -62,7 +62,7 @@
 
             &:hover {
                 .play-btn {
-                    transform: translate(20%, -50%) scale(1.1);
+                    transform: translate(-50%, -50%) scale(1.1);
                     &:before {
                         transform: scale(1.5);
                         opacity: 0;
@@ -71,7 +71,7 @@
             }
             &:active {
                 .play-btn {
-                    transform: translate(20%, -50%);
+                    transform: translate(-50%, -50%);
                 }
             }
             .wrapper {
@@ -134,14 +134,14 @@
 @include mq(768px) {
     .home-page {
         .showcase {
-            min-height: calc(100vh - 179px);
+            min-height: calc(100vh - 128px);
             &-content {
                 grid-gap: 60px 80px;
             }
             &-cover {
             }
             &-description {
-                font-size: 26px;
+                // font-size: 26px;
             }
         }
     }
@@ -169,15 +169,30 @@
                     width: 1128px;
                     height: 67vh;
                 }
+                &:hover {
+                    .play-btn {
+                        transform: translate(20%, -50%) scale(1.1);
+                        &:before {
+                            transform: scale(1.5);
+                            opacity: 0;
+                        }
+                    }
+                }
+                &:active {
+                    .play-btn {
+                        transform: translate(20%, -50%);
+                    }
+                }
             }
             .play-btn {
                 display: block;
                 transform: translate(20%, -50%);
             }
         }
+     
     }
 }
-@include mq(1480px) {
+@include mq(1400px) {
     .home-page {
         .home-circle {
             left: auto;

@@ -13,9 +13,9 @@
     &-subtitle {
         text-align: center;
         font-weight: 400;
-        max-width: 1040px;
+        max-width: 890px;
         margin: 0 auto 3rem;
-        line-height: 25px;
+        // line-height: 25px;
 
     }
 }
@@ -24,7 +24,7 @@
     .pricing {
         padding: 135px 0 145px;
         &-subtitle {
-            line-height: 36.73px;
+            // line-height: 36.73px;
     
                 margin: 0 auto 7rem;
             }
@@ -46,6 +46,9 @@
     .pricing {
         &-content {
             gap: 50px;
+        }
+        &-subtitle {
+            max-width: 1040px;
         }
     }
 }

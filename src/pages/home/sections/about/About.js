@@ -18,7 +18,7 @@ export default function About() {
                             <h3 className="about-subtitle display-6">
                                 A simple solution to manage complex project processes
                             </h3>
-                            <p className="about-description">
+                            <p className="about-description display-8">
                                 We’re changing the way the world builds
                                 <br /> We’ve built Paych to be the world’s easiest estimating & invoicing tool for trade
                                 service pros, and we’re constantly listening to ensure we deliver on our goal: to make

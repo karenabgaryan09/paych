@@ -143,15 +143,7 @@ export default function Navbar() {
                                 home
                             </Link>
                         </li>
-                        <li className="nav-item">
-                            <Link
-                                to="#/"
-                                className={`nav-link ${"/about" === location.pathname ? "active" : ""}`}
-                                aria-current="page"
-                            >
-                                about us
-                            </Link>
-                        </li>
+                     
                         <li className="nav-item">
                             <Link
                                 to="/features"

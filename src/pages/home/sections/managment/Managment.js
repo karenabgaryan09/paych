@@ -13,10 +13,10 @@ export default function Managment() {
                             <h2 className="display-2 managment-title">
                                 Construction software designed to make your business better
                             </h2>
-                            <h6 className="display-7 managment-subtitle">
+                            <h6 className="display-7 managment-subtitle display-7">
                                 Easily manage projects, clients, and contractors
                             </h6>
-                            <p className="managment-description">
+                            <p className="managment-description display-8">
                                 From the office or the field, Paych keeps you on top of your projects, and in control of
                                 your business. Win more jobs, run them better, and control your financials -- all while
                                 making the building process a joy for your customers

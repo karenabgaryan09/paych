@@ -26,12 +26,12 @@ export default function Contact() {
                         <p className="showcase-subtitle display-8">
                             Our team has your back with unlimited support whenever you need it.
                         </p>
-                        <Button className="btn btn-primary rounded-pill showcase-btn">get started now</Button>
+                        <Button className="btn btn-primary rounded-pill showcase-btn">get free trial</Button>
 
                         <div className="showcase-content">
                             <div className="info">
                                 <h2 className="info-title display-2">Contact us</h2>
-                                <p className="info-description">
+                                <p className="info-description display-8">
                                     Contact nullam usamcoen the drana duru metus utah osare asya mavna busnini viventa
                                     the ornare ipsum.
                                 </p>
@@ -82,7 +82,7 @@ export default function Contact() {
 
                             <form action="" className="form contact-form needs-validation" noValidate>
                                 <h2 className="form-title display-2">Get in touch</h2>
-                                <p className="form-description">
+                                <p className="form-description display-8">
                                     Have questions or need help with your account? We’re here for you!{" "}
                                 </p>
 
