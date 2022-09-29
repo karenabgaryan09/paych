@@ -19,12 +19,13 @@
             text-transform: uppercase;
             font-weight: 400;
             margin-bottom: 1.5rem;
+            // font-size: 1rem;
         }
         &-title {
             margin-bottom: 2.8rem;
         }
         &-info {
-            font-size: 24px;
+            font-size: 18px;
             font-weight: 400;
             text-transform: capitalize;
             margin-bottom: 3.2rem;
@@ -103,7 +104,7 @@
         }
         &-description {
             font-weight: 400;
-            font-size: 24px;
+            font-size: 18px;
             line-height: 153%;
             margin-bottom: 2.7rem;
             &::first-letter {
@@ -120,7 +121,12 @@
         }
         .wrapper-inner {
             display: flex;
+            align-items: center;
             flex-wrap: wrap;
+            .btn {
+                padding: 10px 20px;
+                font-size: 12px;
+            }
         }
 
         .link-dark {
@@ -145,36 +151,60 @@
                 justify-content: space-between;
                 align-items:center;
                 margin-bottom: 4rem;
+                gap: 30px;
             }
         }
         .card-group {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 55px;
+            // display: flex;
+            // flex-wrap: wrap;
+            // justify-content: center;
+            // gap: 55px;
+            margin: 0 auto;
+            max-width: 400px;
             & > .card {
-                width: 100%;
-                max-width: 400px;
+                // width: 100%;
+                // max-width: 400px;
             }
         }
     }
 
 
     @include mq(768px) {
+        .showcase {
+           
+        }
         .integrated-news {
             .card-group {
+                max-width: 800px;
                 & > .card {
-                    max-width: 100%;
-                    width: calc(100% / 2 - 55px / 2);
+                    // max-width: 100%;
+                    // width: calc(100% / 2 - 55px / 2);
                 }
             }
         }
     }
+    @include mq(992px) {
+        .showcase {
+            &-sup {
+
+            }
+            &-info {
+                font-size: 24px;
+            }
+        }
+        .details {
+            &-description {
+                font-size: 24px;
+            }
+        }
+     
+    }
     @include mq(1200px) {
         .integrated-news {
             .card-group {
+                max-width: none;
                 & > .card {
-                    width: calc(100% / 3 - (55px * 2) / 3);
+                    // width: calc(100% / 3 - (55px * 2) / 3);
                 }
             }
         }
@@ -213,6 +243,10 @@
         }
 
         .details {
+            max-width: 417px;
+
+            flex-direction: column;
+            order: 2;
             hr {
                 display: block;
             }
@@ -225,10 +259,7 @@
             &-question {
                 margin-top: 2rem;
             }
-            max-width: 417px;
-
-            flex-direction: column;
-            order: 2;
+           
         }
     }
 }

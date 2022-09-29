@@ -23,10 +23,24 @@
             margin-bottom: 70px;
         }
         .card-group {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
+            // display: flex;
+            // gap: 20px;
+            // flex-wrap: wrap;
+            // justify-content: center;
+
+            .swiper-slide {
+                // width: auto !important;
+                @media screen and (max-width: 1200px) and (min-width: 992px) {
+                    width: fit-content !important;
+                }
+                .card {
+                    max-width: 410px;
+                    margin: 0 auto;
+                    @include mq(992px) {
+                        max-width: none;
+                    }
+                }
+            }
         }
     }
 
@@ -36,7 +50,7 @@
                 // margin-bottom: 2rem;
             }
             &-subtitle {
-                margin-bottom: 4rem;
+                
             }
             &-btn {
                 margin-bottom: 115px;
@@ -49,17 +63,20 @@
             padding-top: 0;
             padding-bottom: 144px;
             .card-group{
-                flex-wrap: nowrap;
+                // flex-wrap: nowrap;
             .card {
-                flex: 1;
+                // flex: 1;
             }
             }
         }
     }
     @include mq(1400px) {
         .showcase {
+            &-subtitle {
+                margin-bottom: 4rem;
+            }
           .card-group {
-                gap: 50px;
+                // gap: 50px;
             }
         }
     }

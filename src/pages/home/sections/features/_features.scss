@@ -28,9 +28,7 @@
             &.active {
                 color: color(primary);
             }
-            &:hover {
-                // border-color: #e9ecef #e9ecef #dee2e6;
-                // isolation: isolate;
+            &:hover:not(.active) {
                 color: color(secondary);
             }
         }
@@ -105,8 +103,11 @@
         display: grid;
 
         grid-gap: 40px;
-        &-cover {
+        [data-lazy-block] {
+
             order: 2;
+        }
+        &-cover {
             position: relative;
             width: 100%;
             height: 0;

@@ -30,6 +30,8 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 55px;
+            max-width: 800px;
+            margin: 0 auto;
             & > .card {
                 width: 100%;
                 max-width: 400px;
@@ -40,7 +42,7 @@
     @include mq(768px) {
         .showcase {
             &-btn {
-                margin-bottom: 220px;
+              
             }
             .card-group {
                 & > .card {
@@ -53,9 +55,20 @@
     @include mq(1200px) {
         .showcase {
             .card-group {
+                max-width: none;
                 & > .card {
                     width: calc(100% / 3 - (55px * 2) / 3);
                 }
+            }
+        }
+    }
+    @include mq(1400px) {
+        .showcase {
+            &-btn {
+                margin-bottom: 220px;
+            }
+            &-subtitle {
+                margin-bottom: 4rem;
             }
         }
     }

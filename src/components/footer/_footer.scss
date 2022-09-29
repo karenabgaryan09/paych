@@ -3,7 +3,7 @@
     background-color: rgba(245, 245, 245, 1);
     min-height: 300px;
     &-brand {
-        display: none;
+        // display: none;
     }
     &-subtitle {
         padding: 0 15px;
@@ -15,7 +15,7 @@
         margin-bottom: 1rem;
     }
     &-content {
-        margin-top: -100px;
+        margin-top: -50px;
         // padding-top: 150px;
         padding-bottom: 50px;
         display: grid;
@@ -110,7 +110,7 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        gap: 50px 7.5%;
+        gap: 30px 5%;
         border-radius: 9px;
         overflow: hidden;
         padding: 35px 20px;
@@ -128,7 +128,7 @@
             position: relative;
         }
         &-title {
-            font-size: 35px;
+            font-size: 33px;
             font-weight: 600;
             text-transform: capitalize;
            line-height: 35px;
@@ -145,6 +145,7 @@
         }
         form {
             width: 100%;
+            max-width: 530px;
         }
         .form-group {
             width: 100%;
@@ -189,6 +190,11 @@
 }
 @include mq(576px) {
     .footer {
+        &-content {
+            grid-gap: 50px 30px;
+
+            grid-template-columns: repeat(2, auto);
+        }
         .subscribe {
             &-title {
                 line-height: 43.58px;
@@ -202,9 +208,12 @@
             // padding-top: 250px;
             padding-top: 0px;
             padding-bottom: 120px;
-            grid-gap: 70px 30px;
-
-            grid-template-columns: repeat(2, auto);
+           
+        }
+        .subscribe {
+            &-title {
+                white-space: nowrap;
+            }
         }
         &-bottom {
             &-text {
@@ -216,6 +225,7 @@
 @include mq(992px) {
     .footer {
         &-content {
+            margin-top: 0;
             // padding-top: 250px;
             padding-top: 0px;
             padding-bottom: 120px;
@@ -223,29 +233,32 @@
 
             grid-template-columns: repeat(3, auto);
         }
+        .subscribe {
+            padding: 70px 50px;
      
+            text-align: left;
+            flex-direction: row;
+        }
     }
 }
 
 
-@include mq(1200px) {
+@include mq(1300px) {
     .footer {
         &-content {
             margin-top: 0;
             grid-gap: 0;
             grid-template-columns: repeat(5,auto);
-            
+            grid-gap: 70px 0px;
         }
         &-subtitle {
         margin-bottom: 2.3rem;
-
+        gap: 30px 7.5%;
         }
         .subscribe {
-
-            padding: 70px 50px;
-
-            text-align: left;
-            flex-direction: row;
+            form {
+                max-width: none;
+            }
         }
     }
 }

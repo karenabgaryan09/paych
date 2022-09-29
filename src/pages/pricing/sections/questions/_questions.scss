@@ -16,22 +16,27 @@
 
 @include mq(768px) {
     .questions {
-        &-title {
-            margin-bottom: 7.5rem;
-        }
-        padding: 170px 0 230px;
+      
     }
+  
 }
 @include mq(992px) {
     .questions {
+        &-title {
+            margin-bottom: 3rem;
+        }
         &-content {
             gap: 40px;
             display: flex;
         }
     }
 }
-@include mq(1500px) {
+@include mq(1400px) {
     .questions {
+        padding: 170px 0 230px;
+        &-title {
+            margin-bottom: 7.5rem;
+        }
         &-content {
             gap: 114px;
         }

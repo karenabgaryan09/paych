@@ -1,23 +1,13 @@
 import React, { useEffect, useState } from "react";
 import localData from "../../../../localData";
+import { useGlobalContext } from "../../../../context";
 
 export default function Features() {
-    const { showcaseCoverSm,underConstruction } = localData.images;
-
-    const [activeTab, setActiveTab] = useState("tools");
-    const [nextActiveTab, setNextActiveTab] = useState("tools");
-    const [isActiveTabShown, setIsActiveTabShown] = useState(true);
-
-    useEffect(() => {
-        setIsActiveTabShown(false);
-    }, [nextActiveTab]);
-
-    useEffect(() => {
-        setIsActiveTabShown(true);
-    }, [activeTab]);
+    const { showcaseCoverSm } = localData.images;
+    const { activeTab, setActiveTab } = useGlobalContext();
 
     return (
-        <section className="features" >
+        <section className="features" id="features">
             <div className="container">
                 <h2 className="display-2 features-title text-primary">
                     All the features builders need, under one login.
@@ -26,7 +16,7 @@ export default function Features() {
                     Our construction management software helps with every step of the build – from the sales process and
                     project planning to financial tracking and client communication.
                 </p>
-                <div className="tabs" data-lazy-block>
+                <div className="tabs"  id="tabs">
                     <ul className="nav nav-tabs" id="myTab" role="tablist">
                         <li className="nav-item" role="presentation">
                             <button
@@ -36,7 +26,7 @@ export default function Features() {
                                 data-target="#process"
                                 type="button"
                                 role="tab"
-                                onClick={() => setNextActiveTab("process")}
+                                onClick={() => setActiveTab("process")}
                             >
                                 Sales process
                             </button>
@@ -49,7 +39,7 @@ export default function Features() {
                                 data-target="#managment"
                                 type="button"
                                 role="tab"
-                                onClick={() => setNextActiveTab("managment")}
+                                onClick={() => setActiveTab("managment")}
                             >
                                 Project management
                             </button>
@@ -62,7 +52,7 @@ export default function Features() {
                                 data-target="#tools"
                                 type="button"
                                 role="tab"
-                                onClick={() => setNextActiveTab("tools")}
+                                onClick={() => setActiveTab("tools")}
                             >
                                 Financial tools
                             </button>
@@ -75,7 +65,7 @@ export default function Features() {
                                 data-target="#communication"
                                 type="button"
                                 role="tab"
-                                onClick={() => setNextActiveTab("communication")}
+                                onClick={() => setActiveTab("communication")}
                             >
                                 Communication
                             </button>
@@ -85,45 +75,62 @@ export default function Features() {
                     <div className="tab-content" id="myTabContent">
                         <div
                             className={`tab-pane fade ${activeTab === "process" ? "active" : ""}  ${
-                                isActiveTabShown && activeTab === "process" ? "show" : ""
+                                activeTab === "process" ? "show" : ""
                             }`}
                             id="process"
                             role="tabpanel"
-                            onTransitionEnd={() => {
-                                setActiveTab(nextActiveTab);
-                            }}
                         >
-                            <h3 className="display-3" style={{textAlign:'center'}}>Sales process</h3>
-                            <img src={underConstruction} alt="" style={{margin: '0 auto',display: 'block'}}  />
+                            <div className="sales-process">
+                                <h3 className="display-3 sales-process-title">Sales process</h3>
+                                <br />
+                                <p className="sales-process-description display-7">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id ipsum explicabo quidem
+                                    dicta! Non velit deleniti, voluptas nihil perferendis fugit eos voluptatum dolorem
+                                    harum earum dignissimos veniam explicabo! Possimus odio minus ex assumenda debitis
+                                    optio. Tempora aut atque quaerat illum accusantium rem ab dolores quidem in mollitia
+                                    commodi perspiciatis earum voluptas recusandae, officiis tempore vitae dolor odio?
+                                    Sint hic ullam a aperiam porro laborum laboriosam atque perferendis dolor autem iure
+                                    quod aliquam excepturi, explicabo, repudiandae ex magni tenetur, dicta qui.
+                                    Deleniti, atque quaerat! Ratione fugit vitae earum nesciunt perferendis facere! Odio
+                                    non error minima natus dignissimos quam, iure ex eaque!
+                                </p>
+                            </div>
                         </div>
                         <div
                             className={`tab-pane fade ${activeTab === "managment" ? "active" : ""}  ${
-                                isActiveTabShown && activeTab === "managment" ? "show" : ""
+                                activeTab === "managment" ? "show" : ""
                             }`}
                             id="managment"
                             role="tabpanel"
-                            onTransitionEnd={() => {
-                                setActiveTab(nextActiveTab);
-                            }}
                         >
-                             <h3 className="display-3" style={{textAlign:'center'}}>Project management</h3>
-                           <img src={underConstruction} alt="" style={{margin: '0 auto',display: 'block'}} />
+                            <div className="project-managment-process">
+                                <h3 className="display-3 project-managment-process-title">Project managment</h3>
+                                <br />
+                                <p className="project-managment-process-description display-7">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id ipsum explicabo quidem
+                                    dicta! Non velit deleniti, voluptas nihil perferendis fugit eos voluptatum dolorem
+                                    harum earum dignissimos veniam explicabo! Possimus odio minus ex assumenda debitis
+                                    optio. Tempora aut atque quaerat illum accusantium rem ab dolores quidem in mollitia
+                                    commodi perspiciatis earum voluptas recusandae, officiis tempore vitae dolor odio?
+                                    Sint hic ullam a aperiam porro laborum laboriosam atque perferendis dolor autem iure
+                                    quod aliquam excepturi, explicabo.
+                                </p>
+                            </div>
                         </div>
                         <div
                             className={`tab-pane fade ${activeTab === "tools" ? "active" : ""}  ${
-                                isActiveTabShown && activeTab === "tools" ? "show" : ""
+                                activeTab === "tools" ? "show" : ""
                             }`}
                             id="tools"
                             role="tabpanel"
-                            onTransitionEnd={() => {
-                                setIsActiveTabShown(true);
-                                setActiveTab(nextActiveTab);
-                            }}
+                            
                         >
-                            <div className="financial-tools">
-                                <div className="financial-tools-cover" data-lazy='fade-right'>
-                                    <img src={showcaseCoverSm} alt="" />
-                                </div>
+                            <div className="financial-tools" >
+                               <div data-lazy-block>
+                                 <div className="financial-tools-cover" data-lazy="fade-right" >
+                                     <img src={showcaseCoverSm} alt="" />
+                                 </div>
+                               </div>
 
                                 <div className="financial-tools-info">
                                     <div className="wrapper">
@@ -148,17 +155,23 @@ export default function Features() {
                         </div>
                         <div
                             className={`tab-pane fade ${activeTab === "communication" ? "active" : ""}  ${
-                                isActiveTabShown && activeTab === "communication" ? "show" : ""
+                                activeTab === "communication" ? "show" : ""
                             }`}
                             id="communication"
                             role="tabpanel"
-                            onTransitionEnd={() => {
-                                setIsActiveTabShown(true);
-                                setActiveTab(nextActiveTab);
-                            }}
                         >
-                            <h3 className="display-3" style={{textAlign:'center'}}>Communication</h3>
-                            <img src={underConstruction} alt="" style={{margin: '0 auto',display: 'block'}} />
+                            <div className="communication-process">
+                                <h3 className="display-3 communication-process-title">Communication</h3>
+                                <br />
+                                <p className="communication-process-description display-7">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id ipsum explicabo quidem
+                                    dicta! Non velit deleniti, voluptas nihil perferendis fugit eos voluptatum dolorem
+                                    harum earum dignissimos veniam explicabo! Possimus odio minus ex assumenda debitis
+                                    optio. Tempora aut atque quaerat illum accusantium rem ab dolores quidem in mollitia
+                                    commodi perspiciatis earum voluptas recusandae, officiis tempore vitae dolor odio?
+                                    Sint hic ullam a aperiam porro.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>

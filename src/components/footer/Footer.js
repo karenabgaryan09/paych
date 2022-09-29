@@ -1,32 +1,53 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useGlobalContext } from "../../context";
 import localData from "../../localData";
 import { Button } from "../../components";
 
+let withCredentials = false;
 export default function Footer() {
     const { fade } = useGlobalContext().animations;
+    const { setActiveTab, activeTab } = useGlobalContext();
 
     const { logo, arrow } = localData.svgs;
     const { googlePlay, appStore } = localData.images;
+
+    useEffect(() => {
+        if (!withCredentials) return;
+        console.log("triggggggggggggggggggg");
+        withCredentials = false;
+        handleScroll();
+    }, [activeTab]);
+
+    const handleScroll = () => {
+        setTimeout(() => {
+            const tabs = document.querySelector(".tabs");
+            console.log(tabs);
+            if (tabs) window.scrollTo(0, tabs.offsetTop - 30);
+        }, 500);
+    };
+
     return (
         <motion.footer {...fade} className="footer bg-dark" data-lazy-block>
-            <div className="container">
-                <div className="subscribe" data-lazy='fade'>
+            <div className="container-fluid">
+
+                <div className="subscribe" data-lazy="fade">
                     <div className="wrapper">
                         <h2 className="subscribe-title">Subscribe to Our Newsletter</h2>
                         <p className="subscribe-description">
                             Get notified about updates and be the first to get early access to new episodes.
                         </p>
                     </div>
-                    <form onSubmit={(e)=>e.preventDefault()}>
+                    <form onSubmit={(e) => e.preventDefault()}>
                         <label className="form-group">
-                            <input type="text" className="form-control"  placeholder="You email address here"/>
+                            <input type="text" className="form-control" placeholder="You email address here" />
                             <Button className="btn btn-primary rounded-pill">subscribe</Button>
                         </label>
                     </form>
                 </div>
+            </div>
+            <div className="container">
                 <div className="footer-content">
                     <Link className="footer-brand" to="/">
                         {logo}
@@ -66,35 +87,65 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    
-
                     <div className="features-links">
                         <h4 className="footer-subtitle  features-links-title">features</h4>
                         <ul className="features-links-list">
                             <li className="quick-links-item">
-                                <a target="_blank" href="#/" className="quick-links-link btn btn-text-dark">
-                                    Sales process
-                                </a>
+                                <Link
+                                    to="/"
+                                    onClick={() => {
+                                        setActiveTab("process");
+                                        withCredentials = true;
+                                    }}
+                                >
+                                    <Button className="features-links-link btn btn-text-dark"> Sales process</Button>
+                                </Link>
                             </li>
                             <li className="features-links-item">
-                                <a target="_blank" href="#/" className="features-links-link btn btn-text-dark">
-                                    Project management
-                                </a>
+                                <Link
+                                    to="/"
+                                    onClick={() => {
+                                        setActiveTab("managment");
+                                        withCredentials = true;
+                                    }}
+                                >
+                                    <Button className="features-links-link btn btn-text-dark">
+                                        Project management
+                                    </Button>
+                                </Link>
                             </li>
                             <li className="features-links-item">
-                                <a target="_blank" href="#/" className="features-links-link btn btn-text-dark">
-                                    Financial tools
-                                </a>
+                                <Link
+                                    to="/"
+                                    onClick={() => {
+                                        setActiveTab("tools");
+                                        withCredentials = true;
+                                    }}
+                                >
+                                    <Button className="features-links-link btn btn-text-dark">Financial tools</Button>
+                                </Link>
                             </li>
                             <li className="features-links-item">
-                                <a target="_blank" href="#/" className="features-links-link btn btn-text-dark">
-                                    Communication
-                                </a>
+                                <Link
+                                    to="/"
+                                    onClick={() => {
+                                        setActiveTab("communication");
+                                        withCredentials = true;
+                                    }}
+                                >
+                                    <Button className="features-links-link btn btn-text-dark">Communication</Button>
+                                </Link>
                             </li>
                             <li className="features-links-item">
-                                <a target="_blank" href="#/" className="features-links-link btn btn-text-dark">
-                                    Mobile app
-                                </a>
+                                <Link
+                                    to="/"
+                                    onClick={() => {
+                                        setActiveTab("process");
+                                        withCredentials = true;
+                                    }}
+                                >
+                                    <Button className="features-links-link btn btn-text-dark">Mobile app</Button>
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -102,7 +153,6 @@ export default function Footer() {
                     <div className="quick-links">
                         <h4 className="footer-subtitle  quick-links-title">quick links</h4>
                         <ul className="quick-links-list">
-                         
                             <li className="quick-links-item">
                                 <Link to="/contact" className="quick-links-link btn btn-text-dark">
                                     contact us
@@ -118,7 +168,6 @@ export default function Footer() {
                                     pricing
                                 </Link>
                             </li>
-                          
                         </ul>
                     </div>
 

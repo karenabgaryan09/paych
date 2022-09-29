@@ -5,6 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
 import Provider from "./context";
+import "swiper/css/bundle";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

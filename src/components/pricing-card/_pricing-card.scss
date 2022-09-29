@@ -8,13 +8,13 @@
     transition: border-color 0.3s ease, transform 0.3s ease;
     &:hover {
         border-color: color(primary);
-        transform: translateX(-10px);
+        // transform: translateX(-10px);
     }
 
     .card {
         &-title {
             font-weight: 600;
-            font-size: 2rem;
+            font-size: 1.5rem;
             text-transform: capitalize;
             margin-bottom: 1rem;
         }
@@ -27,7 +27,7 @@
             }
         }
         &-price {
-            font-size: 34px;
+            font-size: 25px;
             font-weight: 500;
             margin-bottom: 0.4rem;
         }
@@ -75,6 +75,9 @@
             }
             &-date {
                 margin-bottom: 2rem;
+            }
+            &-price {
+                // font-size: 34px;
             }
             &-item {
                 .checkmark {

@@ -1,7 +1,7 @@
 .banner-2 {
     background-color: color(primary);
     color: #fff;
-    padding: 3rem 0 3rem;
+    padding: 2rem 0 2rem;
     &-content {
         display: flex;
         align-items: center;
@@ -21,7 +21,7 @@
 
 @include mq(768px) {
     .banner-2 {
-        padding: 110px 0 110px;
+        padding: 60px 0 60px;
 
         &-title {
             font-size: 30px;
@@ -30,6 +30,7 @@
 }
 @include mq(1200px) {
     .banner-2 {
+        padding: 110px 0 110px;
         &-content {
             flex-direction: row;
             justify-content: space-between;

@@ -1,7 +1,7 @@
-@media screen and (min-width: 576px) {
+// @media screen and (min-width: 576px) {
     [data-lazy] {
         opacity: 0;
-        will-change: transform, opacity;
+        // will-change: transform, opacity;
     }
 
     [data-lazy="fade"] {
@@ -12,7 +12,8 @@
     }
 
     [data-lazy="fade-up"] {
-        transform: translate3d(0, 100px, 0);
+        // transform: translate3d(0, 100px, 0);
+        transform: translateY(100px);
     }
     [data-lazy="fade-up-long"] {
         transform: translate3d(0, 300px, 0);
@@ -45,7 +46,8 @@
 
     .lazy-animate {
         opacity: 1;
-        transform: translateZ(0);
+        // transform: translateZ(0);
+        transform: none;
     }
 
     .animating {
@@ -55,7 +57,7 @@
         // transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
       
     }
-}
+// }
 
 // header,
 // main,

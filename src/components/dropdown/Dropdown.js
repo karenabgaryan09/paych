@@ -15,7 +15,7 @@ export default function Dropdown({ title, className, category, text }) {
     }, [isShown]);
 
     return (
-        <div className="dropdown" >
+        <div className="dropdown" data-lazy='fade-up'>
             <div
                 className={`${className ? className : ""} dropdown-toggle ${!isShown ? "dropped" : ""}`}
                 data-toggle="dropdown"

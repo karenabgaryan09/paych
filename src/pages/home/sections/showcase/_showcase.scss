@@ -9,7 +9,7 @@
         // overflow: hidden;
         position: relative;
         display: flex;
-     text-align: center;
+        text-align: center;
 
         & > .container {
             flex: 1;
@@ -29,10 +29,10 @@
             align-self: center;
         }
         &-title {
-            line-height: 1.1;
+            // line-height: 1.1;
             max-width: 700px;
             margin: 0 auto;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             span {
                 // display: inline-block;
             }
@@ -40,7 +40,7 @@
         &-description {
             // max-width: 600px;
             font-weight: 400;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
 
             &::first-letter {
                 text-transform: uppercase;
@@ -49,16 +49,9 @@
 
         &-cover {
             position: relative;
-            // pointer-events: none;
-            // opacity: 0.1;
             width: 100%;
             height: 0;
             padding-top: 50%;
-            
-            // top: 0;
-            // left: 0;
-            // height: 0;
-            // padding-top: 80%;
             cursor: pointer;
 
             &:hover {
@@ -92,14 +85,11 @@
             }
             .play-btn {
                 pointer-events: none;
-                // display: none;
                 position: absolute;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 z-index: 1;
-                // width: 90px;
-                // height: 90px;
                 width: 10%;
                 padding-top: 10%;
                 border-radius: 50%;
@@ -162,8 +152,7 @@
             }
             &-info {
                 // margin-top: 70px;
-            max-width: 620px;
-
+                max-width: 620px;
             }
 
             &-cover {
@@ -176,7 +165,6 @@
                 }
                 &:hover {
                     .play-btn {
-                        transform: translate(20%, -50%) scale(1.1);
                         &:before {
                             transform: scale(1.5);
                             opacity: 0;
@@ -185,16 +173,14 @@
                 }
                 &:active {
                     .play-btn {
-                        transform: translate(20%, -50%);
                     }
                 }
             }
             .play-btn {
                 display: block;
-                transform: translate(20%, -50%);
+                left: 23vw;
             }
         }
-     
     }
 }
 @include mq(1400px) {
@@ -215,8 +201,26 @@
             }
             &-title {
                 line-height: 1.2;
+                margin-bottom: 1.5rem;
             }
             &-description {
+                line-height: 39.78px;
+                margin-bottom: 3rem;
+            }
+            .play-btn {
+                left: 30vw;
+            }
+        }
+    }
+}
+@include mq(2200px) {
+    .home-page {
+        .showcase {
+            min-height: auto;
+            padding-bottom: 400px;
+
+            .play-btn {
+                left: 50%;
             }
         }
     }

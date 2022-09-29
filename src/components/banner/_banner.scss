@@ -1,11 +1,11 @@
 .banner {
     background-color: color(primary);
     color: #fff;
-    padding: 4rem 0 3rem;
+    padding: 2.5rem 0 2rem;
     &-content {
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        gap: 20px 40px;
     }
 
     &-title {
@@ -25,15 +25,19 @@
     }
 
     &-links {
+     
+
         justify-content: center;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 5px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0px 10px;
+    // max-width: 200px;
+    // margin: 0 auto;
         .btn {
             padding: 5px;
             min-width: auto;
             border-radius: 16px;
-            // max-width: 180px;
+            max-width: 180px;
             img {
                 max-width: 260px;
                 width: 100%;
@@ -44,7 +48,7 @@
 
 @include mq(768px) {
     .banner {
-        padding: 100px 0 80px;
+        padding: 50px 0 40px;
 
         &-title {
             font-size: 30px;
@@ -54,11 +58,15 @@
         }
         &-links {
             flex-wrap: nowrap;
+            .btn {
+                max-width: 250px;
+            }
         }
     }
 }
 @include mq(1200px) {
     .banner {
+        padding: 100px 0 80px;
         &-content {
             flex-direction: row;
             justify-content: space-between;
@@ -72,7 +80,9 @@
             text-align: left;
         }
         &-links {
+            gap: 0px 20px;
             justify-content: flex-start;
+            .btn {max-width: none;}
         }
     }
 }

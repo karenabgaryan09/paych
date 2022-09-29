@@ -6,7 +6,7 @@ import { Button } from "../../components";
 export default function Navbar() {
     const location = useLocation();
 
-    const { togglerIcon, telegram, logo } = localData.svgs;
+    const { logo } = localData.svgs;
 
     // COLLAPSE
     let navbarCollapse = useRef();
@@ -18,25 +18,8 @@ export default function Navbar() {
         setIsShown(!isShown);
     }, [isCollapsing]);
 
-    const getHeight = () => {
-        let computedHeight = null;
-        [...navbarCollapse.current.children].forEach((each) => (computedHeight += getAbsoluteHeight(each)));
-        return computedHeight + "px";
-    };
-
-    const getAbsoluteHeight = (el) => {
-        el = typeof el === "string" ? document.querySelector(el) : el;
-
-        let styles = window.getComputedStyle(el);
-        let margin = parseFloat(styles["marginTop"]) + parseFloat(styles["marginBottom"]);
-        let border = parseFloat(styles["borderTop"]) + parseFloat(styles["borderBottom"]);
-
-        return Math.ceil(el.offsetHeight + margin + border);
-    };
-    //
 
     useEffect(() => {
-    
         (function () {
             const target = document.querySelector(".navbar .target");
             const links = document.querySelectorAll(".navbar li a");
@@ -100,10 +83,10 @@ export default function Navbar() {
         })();
     }, []);
 
-    useEffect(()=>{
-        const target = document.querySelector('.navbar .target')
-        target.style.borderColor ="rgba(155, 57, 44, 1)" 
-    },[location])
+    useEffect(() => {
+        const target = document.querySelector(".navbar .target");
+        target.style.borderColor = "rgba(155, 57, 44, 1)";
+    }, [location]);
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light">
@@ -113,13 +96,6 @@ export default function Navbar() {
                 </Link>
                 <Button className="btn btn-primary rounded-pill trial-btn">get free trial</Button>
 
-                {/* <button
-                    className={`navbar-toggler ${isShown ? "collapsed" : ""}`}
-                    type="button"
-                    onClick={() => setIsCollapsing(true)}
-                >
-                    <span className="navbar-toggler-icon">{togglerIcon}</span>
-                </button> */}
                 <div className="navbar-toggler" onClick={() => setIsCollapsing(true)}>
                     <div className={` header_burger  ${isShown ? "active" : ""}`}>
                         <span></span>
@@ -130,12 +106,14 @@ export default function Navbar() {
                     className={`navbar-collapse ${isCollapsing ? "collapsing" : "collapse"} ${isShown ? "show" : ""}`}
                     id="navbarSupportedContent"
                     onTransitionEnd={() => setIsCollapsing(false)}
-                    style={isShown && isCollapsing ? { height: getHeight() } : {}}
+                    // style={isShown && isCollapsing ? { height: getHeight() } : {}}
+                    style={isShown && isCollapsing ? { transform: "none" } : {}}
                 >
                     <ul className="navbar-nav me-auto">
                         <span className="target"></span>
                         <li className="nav-item">
                             <Link
+                                onClick={() => setIsShown(false)}
                                 to="/"
                                 className={`nav-link ${"/" === location.pathname ? "active" : ""}`}
                                 aria-current="page"
@@ -143,9 +121,10 @@ export default function Navbar() {
                                 home
                             </Link>
                         </li>
-                     
+
                         <li className="nav-item">
                             <Link
+                                onClick={() => setIsShown(false)}
                                 to="/features"
                                 className={`nav-link ${"/features" === location.pathname ? "active" : ""}`}
                                 aria-current="page"
@@ -153,9 +132,10 @@ export default function Navbar() {
                                 features
                             </Link>
                         </li>
-                       
+
                         <li className="nav-item">
                             <Link
+                                onClick={() => setIsShown(false)}
                                 to="/pricing"
                                 className={`nav-link ${"/pricing" === location.pathname ? "active" : ""}`}
                                 aria-current="page"
@@ -165,8 +145,9 @@ export default function Navbar() {
                         </li>
                         <li className="nav-item">
                             <Link
+                                onClick={() => setIsShown(false)}
                                 to="/blogs"
-                                className={`nav-link ${location.pathname.includes('/blogs') ? "active" : ""}`}
+                                className={`nav-link ${location.pathname.includes("/blogs") ? "active" : ""}`}
                                 aria-current="page"
                             >
                                 blogs
@@ -174,6 +155,7 @@ export default function Navbar() {
                         </li>
                         <li className="nav-item">
                             <Link
+                                onClick={() => setIsShown(false)}
                                 to="/contact"
                                 className={`nav-link ${"/contact" === location.pathname ? "active" : ""}`}
                                 aria-current="page"

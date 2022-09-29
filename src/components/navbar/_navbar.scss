@@ -10,7 +10,7 @@
     background-color: transparent !important;
     border-top: 6px solid color(primary);
     position: relative;
-    z-index: 1;
+    z-index: 2;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -71,12 +71,20 @@
         display: flex;
         align-items: center;
         svg {
-            width: 100px !important;
+            width: 130px !important;
             height: auto;
         }
     }
 
     &-collapse {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        border-bottom-left-radius: 12px;
+        padding: 40px 80px;
+
         flex-basis: 100%;
         flex-grow: 1;
         align-items: center;
@@ -94,11 +102,12 @@
         .nav-link {
             padding-left: 0;
             padding-right: 0;
-            font-size: 19px;
+            font-size: 25px;
             text-transform: capitalize;
             font-weight: 500;
             white-space: nowrap;
-            display: inline-block;
+            // display: inline-block;
+            user-select: none;
         }
     }
     .trial-btn {
@@ -148,7 +157,8 @@
 }
 
 .navbar-collapse:not(.collapsing) {
-    height: auto !important;
+    // height: auto !important;
+    // transform: none !important;
 }
 
 .collapse:not(.show) {
@@ -156,12 +166,13 @@
 }
 
 .collapsing {
-    height: 0px;
+    // height: 0px;
+    transform: translateX(100%);
     overflow: hidden;
-    transition: height 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
-@media (min-width: 390px) {
+@media (min-width: 440px) {
     .navbar {
         .trial-btn {
             display: block;
@@ -183,10 +194,17 @@
                 .nav-link {
                     padding-right: 15px;
                     padding-left: 15px;
+                    font-size: 19px;
                 }
             }
             &-collapse {
-                height: auto !important;
+                position: static;
+                background-color: transparent;
+                box-shadow:none;
+                border-bottom-left-radius: 0;
+                padding: 0;
+                
+                // height: auto !important;
                 display: flex !important;
                 flex-basis: auto;
             }
