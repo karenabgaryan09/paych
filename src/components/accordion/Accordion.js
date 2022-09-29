@@ -3,7 +3,7 @@ import AccordionItem from "./AccordionItem";
 
 export default function Accordion({accordionItems}) {
     const [active,setActive] = useState('')
-    const [isShown, setIsShown] = useState("collapseOne");
+    const [isShown, setIsShown] = useState("");
     const [isCollapsing, setIsCollapsing] = useState(false);
 
     // const [accordionItems, setAccordionItems] = useState([
