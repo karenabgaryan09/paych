@@ -7,10 +7,15 @@
         margin-bottom: 2rem;
     }
     &-content {
-        .dropdown-group {
+        .accordion-group {
             width: 100%;
-            max-width: 740px;
+            // max-width: 740px;
+            margin: 0 auto;
         }
+    }
+    .divider {
+        margin: 40px 0;
+        border-color: rgba(0,0,0,0.1);
     }
 }
 
@@ -28,6 +33,9 @@
         &-content {
             gap: 40px;
             display: flex;
+        }
+        .divider {
+            display: none;
         }
     }
 }

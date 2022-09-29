@@ -156,16 +156,16 @@
     }
 }
 
-.navbar-collapse:not(.collapsing) {
+.navbar .navbar-collapse:not(.collapsing) {
     // height: auto !important;
     // transform: none !important;
 }
 
-.collapse:not(.show) {
+.navbar .collapse:not(.show) {
     display: none;
 }
 
-.collapsing {
+.navbar .collapsing {
     // height: 0px;
     transform: translateX(100%);
     overflow: hidden;

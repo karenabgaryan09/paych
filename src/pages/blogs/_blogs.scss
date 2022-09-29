@@ -1,7 +1,7 @@
 .blogs-page {
     .showcase {
         padding-top: 0;
-        padding-bottom: 284px;
+        padding-bottom: 230px;
 
         &-title {
             text-align: center;
@@ -29,7 +29,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 55px;
+            gap: 15px 55px;
             max-width: 800px;
             margin: 0 auto;
             & > .card {
@@ -45,6 +45,7 @@
               
             }
             .card-group {
+                gap: 55px;
                 & > .card {
                     max-width: 100%;
                     width: calc(100% / 2 - 55px / 2);
@@ -54,6 +55,7 @@
     }
     @include mq(1200px) {
         .showcase {
+            padding-bottom: 284px;
             .card-group {
                 max-width: none;
                 & > .card {
