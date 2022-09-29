@@ -262,4 +262,20 @@
            
         }
     }
+    @include mq(1400px) {
+   
+
+        .details {
+      
+             .wrapper-inner {
+                .btn {
+
+                    font-size: 21px;
+                    padding: 15px 42px;
+                }
+            }
+          
+           
+        }
+    }
 }

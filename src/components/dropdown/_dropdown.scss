@@ -77,10 +77,10 @@
 
     background-repeat: no-repeat;
     background-size: 20px;
-    background-image: url("../../assets/images/icons/arrow-up.svg");
     transition: background-image .3s ease;
+    background-image: url("../../assets/images/icons/arrow-down.svg");
     &:not(.dropped) {
-        background-image: url("../../assets/images/icons/arrow-down.svg");
+        background-image: url("../../assets/images/icons/arrow-up.svg");
     }
 }
 

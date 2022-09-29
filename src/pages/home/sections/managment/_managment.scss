@@ -1,4 +1,6 @@
 .managment {
+    padding-top: 0;
+    padding-bottom: 50px;
     background-color: color(primary);
     color: #fff;
     position: relative;
@@ -13,10 +15,11 @@
         display: grid;
         align-items: center;
         grid-gap: 40px;
+        justify-items: center;
     }
     &-info {
         & > .wrapper {
-            max-width: 610px;
+            max-width:635px;
             margin: 0 auto;
         }
     }
@@ -34,23 +37,33 @@
     }
     //
     &-cover {
-        position: absolute;
-        width: 50%;
-        right: 24px;
-        height: 100%;
-        opacity: 0.1;
-    }
-    .phone-tablet {
-        display: none;
-        position: absolute;
-        top: 0;
-        left: 0;
+        // transform: rotateZ(90deg);
+        // width: 50%;
+        // right: 24px;
+        // height: 100%;
+        // opacity: 0.1;
         width: 100%;
-        height: 100%;
-        object-fit: contain;
-        object-position: right;
+        max-width: 350px;
     }
+    &-bg {
+
+        position: relative;
+        width: 100%;
+        padding-top: 160%;
+
+    }
+    // .phone-tablet {
+    //     display: none;
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 100%;
+    //     object-fit: contain;
+    //     object-position: right;
+    // }
     .phone-cover {
+        
         position: absolute;
         width: 45%;
         img {
@@ -63,7 +76,7 @@
         }
     }
     .phone-top {
-        display: none;
+        // display: none;
         padding-top: 62.5%;
 
         top: -1px;
@@ -76,38 +89,56 @@
         right: 0;
     }
     .phone-bottom {
-        padding-top: 67%;
-        bottom: -1px;
+
+        padding-top: 92%;
+        bottom: 0px;
         left: 0;
+        img {
+            // height: 140%;
+            // bottom: 0;
+        }
+    }
+    &-btn {
     }
 }
 
 @include mq(992px) {
     .managment {
+        padding-bottom: 0;
         background-size: contain;
         &-info {
+            order: 1;
+            margin-right: auto;
              & > .wrapper {
                 text-align: left;
              }
         }
         &-content {
+        
             grid-template-columns: 1.5fr 1fr;
             justify-content: space-between;
         }
         &-cover {
-            position: relative;
-            right: 0;
-            opacity: 1;
-            height: 0;
+            max-width: none;
+            order: 2;
+            // position: relative;
+            // right: 0;
+            // opacity: 1;
+            // height: 0;
 
-            width: 100%;
-            padding-top: 150%;
         }
-        .phone-tablet {
-            display: block;
+        &-bg {
+            
+            padding-top: 140%;
         }
+        // .phone-tablet {
+        //     display: block;
+        // }
         .phone-cover {
-            display: none;
+            // display: none;
+        }
+        .phone-bottom {
+            bottom: -17%;
         }
       
     }
@@ -121,13 +152,15 @@
         }
 
         &-cover {
-            padding-top: 137%;
         }
-        .phone-tablet {
-            display: none;
+        &-bg {
+
         }
+        // .phone-tablet {
+        //     display: none;
+        // }
         .phone-cover {
-            display: block;
+            // display: block;
         }
         .phone-top {
             display: block;

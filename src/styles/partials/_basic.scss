@@ -187,9 +187,9 @@ img {
     @include mq(1400px) {
         max-width: calc(1500px + 80px * 2); // 80
     }
-    // @include mq(1650px) {
-    //     max-width: calc(1600px + 80px * 2); // 80
-    // }
+    @include mq(1650px) {
+        max-width: calc(1600px + 80px * 2); // 80
+    }
     // @include mq(1920px) {
     //     max-width: mw(xl); //full hd
     // }

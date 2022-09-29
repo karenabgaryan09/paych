@@ -71,7 +71,7 @@
             .wrapper {
                 object-fit: cover;
                 position: absolute;
-                top: 25px;
+                top: 0;
                 left: 0;
                 width: 100%;
                 height: 100%;
@@ -160,6 +160,7 @@
                 opacity: 1;
                 // pointer-events: auto;
                 .wrapper {
+                    top: 25px;
                     width: 1128px;
                     height: 67vh;
                 }

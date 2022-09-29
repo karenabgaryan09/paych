@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from "react";
-import localData from "../../../../localData";
 import { useGlobalContext } from "../../../../context";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Navigation, Pagination } from "swiper";
+import localData from "../../../../localData";
 
 export default function Features() {
     const { showcaseCoverSm } = localData.images;
+    const { angleLeft, angleRight, preloader } = localData.svgs;
     const { activeTab, setActiveTab } = useGlobalContext();
+
+    const navigationPrevRef = React.useRef(null);
+    const navigationNextRef = React.useRef(null);
 
     return (
         <section className="features" id="features">
@@ -16,60 +22,118 @@ export default function Features() {
                     Our construction management software helps with every step of the build – from the sales process and
                     project planning to financial tracking and client communication.
                 </p>
-                <div className="tabs"  id="tabs">
+                <div className="tabs" id="tabs">
                     <ul className="nav nav-tabs" id="myTab" role="tablist">
-                        <li className="nav-item" role="presentation">
-                            <button
-                                className={`nav-link ${activeTab === "process" ? "active" : ""}`}
-                                id="home-tab"
-                                data-toggle="tab"
-                                data-target="#process"
-                                type="button"
-                                role="tab"
-                                onClick={() => setActiveTab("process")}
-                            >
-                                Sales process
-                            </button>
-                        </li>
-                        <li className="nav-item" role="presentation">
-                            <button
-                                className={`nav-link ${activeTab === "managment" ? "active" : ""}`}
-                                id="profile-tab"
-                                data-toggle="tab"
-                                data-target="#managment"
-                                type="button"
-                                role="tab"
-                                onClick={() => setActiveTab("managment")}
-                            >
-                                Project management
-                            </button>
-                        </li>
-                        <li className="nav-item" role="presentation">
-                            <button
-                                className={`nav-link ${activeTab === "tools" ? "active" : ""}`}
-                                id="contact-tab"
-                                data-toggle="tab"
-                                data-target="#tools"
-                                type="button"
-                                role="tab"
-                                onClick={() => setActiveTab("tools")}
-                            >
-                                Financial tools
-                            </button>
-                        </li>
-                        <li className="nav-item" role="presentation">
-                            <button
-                                className={`nav-link ${activeTab === "communication" ? "active" : ""}`}
-                                id="contact-tab"
-                                data-toggle="tab"
-                                data-target="#communication"
-                                type="button"
-                                role="tab"
-                                onClick={() => setActiveTab("communication")}
-                            >
-                                Communication
-                            </button>
-                        </li>
+                        {false ? (
+                            <img src={preloader} width="300" />
+                        ) : (
+                            <div className="swiper-custom-wrapper" data-lazy-block>
+                                <div className="swiper-custom-center">
+                                    <span
+                                        className="swiper-custom-angle swiper-custom-angle-left"
+                                        ref={navigationPrevRef}
+                                    >
+                                        {angleLeft}
+                                    </span>
+                                    <span
+                                        className="swiper-custom-angle swiper-custom-angle-right"
+                                        ref={navigationNextRef}
+                                    >
+                                        {angleRight}
+                                    </span>
+                                </div>
+                                <Swiper
+                                    touchStartPreventDefault={false}
+                                    modules={[Navigation, Pagination]}
+                                    // spaceBetween={30}
+                                    slidesPerView={1}
+                                    onSlideChange={() => console.log("slide change")}
+                                    navigation={{
+                                        prevEl: navigationPrevRef.current,
+                                        nextEl: navigationNextRef.current,
+                                    }}
+                                    onBeforeInit={(swiper) => {
+                                        swiper.params.navigation.prevEl = navigationPrevRef.current;
+                                        swiper.params.navigation.nextEl = navigationNextRef.current;
+                                    }}
+                                    breakpoints={{
+                                        0: {
+                                            slidesPerView: 1,
+                                        },
+                                        576: {
+                                            slidesPerView: 2,
+                                        },
+                                        768: {
+                                            slidesPerView: 3,
+                                        },
+                                        1100: {
+                                            slidesPerView: 4,
+                                        },
+                                    }}
+                                >
+                                    <SwiperSlide>
+                                        <li className="nav-item" role="presentation">
+                                            <button
+                                                className={`nav-link ${activeTab === "process" ? "active" : ""}`}
+                                                id="home-tab"
+                                                data-toggle="tab"
+                                                data-target="#process"
+                                                type="button"
+                                                role="tab"
+                                                onClick={() => setActiveTab("process")}
+                                            >
+                                                Sales process
+                                            </button>
+                                        </li>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <li className="nav-item" role="presentation">
+                                            <button
+                                                className={`nav-link ${activeTab === "managment" ? "active" : ""}`}
+                                                id="profile-tab"
+                                                data-toggle="tab"
+                                                data-target="#managment"
+                                                type="button"
+                                                role="tab"
+                                                onClick={() => setActiveTab("managment")}
+                                            >
+                                                Project management
+                                            </button>
+                                        </li>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <li className="nav-item" role="presentation">
+                                            <button
+                                                className={`nav-link ${activeTab === "tools" ? "active" : ""}`}
+                                                id="contact-tab"
+                                                data-toggle="tab"
+                                                data-target="#tools"
+                                                type="button"
+                                                role="tab"
+                                                onClick={() => setActiveTab("tools")}
+                                            >
+                                                Financial tools
+                                            </button>
+                                        </li>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <li className="nav-item" role="presentation">
+                                            <button
+                                                className={`nav-link ${activeTab === "communication" ? "active" : ""}`}
+                                                id="contact-tab"
+                                                data-toggle="tab"
+                                                data-target="#communication"
+                                                type="button"
+                                                role="tab"
+                                                onClick={() => setActiveTab("communication")}
+                                            >
+                                                Communication
+                                            </button>
+                                        </li>
+                                    </SwiperSlide>
+                                </Swiper>
+                            </div>
+                        )}
                     </ul>
 
                     <div className="tab-content" id="myTabContent">
@@ -80,20 +144,32 @@ export default function Features() {
                             id="process"
                             role="tabpanel"
                         >
-                            <div className="sales-process">
-                                <h3 className="display-3 sales-process-title">Sales process</h3>
-                                <br />
-                                <p className="sales-process-description display-7">
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id ipsum explicabo quidem
-                                    dicta! Non velit deleniti, voluptas nihil perferendis fugit eos voluptatum dolorem
-                                    harum earum dignissimos veniam explicabo! Possimus odio minus ex assumenda debitis
-                                    optio. Tempora aut atque quaerat illum accusantium rem ab dolores quidem in mollitia
-                                    commodi perspiciatis earum voluptas recusandae, officiis tempore vitae dolor odio?
-                                    Sint hic ullam a aperiam porro laborum laboriosam atque perferendis dolor autem iure
-                                    quod aliquam excepturi, explicabo, repudiandae ex magni tenetur, dicta qui.
-                                    Deleniti, atque quaerat! Ratione fugit vitae earum nesciunt perferendis facere! Odio
-                                    non error minima natus dignissimos quam, iure ex eaque!
-                                </p>
+                            <div className="financial-tools">
+                                <div data-lazy-block>
+                                    <div className="financial-tools-cover" data-lazy="fade-right">
+                                        <img src={showcaseCoverSm} alt="" />
+                                    </div>
+                                </div>
+
+                                <div className="financial-tools-info">
+                                    <div className="wrapper">
+                                        <h3 className="financial-tools-title display-3">sales process</h3>
+                                        <p className="financial-tools-description display-8">
+                                            Paych money-saving features track cash flow and manage budgets, down to the
+                                            last penny.
+                                        </p>
+                                        <ul className="list">
+                                            <li className="list-item text-primary display-8">
+                                                -Bills and Purchase Orders
+                                            </li>
+                                            <li className="list-item text-primary display-8">-Budget</li>
+                                            <li className="list-item text-primary display-8">-Accurate Estimating</li>
+                                            <li className="list-item text-primary display-8">-Invoicing</li>
+                                            <li className="list-item text-primary display-8">-Online payments</li>
+                                            <li className="list-item text-primary display-8">-Advanced reporting</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div
@@ -103,18 +179,32 @@ export default function Features() {
                             id="managment"
                             role="tabpanel"
                         >
-                            <div className="project-managment-process">
-                                <h3 className="display-3 project-managment-process-title">Project managment</h3>
-                                <br />
-                                <p className="project-managment-process-description display-7">
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id ipsum explicabo quidem
-                                    dicta! Non velit deleniti, voluptas nihil perferendis fugit eos voluptatum dolorem
-                                    harum earum dignissimos veniam explicabo! Possimus odio minus ex assumenda debitis
-                                    optio. Tempora aut atque quaerat illum accusantium rem ab dolores quidem in mollitia
-                                    commodi perspiciatis earum voluptas recusandae, officiis tempore vitae dolor odio?
-                                    Sint hic ullam a aperiam porro laborum laboriosam atque perferendis dolor autem iure
-                                    quod aliquam excepturi, explicabo.
-                                </p>
+                            <div className="financial-tools">
+                                <div data-lazy-block>
+                                    <div className="financial-tools-cover" data-lazy="fade-right">
+                                        <img src={showcaseCoverSm} alt="" />
+                                    </div>
+                                </div>
+
+                                <div className="financial-tools-info">
+                                    <div className="wrapper">
+                                        <h3 className="financial-tools-title display-3">project managment</h3>
+                                        <p className="financial-tools-description display-8">
+                                            Paych money-saving features track cash flow and manage budgets, down to the
+                                            last penny.
+                                        </p>
+                                        <ul className="list">
+                                            <li className="list-item text-primary display-8">
+                                                -Bills and Purchase Orders
+                                            </li>
+                                            <li className="list-item text-primary display-8">-Budget</li>
+                                            <li className="list-item text-primary display-8">-Accurate Estimating</li>
+                                            <li className="list-item text-primary display-8">-Invoicing</li>
+                                            <li className="list-item text-primary display-8">-Online payments</li>
+                                            <li className="list-item text-primary display-8">-Advanced reporting</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div
@@ -123,14 +213,13 @@ export default function Features() {
                             }`}
                             id="tools"
                             role="tabpanel"
-                            
                         >
-                            <div className="financial-tools" >
-                               <div data-lazy-block>
-                                 <div className="financial-tools-cover" data-lazy="fade-right" >
-                                     <img src={showcaseCoverSm} alt="" />
-                                 </div>
-                               </div>
+                            <div className="financial-tools">
+                                <div data-lazy-block>
+                                    <div className="financial-tools-cover" data-lazy="fade-right">
+                                        <img src={showcaseCoverSm} alt="" />
+                                    </div>
+                                </div>
 
                                 <div className="financial-tools-info">
                                     <div className="wrapper">
@@ -160,17 +249,32 @@ export default function Features() {
                             id="communication"
                             role="tabpanel"
                         >
-                            <div className="communication-process">
-                                <h3 className="display-3 communication-process-title">Communication</h3>
-                                <br />
-                                <p className="communication-process-description display-7">
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id ipsum explicabo quidem
-                                    dicta! Non velit deleniti, voluptas nihil perferendis fugit eos voluptatum dolorem
-                                    harum earum dignissimos veniam explicabo! Possimus odio minus ex assumenda debitis
-                                    optio. Tempora aut atque quaerat illum accusantium rem ab dolores quidem in mollitia
-                                    commodi perspiciatis earum voluptas recusandae, officiis tempore vitae dolor odio?
-                                    Sint hic ullam a aperiam porro.
-                                </p>
+                            <div className="financial-tools">
+                                <div data-lazy-block>
+                                    <div className="financial-tools-cover" data-lazy="fade-right">
+                                        <img src={showcaseCoverSm} alt="" />
+                                    </div>
+                                </div>
+
+                                <div className="financial-tools-info">
+                                    <div className="wrapper">
+                                        <h3 className="financial-tools-title display-3">communication</h3>
+                                        <p className="financial-tools-description display-8">
+                                            Paych money-saving features track cash flow and manage budgets, down to the
+                                            last penny.
+                                        </p>
+                                        <ul className="list">
+                                            <li className="list-item text-primary display-8">
+                                                -Bills and Purchase Orders
+                                            </li>
+                                            <li className="list-item text-primary display-8">-Budget</li>
+                                            <li className="list-item text-primary display-8">-Accurate Estimating</li>
+                                            <li className="list-item text-primary display-8">-Invoicing</li>
+                                            <li className="list-item text-primary display-8">-Online payments</li>
+                                            <li className="list-item text-primary display-8">-Advanced reporting</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

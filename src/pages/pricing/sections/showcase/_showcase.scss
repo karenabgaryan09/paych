@@ -23,24 +23,26 @@
             margin-bottom: 70px;
         }
         .card-group {
+            margin: 0 auto;
+            max-width: 400px;
             // display: flex;
             // gap: 20px;
             // flex-wrap: wrap;
             // justify-content: center;
 
-            .swiper-slide {
-                // width: auto !important;
-                @media screen and (max-width: 1200px) and (min-width: 992px) {
-                    width: fit-content !important;
-                }
-                .card {
-                    max-width: 410px;
-                    margin: 0 auto;
-                    @include mq(992px) {
-                        max-width: none;
-                    }
-                }
-            }
+            // .swiper-slide {
+            //     // width: auto !important;
+            //     @media screen and (max-width: 1200px) and (min-width: 992px) {
+            //         width: fit-content !important;
+            //     }
+            //     .card {
+            //         max-width: 410px;
+            //         margin: 0 auto;
+            //         @include mq(992px) {
+            //             max-width: none;
+            //         }
+            //     }
+            // }
         }
     }
 
@@ -50,10 +52,12 @@
                 // margin-bottom: 2rem;
             }
             &-subtitle {
-                
             }
             &-btn {
                 margin-bottom: 115px;
+            }
+            .card-group {
+                max-width: 750px;
             }
         }
     }
@@ -62,11 +66,12 @@
         .showcase {
             padding-top: 0;
             padding-bottom: 144px;
-            .card-group{
+            .card-group {
+                max-width: 1200px;
                 // flex-wrap: nowrap;
-            .card {
-                // flex: 1;
-            }
+                .card {
+                    // flex: 1;
+                }
             }
         }
     }
@@ -75,11 +80,20 @@
             &-subtitle {
                 margin-bottom: 4rem;
             }
-          .card-group {
+            .card-group {
+                // gap: 50px;
+            }
+        }
+    }
+    @include mq(1650px) {
+        .showcase {
+            &-subtitle {
+                margin-bottom: 4rem;
+            }
+            .card-group {
+                max-width: none;
                 // gap: 50px;
             }
         }
     }
 }
-
-

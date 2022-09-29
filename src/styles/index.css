@@ -303,6 +303,11 @@ img {
     max-width: 1660px;
   }
 }
+@media screen and (min-width: 1650px) {
+  .container {
+    max-width: 1760px;
+  }
+}
 
 @media screen and (min-width: 1650px) {
   .container-fluid {
@@ -1766,11 +1771,11 @@ section {
   background-position: calc(100% - 30px);
   background-repeat: no-repeat;
   background-size: 20px;
-  background-image: url("../../assets/images/icons/arrow-up.svg");
   transition: background-image 0.3s ease;
+  background-image: url("../../assets/images/icons/arrow-down.svg");
 }
 .dropdown-toggle:not(.dropped) {
-  background-image: url("../../assets/images/icons/arrow-down.svg");
+  background-image: url("../../assets/images/icons/arrow-up.svg");
 }
 
 .dropdown-text {
@@ -2583,6 +2588,12 @@ label {
     margin-top: 2rem;
   }
 }
+@media screen and (min-width: 1400px) {
+  .blog-page .details .wrapper-inner .btn {
+    font-size: 21px;
+    padding: 15px 42px;
+  }
+}
 
 .error {
   padding: 0;
@@ -2677,7 +2688,7 @@ label {
   -o-object-fit: cover;
      object-fit: cover;
   position: absolute;
-  top: 25px;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
@@ -2751,6 +2762,7 @@ label {
     opacity: 1;
   }
   .home-page .showcase-cover .wrapper {
+    top: 25px;
     width: 1128px;
     height: 67vh;
   }
@@ -2852,18 +2864,39 @@ label {
     margin-left: auto;
   }
 }
-.tabs .nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-  margin: 0 auto;
-  max-width: 1400px;
+@media screen and (min-width: 1200px) {
+  .tabs .swiper-wrapper {
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .tabs .swiper-slide {
+    width: auto !important;
+  }
 }
 .tabs .nav-tabs {
-  display: none;
   border-bottom: 2px solid #dee2e6;
+  margin: 0 auto;
   margin-bottom: 1.5rem;
+  max-width: 250px;
+}
+@media screen and (min-width: 576px) {
+  .tabs .nav-tabs {
+    max-width: 450px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .tabs .nav-tabs {
+    max-width: 700px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .tabs .nav-tabs {
+    max-width: none;
+  }
+}
+.tabs .nav-tabs .nav-item {
+  margin: 0 auto;
 }
 .tabs .nav-tabs .nav-link {
   color: rgba(108, 117, 125,0.7);
@@ -2871,14 +2904,19 @@ label {
   white-space: nowrap;
   font-family: Montserrat;
   font-weight: 500;
+  margin: 0 auto;
   margin-bottom: -1px;
   background: 0 0;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
   padding: 0.5rem 1rem;
   cursor: pointer;
   border: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .tabs .nav-tabs .nav-link.active {
   color: rgba(155, 57, 44,1);
@@ -2899,11 +2937,6 @@ label {
   opacity: 0;
 }
 
-@media screen and (min-width: 992px) {
-  .tabs .nav-tabs {
-    display: flex;
-  }
-}
 @media screen and (min-width: 1200px) {
   .tabs .nav-tabs {
     padding-bottom: 1.2rem;
@@ -2943,6 +2976,8 @@ label {
 .features .financial-tools {
   display: grid;
   grid-gap: 40px;
+  max-width: 400px;
+  margin: 0 auto;
 }
 .features .financial-tools [data-lazy-block] {
   order: 2;
@@ -2972,6 +3007,7 @@ label {
 }
 .features .financial-tools-title {
   margin-bottom: 1rem;
+  text-transform: capitalize;
 }
 .features .financial-tools-description {
   font-weight: 400;
@@ -3001,6 +3037,7 @@ label {
     max-width: none;
   }
   .features .financial-tools {
+    max-width: none;
     grid-template-columns: 1fr 1.08fr;
     align-items: center;
     justify-content: space-between;
@@ -3034,6 +3071,8 @@ label {
   }
 }
 .managment {
+  padding-top: 0;
+  padding-bottom: 50px;
   background-color: rgba(155, 57, 44,1);
   color: #fff;
   position: relative;
@@ -3048,9 +3087,10 @@ label {
   display: grid;
   align-items: center;
   grid-gap: 40px;
+  justify-items: center;
 }
 .managment-info > .wrapper {
-  max-width: 610px;
+  max-width: 635px;
   margin: 0 auto;
 }
 .managment-title {
@@ -3066,23 +3106,13 @@ label {
   font-weight: 400;
 }
 .managment-cover {
-  position: absolute;
-  width: 50%;
-  right: 24px;
-  height: 100%;
-  opacity: 0.1;
-}
-.managment .phone-tablet {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
-  -o-object-position: right;
-     object-position: right;
+  max-width: 350px;
+}
+.managment-bg {
+  position: relative;
+  width: 100%;
+  padding-top: 160%;
 }
 .managment .phone-cover {
   position: absolute;
@@ -3098,7 +3128,6 @@ label {
      object-fit: contain;
 }
 .managment .phone-top {
-  display: none;
   padding-top: 62.5%;
   top: -1px;
   left: 0;
@@ -3110,14 +3139,18 @@ label {
   right: 0;
 }
 .managment .phone-bottom {
-  padding-top: 67%;
-  bottom: -1px;
+  padding-top: 92%;
+  bottom: 0px;
   left: 0;
 }
-
 @media screen and (min-width: 992px) {
   .managment {
+    padding-bottom: 0;
     background-size: contain;
+  }
+  .managment-info {
+    order: 1;
+    margin-right: auto;
   }
   .managment-info > .wrapper {
     text-align: left;
@@ -3127,18 +3160,14 @@ label {
     justify-content: space-between;
   }
   .managment-cover {
-    position: relative;
-    right: 0;
-    opacity: 1;
-    height: 0;
-    width: 100%;
-    padding-top: 150%;
+    max-width: none;
+    order: 2;
   }
-  .managment .phone-tablet {
-    display: block;
+  .managment-bg {
+    padding-top: 140%;
   }
-  .managment .phone-cover {
-    display: none;
+  .managment .phone-bottom {
+    bottom: -17%;
   }
 }
 @media screen and (min-width: 1400px) {
@@ -3147,15 +3176,6 @@ label {
   }
   .managment-content {
     grid-template-columns: 1fr 1.13fr;
-  }
-  .managment-cover {
-    padding-top: 137%;
-  }
-  .managment .phone-tablet {
-    display: none;
-  }
-  .managment .phone-cover {
-    display: block;
   }
   .managment .phone-top {
     display: block;
@@ -3382,25 +3402,16 @@ label {
   margin: 0 auto;
   margin-bottom: 70px;
 }
-@media screen and (max-width: 1200px) and (min-width: 992px) {
-  .pricing-page .showcase .card-group .swiper-slide {
-    width: -webkit-fit-content !important;
-    width: -moz-fit-content !important;
-    width: fit-content !important;
-  }
-}
-.pricing-page .showcase .card-group .swiper-slide .card {
-  max-width: 410px;
+.pricing-page .showcase .card-group {
   margin: 0 auto;
-}
-@media screen and (min-width: 992px) {
-  .pricing-page .showcase .card-group .swiper-slide .card {
-    max-width: none;
-  }
+  max-width: 400px;
 }
 @media screen and (min-width: 768px) {
   .pricing-page .showcase-btn {
     margin-bottom: 115px;
+  }
+  .pricing-page .showcase .card-group {
+    max-width: 750px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -3408,10 +3419,21 @@ label {
     padding-top: 0;
     padding-bottom: 144px;
   }
+  .pricing-page .showcase .card-group {
+    max-width: 1200px;
+  }
 }
 @media screen and (min-width: 1400px) {
   .pricing-page .showcase-subtitle {
     margin-bottom: 4rem;
+  }
+}
+@media screen and (min-width: 1650px) {
+  .pricing-page .showcase-subtitle {
+    margin-bottom: 4rem;
+  }
+  .pricing-page .showcase .card-group {
+    max-width: none;
   }
 }
 
