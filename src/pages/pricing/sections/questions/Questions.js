@@ -174,7 +174,7 @@ export default function Questions() {
                  Simply go to the Plan and billing page and enter your organization’s
                  address and credit card information to complete your subscription.
                  The billing period starts right after you enter your credit card details.
-                 `}
+                 `}s
                         /> */}
 
                         <Accordion

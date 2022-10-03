@@ -14,6 +14,7 @@ export default function App() {
     return (
         <>
             <div id="top"></div>
+            {/* <div className="loading-line"></div> */}
             <Header />
             <AnimatePresence exitBeforeEnter>
                 <Routes location={location} key={location.pathname}>

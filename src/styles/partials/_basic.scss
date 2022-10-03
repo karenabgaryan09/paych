@@ -391,3 +391,38 @@ section {
         display: block;
     }
 }
+
+// .loading-line {
+//     position: absolute;
+//     z-index: 999;
+//     top: 0;
+//     left: 0 ;
+//     width: 100%;
+//     height: 6px;
+//     background-color: color(primary);
+// }
+
+
+.pace {
+	-webkit-pointer-events: none;
+	pointer-events: none;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+.pace-inactive {
+	display: none;
+    // display: block;
+}
+
+.pace .pace-progress {
+	background: color(primary);
+	position: fixed;
+	z-index: 2000;
+	top: 0;
+	right: 100%;
+	width: 100%;
+	height: 6px;
+}

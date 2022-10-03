@@ -5,27 +5,20 @@ import { useGlobalContext } from "../../context";
 import localData from "../../localData";
 import { Button } from "../../components";
 
-let withCredentials = false;
 export default function Footer() {
     const { fade } = useGlobalContext().animations;
-    const { setActiveTab, activeTab } = useGlobalContext();
 
     const { logo, arrow } = localData.svgs;
     const { googlePlay, appStore } = localData.images;
 
-    useEffect(() => {
-        if (!withCredentials) return;
-        console.log("triggggggggggggggggggg");
-        withCredentials = false;
-        handleScroll();
-    }, [activeTab]);
-
-    const handleScroll = () => {
+    const handleScroll = (id) => {
         setTimeout(() => {
             const tabs = document.querySelector(".tabs");
-            console.log(tabs);
-            if (tabs) window.scrollTo(0, tabs.offsetTop - 30);
-        }, 500);
+            const link = document.querySelector(id)
+
+                if(link) link.click()
+                if (tabs) window.scrollTo(0, tabs.offsetTop - 30);
+        }, 1000);
     };
 
     return (
@@ -94,8 +87,7 @@ export default function Footer() {
                                 <Link
                                     to="/"
                                     onClick={() => {
-                                        setActiveTab("process");
-                                        withCredentials = true;
+                                        handleScroll("#process-tab");
                                     }}
                                 >
                                     <Button className="features-links-link btn btn-text-dark"> Sales process</Button>
@@ -105,8 +97,7 @@ export default function Footer() {
                                 <Link
                                     to="/"
                                     onClick={() => {
-                                        setActiveTab("managment");
-                                        withCredentials = true;
+                                        handleScroll("#managment-tab");
                                     }}
                                 >
                                     <Button className="features-links-link btn btn-text-dark">
@@ -118,8 +109,7 @@ export default function Footer() {
                                 <Link
                                     to="/"
                                     onClick={() => {
-                                        setActiveTab("tools");
-                                        withCredentials = true;
+                                        handleScroll("#tools-tab");
                                     }}
                                 >
                                     <Button className="features-links-link btn btn-text-dark">Financial tools</Button>
@@ -129,8 +119,7 @@ export default function Footer() {
                                 <Link
                                     to="/"
                                     onClick={() => {
-                                        setActiveTab("communication");
-                                        withCredentials = true;
+                                        handleScroll("#communication-tab");
                                     }}
                                 >
                                     <Button className="features-links-link btn btn-text-dark">Communication</Button>
@@ -140,8 +129,7 @@ export default function Footer() {
                                 <Link
                                     to="/"
                                     onClick={() => {
-                                        setActiveTab("process");
-                                        withCredentials = true;
+                                        handleScroll("#process-tab");
                                     }}
                                 >
                                     <Button className="features-links-link btn btn-text-dark">Mobile app</Button>

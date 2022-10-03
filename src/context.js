@@ -21,8 +21,6 @@ export default function Provider({ children }) {
 
     const [isModalShown, setIsModalShown] = useState(false);
 
-    const [activeTab, setActiveTab] = useState("tools");
-
     return (
         <Context.Provider
             value={{
@@ -34,8 +32,6 @@ export default function Provider({ children }) {
                 animations,
                 isModalShown,
                 setIsModalShown,
-                activeTab,
-                setActiveTab,
             }}
         >
             {children}

@@ -7,10 +7,39 @@ import localData from "../../../../localData";
 export default function Features() {
     const { showcaseCoverSm } = localData.images;
     const { angleLeft, angleRight, preloader } = localData.svgs;
-    const { activeTab, setActiveTab } = useGlobalContext();
+    // const { activeTab, setActiveTab } = useGlobalContext();
 
     const navigationPrevRef = React.useRef(null);
     const navigationNextRef = React.useRef(null);
+
+    const handleAnimation = (id) => {
+        const activeLink = document.querySelector(`#tabs .nav-link.active`);
+        const nextActiveLink = document.querySelector(`${id}-tab`);
+        if (activeLink) activeLink.classList.remove("active");
+        nextActiveLink.classList.add("active");
+
+        const activePane = document.querySelector(`#tabs .tab-pane.active`);
+        const nextActivePane = document.querySelector(id);
+        if (activePane) {
+            activePane.classList.remove("show");
+            activePane.addEventListener(
+                "transitionend",
+                () => {
+                    activePane.classList.remove("active");
+                    nextActivePane.classList.add("active");
+                    setTimeout(() => {
+                        nextActivePane.classList.add("show");
+                    }, 0);
+                },
+                { once: true }
+            );
+        } else {
+            nextActivePane.classList.add("active");
+            setTimeout(() => {
+                nextActivePane.classList.add("show");
+            }, 0);
+        }
+    };
 
     return (
         <section className="features" id="features">
@@ -74,13 +103,13 @@ export default function Features() {
                                     <SwiperSlide>
                                         <li className="nav-item" role="presentation">
                                             <button
-                                                className={`nav-link ${activeTab === "process" ? "active" : ""}`}
-                                                id="home-tab"
+                                                className="nav-link"
+                                                id="process-tab"
                                                 data-toggle="tab"
                                                 data-target="#process"
                                                 type="button"
                                                 role="tab"
-                                                onClick={() => setActiveTab("process")}
+                                                onClick={() => handleAnimation(`#process`)}
                                             >
                                                 Sales process
                                             </button>
@@ -89,13 +118,13 @@ export default function Features() {
                                     <SwiperSlide>
                                         <li className="nav-item" role="presentation">
                                             <button
-                                                className={`nav-link ${activeTab === "managment" ? "active" : ""}`}
-                                                id="profile-tab"
+                                                className="nav-link"
+                                                id="managment-tab"
                                                 data-toggle="tab"
                                                 data-target="#managment"
                                                 type="button"
                                                 role="tab"
-                                                onClick={() => setActiveTab("managment")}
+                                                onClick={() => handleAnimation(`#managment`)}
                                             >
                                                 Project management
                                             </button>
@@ -104,13 +133,13 @@ export default function Features() {
                                     <SwiperSlide>
                                         <li className="nav-item" role="presentation">
                                             <button
-                                                className={`nav-link ${activeTab === "tools" ? "active" : ""}`}
-                                                id="contact-tab"
+                                                className="nav-link active"
+                                                id="tools-tab"
                                                 data-toggle="tab"
                                                 data-target="#tools"
                                                 type="button"
                                                 role="tab"
-                                                onClick={() => setActiveTab("tools")}
+                                                onClick={() => handleAnimation(`#tools`)}
                                             >
                                                 Financial tools
                                             </button>
@@ -119,13 +148,13 @@ export default function Features() {
                                     <SwiperSlide>
                                         <li className="nav-item" role="presentation">
                                             <button
-                                                className={`nav-link ${activeTab === "communication" ? "active" : ""}`}
-                                                id="contact-tab"
+                                                className="nav-link"
+                                                id="communication-tab"
                                                 data-toggle="tab"
                                                 data-target="#communication"
                                                 type="button"
                                                 role="tab"
-                                                onClick={() => setActiveTab("communication")}
+                                                onClick={() => handleAnimation(`#communication`)}
                                             >
                                                 Communication
                                             </button>
@@ -137,13 +166,7 @@ export default function Features() {
                     </ul>
 
                     <div className="tab-content" id="myTabContent">
-                        <div
-                            className={`tab-pane fade ${activeTab === "process" ? "active" : ""}  ${
-                                activeTab === "process" ? "show" : ""
-                            }`}
-                            id="process"
-                            role="tabpanel"
-                        >
+                        <div className="tab-pane fade" id="process" role="tabpanel">
                             <div className="financial-tools">
                                 <div data-lazy-block>
                                     <div className="financial-tools-cover" data-lazy="fade-right">
@@ -172,13 +195,7 @@ export default function Features() {
                                 </div>
                             </div>
                         </div>
-                        <div
-                            className={`tab-pane fade ${activeTab === "managment" ? "active" : ""}  ${
-                                activeTab === "managment" ? "show" : ""
-                            }`}
-                            id="managment"
-                            role="tabpanel"
-                        >
+                        <div className="tab-pane fade" id="managment" role="tabpanel">
                             <div className="financial-tools">
                                 <div data-lazy-block>
                                     <div className="financial-tools-cover" data-lazy="fade-right">
@@ -207,13 +224,7 @@ export default function Features() {
                                 </div>
                             </div>
                         </div>
-                        <div
-                            className={`tab-pane fade ${activeTab === "tools" ? "active" : ""}  ${
-                                activeTab === "tools" ? "show" : ""
-                            }`}
-                            id="tools"
-                            role="tabpanel"
-                        >
+                        <div className="tab-pane fade active show" id="tools" role="tabpanel">
                             <div className="financial-tools">
                                 <div data-lazy-block>
                                     <div className="financial-tools-cover" data-lazy="fade-right">
@@ -242,13 +253,7 @@ export default function Features() {
                                 </div>
                             </div>
                         </div>
-                        <div
-                            className={`tab-pane fade ${activeTab === "communication" ? "active" : ""}  ${
-                                activeTab === "communication" ? "show" : ""
-                            }`}
-                            id="communication"
-                            role="tabpanel"
-                        >
+                        <div className="tab-pane fade" id="communication" role="tabpanel">
                             <div className="financial-tools">
                                 <div data-lazy-block>
                                     <div className="financial-tools-cover" data-lazy="fade-right">
