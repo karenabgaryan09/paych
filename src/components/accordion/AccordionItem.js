@@ -4,7 +4,7 @@ export default function AccordionItem({ item, isShown, setActive, isCollapsing, 
     const content = useRef(null);
 
     return (
-           <div className="accordion-item">
+           <div className="accordion-item" data-lazy='fade-up'>
                <h2 className="accordion-header">
                    <button
                        onClick={() => {

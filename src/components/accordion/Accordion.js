@@ -27,7 +27,7 @@ export default function Accordion({ accordionItems }) {
     };
     return (
         <div className="accordion" id="accordionExample">
-            <div className="accordion-group">
+            <div className="accordion-group" data-lazy-block>
                 {accordionItems.map((item, index) => {
                     if(index > 4) return
                     return (
@@ -39,7 +39,7 @@ export default function Accordion({ accordionItems }) {
                     );
                 })}
             </div>
-            <div className="accordion-group">
+            <div className="accordion-group" data-lazy-block>
                 {accordionItems.map((item, index) => {
                     if(index < 5) return
                     return (
