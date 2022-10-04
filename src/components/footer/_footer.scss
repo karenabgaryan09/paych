@@ -4,6 +4,7 @@
     min-height: 300px;
     &-brand {
         // display: none;
+        margin-top: -32px;
     }
     &-subtitle {
         padding: 0 15px;
@@ -128,7 +129,7 @@
             position: relative;
         }
         &-title {
-            font-size: 33px;
+            font-size: 35px;
             font-weight: 600;
             text-transform: capitalize;
            line-height: 35px;
@@ -234,15 +235,22 @@
             grid-template-columns: repeat(3, auto);
         }
         .subscribe {
-            padding: 70px 50px;
-     
-            text-align: left;
-            flex-direction: row;
+           
         }
     }
 }
 
 
+@include mq(1200px) {
+    .footer {
+        .subscribe {
+            padding: 70px 50px;
+            flex-direction: row;
+     
+            text-align: left;
+        }
+    }
+}
 @include mq(1300px) {
     .footer {
         &-content {
@@ -256,6 +264,7 @@
         gap: 30px 7.5%;
         }
         .subscribe {
+            
             form {
                 max-width: none;
             }
@@ -269,6 +278,15 @@
                 font-size: 18px;
             }
         }
+    
+    }
+}
+@include mq(1500px) {
+    .footer {
+   
+        .features-links {
+            margin-right: -55px;
+        }
     }
 }
 @include mq(1700px) {
@@ -281,5 +299,6 @@
             width: auto;
             display: block;
         }
+        
     }
 }

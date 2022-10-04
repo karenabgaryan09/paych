@@ -6,6 +6,7 @@ import FadeOnScreen from "../../utils/fadeOnScreen";
 import localData from "../../localData";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination } from "swiper";
+import { Link } from "react-router-dom";
 
 export default function Blog() {
     const { fade } = useGlobalContext().animations;
@@ -155,7 +156,7 @@ export default function Blog() {
                <div className="container">
                  <div className="wrapper">
                      <h2 className="integrated-news-title display-2">next up in blog</h2>
-                     <Button className="btn btn-primary rounded-pill">view all</Button>
+                     <Link to="/blogs" className="btn btn-primary rounded-pill">view all</Link>
                  </div>
                  <div className="card-group">
                  {!news || !Object.keys(news).length ? (
@@ -179,7 +180,7 @@ export default function Blog() {
                                 <Swiper
                                     touchStartPreventDefault={false}
                                     modules={[Navigation, Pagination]}
-                                    spaceBetween={30}
+                                    spaceBetween={20}
                                     slidesPerView={1}
                                     onSlideChange={() => console.log("slide change")}
                                     navigation={{

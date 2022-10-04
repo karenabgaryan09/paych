@@ -106,26 +106,47 @@ label {
     overflow: hidden;
     display: flex;
     align-items: center;
+    max-width: 400px;
     .btn {
         background-color: rgba(238, 238, 238, 1);
         min-width: auto;
         padding: 0;
         height: 100%;
         display: block;
-        height: 59px;
-        width: 85px;
         display: flex;
         align-items: center;
         justify-content: center;
+        width: 60px;
+        svg {
+            height: 20px;
+        }
         &:hover {
             background-color: rgba(0, 0, 0, 0.03);
         }
     }
     .form-control {
-        padding: 17px 15px;
+        padding: 10px 15px;
         padding-left: 5px;
         padding-right: 40px;
         margin: 0;
         border: none;
+    }
+}
+
+@include mq(1200px){
+    .search-field {
+        max-width: none;
+        .form-control {
+            
+            padding: 17px 15px;
+        }
+        .btn {
+        height: 59px;
+        width: 85px;
+
+            svg {
+                height: auto;
+            }
+        }
     }
 }

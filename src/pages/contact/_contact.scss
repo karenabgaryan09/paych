@@ -17,6 +17,7 @@
             max-width: 1320px;
             margin: 0 auto;
             margin-bottom: 2rem;
+            font-weight: 400;
         }
         &-btn {
             display: block;
@@ -86,6 +87,10 @@
                     text-transform: capitalize;
                     max-width: 250px;
                     display: block;
+                    color: #000;
+                    &.lowercase {
+                        text-transform: lowercase;
+                    }
                 }
             }
         }

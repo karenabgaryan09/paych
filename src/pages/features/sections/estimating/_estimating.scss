@@ -9,11 +9,11 @@
 @include mq(768px) {
     .estimating {
         padding-top: 100px;
-        padding-bottom: 350px;
     }
 }
 @include mq(992px) {
     .estimating {
+        padding-bottom: 350px;
         .banner {
             margin: 170px 0;
         }

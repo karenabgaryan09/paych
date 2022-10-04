@@ -66,6 +66,12 @@
                     font-size: 1.4vw;
                 }
             }
+            @include mq(2000px) {
+                // width: calc(100% / 7);
+                .card-title {
+                    font-size: 1.4rem;
+                }
+            }
         }
     }
 }
@@ -78,12 +84,8 @@
         &-subtitle {
           
         }
-        .btn {
-            margin-bottom: 160px;
-        }
-        & > .wrapper {
-            padding: 145px 0;
-        }
+        
+       
         &-description {
             
             font-size: 24px;
@@ -93,6 +95,7 @@
         }
     }
 }
+
 @include mq(1200px) {
     .builder {
         padding-top: 0;
@@ -102,6 +105,9 @@
 }
 @include mq(1400px) {
     .builder {
+        & > .wrapper {
+            padding: 145px 0;
+        }
         &-title {
             max-width: 1020px;
         }
@@ -112,6 +118,9 @@
         &-description {
             line-height: 53.21px;
             font-size: 38px;
+        }
+        .btn {
+            margin-bottom: 160px;
         }
     }
 }

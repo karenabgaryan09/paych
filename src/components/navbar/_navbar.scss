@@ -18,10 +18,14 @@
     padding-top: 20px;
     padding-bottom: 50px;
     .target {
+        // display: none !important;
         position: absolute;
         border-bottom: 2px solid transparent;
         z-index: -1;
         transform: translateX(-60px);
+        @media screen and (max-width: 1200px) {
+            display: none !important;
+        }
     }
 
     a,
@@ -78,24 +82,26 @@
 
     &-collapse {
         position: absolute;
-        top: 0;
+        top: 100%;
         right: 0;
         background-color: #fff;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         border-bottom-left-radius: 12px;
-        padding: 40px 80px;
+       
 
         flex-basis: 100%;
         flex-grow: 1;
         align-items: center;
+
+        width: 100%;
     }
 
     &-nav {
-        margin-top: 30px;
-
+        
         display: inline-flex;
         flex-direction: column;
-        padding-left: 0;
+        padding: 0px 80px 40px;
+        padding-left: 24px;
+
         margin-bottom: 0;
         list-style: none;
 
@@ -166,10 +172,9 @@
 }
 
 .navbar .collapsing {
-    // height: 0px;
-    transform: translateX(100%);
+    height: 0px;
     overflow: hidden;
-    transition: transform 0.3s ease;
+    transition: height 0.3s ease;
 }
 
 @media (min-width: 440px) {
@@ -179,18 +184,32 @@
         }
     }
 }
+@media (min-width: 768px) {
+    .navbar {
+      &-nav {
+        padding-left: 80px;
+      }
+    }
+}
 @media (min-width: 1200px) {
     .navbar-expand-lg {
         padding-top: 55px;
         padding-bottom: 80px;
         .navbar {
+            .target {
+                // display: block !important;
+            }
             &-toggler {
                 display: none;
             }
             &-nav {
+        margin-top: 30px;
+
                 flex-direction: row;
                 margin-top: 0;
                 margin-left: auto;
+                padding: 0;
+
                 .nav-link {
                     padding-right: 15px;
                     padding-left: 15px;
@@ -202,11 +221,12 @@
                 background-color: transparent;
                 box-shadow:none;
                 border-bottom-left-radius: 0;
-                padding: 0;
                 
                 // height: auto !important;
                 display: flex !important;
                 flex-basis: auto;
+
+                width: auto;
             }
         }
         .trial-btn {

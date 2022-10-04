@@ -83,10 +83,27 @@ export default function Navbar() {
         })();
     }, []);
 
+
     useEffect(() => {
         const target = document.querySelector(".navbar .target");
         target.style.borderColor = "rgba(155, 57, 44, 1)";
     }, [location]);
+
+    const getHeight = () => {
+        let computedHeight = null;
+        [...navbarCollapse.current.children].forEach((each) => (computedHeight += getAbsoluteHeight(each)));
+        return computedHeight + "px";
+    };
+
+    const getAbsoluteHeight = (el) => {
+        el = typeof el === "string" ? document.querySelector(el) : el;
+
+        let styles = window.getComputedStyle(el);
+        let margin = parseFloat(styles["marginTop"]) + parseFloat(styles["marginBottom"]);
+        let border = parseFloat(styles["borderTop"]) + parseFloat(styles["borderBottom"]);
+
+        return Math.ceil(el.offsetHeight + margin + border);
+    };
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light">
@@ -107,7 +124,7 @@ export default function Navbar() {
                     id="navbarSupportedContent"
                     onTransitionEnd={() => setIsCollapsing(false)}
                     // style={isShown && isCollapsing ? { height: getHeight() } : {}}
-                    style={isShown && isCollapsing ? { transform: "none" } : {}}
+                    style={isShown && isCollapsing ? { height: getHeight() } : {}}
                 >
                     <ul className="navbar-nav me-auto">
                         <span className="target"></span>

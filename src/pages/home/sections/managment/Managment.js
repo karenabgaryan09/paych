@@ -18,7 +18,7 @@ export default function Managment() {
                                 <img className="" src={phoneMiddle} alt="" />
                             </div>
                             <div className="phone-cover phone-bottom" data-lazy="fade-up-long" data-lazy-delay="0">
-                                <img className="" src={phoneMiddle} alt="" />
+                                <img className="" src={phoneBottom} alt="" />
                             </div>
                         </div>
                     </div>

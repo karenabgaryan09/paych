@@ -23,6 +23,7 @@
         }
         &-title {
             margin-bottom: 2.8rem;
+            text-transform: capitalize;
         }
         &-info {
             font-size: 18px;
@@ -78,7 +79,8 @@
                 list-style-type: disc;
                 font-size: 18px;
                 font-weight: 400;
-                line-height: 27.54px;
+                line-height: 23px;
+                margin-bottom: 0.3rem;
             }
         }
     }
@@ -107,6 +109,7 @@
             font-size: 18px;
             line-height: 153%;
             margin-bottom: 2.7rem;
+            max-width: 500px;
             &::first-letter {
                 text-transform: uppercase;
             }
@@ -117,7 +120,6 @@
             font-size: 27px;
             line-height: 153%;
             text-transform: capitalize;
-            margin-bottom: 1.5rem;
         }
         .wrapper-inner {
             display: flex;
@@ -170,6 +172,11 @@
 
 
     @include mq(768px) {
+        .details {
+            &-question {
+                margin-bottom: 1.5rem;;
+            }
+        }
         .showcase {
            
         }
@@ -200,6 +207,11 @@
      
     }
     @include mq(1200px) {
+        .details {
+            &-description {
+                max-width: none;
+            }
+        }
         .integrated-news {
             .card-group {
                 max-width: none;

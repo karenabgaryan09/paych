@@ -23,7 +23,7 @@ export default function Footer() {
 
     return (
         <motion.footer {...fade} className="footer bg-dark" data-lazy-block>
-            <div className="container-fluid">
+            <div className="container">
 
                 <div className="subscribe" data-lazy="fade">
                     <div className="wrapper">
@@ -76,6 +76,27 @@ export default function Footer() {
                                 >
                                     info@paych.com
                                 </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div className="quick-links">
+                        <h4 className="footer-subtitle  quick-links-title">quick links</h4>
+                        <ul className="quick-links-list">
+                            <li className="quick-links-item">
+                                <Link to="/contact" className="quick-links-link btn btn-text-dark">
+                                    contact us
+                                </Link>
+                            </li>
+                            <li className="quick-links-item">
+                                <Link to="/blogs/blog" className="quick-links-link btn btn-text-dark">
+                                    blog
+                                </Link>
+                            </li>
+                            <li className="quick-links-item">
+                                <Link to="/pricing" className="quick-links-link btn btn-text-dark">
+                                    pricing
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -133,27 +154,6 @@ export default function Footer() {
                                     }}
                                 >
                                     <Button className="features-links-link btn btn-text-dark">Mobile app</Button>
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div className="quick-links">
-                        <h4 className="footer-subtitle  quick-links-title">quick links</h4>
-                        <ul className="quick-links-list">
-                            <li className="quick-links-item">
-                                <Link to="/contact" className="quick-links-link btn btn-text-dark">
-                                    contact us
-                                </Link>
-                            </li>
-                            <li className="quick-links-item">
-                                <Link to="/blogs/blog" className="quick-links-link btn btn-text-dark">
-                                    blog
-                                </Link>
-                            </li>
-                            <li className="quick-links-item">
-                                <Link to="/pricing" className="quick-links-link btn btn-text-dark">
-                                    pricing
                                 </Link>
                             </li>
                         </ul>

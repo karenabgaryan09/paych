@@ -56,7 +56,7 @@ export default function Contact() {
                                             <a
                                                 target="_blank"
                                                 href="mailto:info@paych.com"
-                                                className="details-link link-dark"
+                                                className="details-link link-dark lowercase"
                                                 underline="hover"
                                             >
                                                 info@paych.com
@@ -66,7 +66,7 @@ export default function Contact() {
                                     <li className="details-item">
                                         <div className="details-icon">{location}</div>
                                         <div className="wrapper">
-                                            <h4 className="details-title">Adress</h4>
+                                            <h4 className="details-title">Address</h4>
                                             <a
                                                 target="_blank"
                                                 href="https://www.google.com/maps/place/Howard+St,+Toronto,+ON,+Canada/@43.6713196,-79.3758678,17z/data=!3m1!4b1!4m5!3m4!1s0x89d4cb51467e47e9:0x8a871249511f4c9a!8m2!3d43.6713196!4d-79.3736791"

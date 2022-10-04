@@ -69,7 +69,7 @@ export default function News() {
                                 <Swiper
                                     touchStartPreventDefault={false}
                                     modules={[Navigation, Pagination]}
-                                    spaceBetween={30}
+                                    spaceBetween={20}
                                     slidesPerView={1}
                                     onSlideChange={() => console.log("slide change")}
                                     navigation={{

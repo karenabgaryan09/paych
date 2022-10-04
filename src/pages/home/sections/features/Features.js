@@ -12,14 +12,15 @@ export default function Features() {
     const navigationPrevRef = React.useRef(null);
     const navigationNextRef = React.useRef(null);
 
-    const handleAnimation = (id) => {
-        const activeLink = document.querySelector(`#tabs .nav-link.active`);
-        const nextActiveLink = document.querySelector(`${id}-tab`);
+    const setActiveTab = (nextActiveLink) => {
+        const wrapper = nextActiveLink.closest(".tabs");
+        const activeLink = wrapper.querySelector(`.nav-link.active`);
+        const activePane = wrapper.querySelector(`.tab-pane.active`);
+        const nextActivePane = wrapper.querySelector(nextActiveLink.dataset.target);
+
         if (activeLink) activeLink.classList.remove("active");
         nextActiveLink.classList.add("active");
 
-        const activePane = document.querySelector(`#tabs .tab-pane.active`);
-        const nextActivePane = document.querySelector(id);
         if (activePane) {
             activePane.classList.remove("show");
             activePane.addEventListener(
@@ -27,18 +28,22 @@ export default function Features() {
                 () => {
                     activePane.classList.remove("active");
                     nextActivePane.classList.add("active");
-                    setTimeout(() => {
-                        nextActivePane.classList.add("show");
-                    }, 0);
+                    setTimeout(() => nextActivePane.classList.add("show"), 0);
                 },
                 { once: true }
             );
         } else {
             nextActivePane.classList.add("active");
-            setTimeout(() => {
-                nextActivePane.classList.add("show");
-            }, 0);
+            setTimeout(() => nextActivePane.classList.add("show"), 0);
         }
+    };
+
+    const handleOnClick = () => {
+        if (window.innerWidth > 576) return;
+        const activeSlide = document.querySelector(".swiper-slide-active");
+        if (!activeSlide) return;
+        const link = activeSlide.querySelector(".nav-link");
+        if (link) link.click();
     };
 
     return (
@@ -61,12 +66,14 @@ export default function Features() {
                                     <span
                                         className="swiper-custom-angle swiper-custom-angle-left"
                                         ref={navigationPrevRef}
+                                        onClick={handleOnClick}
                                     >
                                         {angleLeft}
                                     </span>
                                     <span
                                         className="swiper-custom-angle swiper-custom-angle-right"
                                         ref={navigationNextRef}
+                                        onClick={handleOnClick}
                                     >
                                         {angleRight}
                                     </span>
@@ -75,7 +82,10 @@ export default function Features() {
                                     touchStartPreventDefault={false}
                                     modules={[Navigation, Pagination]}
                                     // spaceBetween={30}
-                                    slidesPerView={1}
+                                    // slidesPerView={1}
+                                    initialSlide={2}
+                                    centeredSlides={window.innerWidth < 576 ? true : false}
+                                    slidesPerView="auto"
                                     onSlideChange={() => console.log("slide change")}
                                     navigation={{
                                         prevEl: navigationPrevRef.current,
@@ -85,20 +95,20 @@ export default function Features() {
                                         swiper.params.navigation.prevEl = navigationPrevRef.current;
                                         swiper.params.navigation.nextEl = navigationNextRef.current;
                                     }}
-                                    breakpoints={{
-                                        0: {
-                                            slidesPerView: 1,
-                                        },
-                                        576: {
-                                            slidesPerView: 2,
-                                        },
-                                        768: {
-                                            slidesPerView: 3,
-                                        },
-                                        1100: {
-                                            slidesPerView: 4,
-                                        },
-                                    }}
+                                    // breakpoints={{
+                                    //     0: {
+                                    //         slidesPerView: 1,
+                                    //     },
+                                    //     576: {
+                                    //         slidesPerView: 2,
+                                    //     },
+                                    //     768: {
+                                    //         slidesPerView: 3,
+                                    //     },
+                                    //     1100: {
+                                    //         slidesPerView: 4,
+                                    //     },
+                                    // }}
                                 >
                                     <SwiperSlide>
                                         <li className="nav-item" role="presentation">
@@ -109,14 +119,14 @@ export default function Features() {
                                                 data-target="#process"
                                                 type="button"
                                                 role="tab"
-                                                onClick={() => handleAnimation(`#process`)}
+                                                onClick={(e) => setActiveTab(e.target)}
                                             >
                                                 Sales process
                                             </button>
                                         </li>
                                     </SwiperSlide>
                                     <SwiperSlide>
-                                        <li className="nav-item" role="presentation">
+                                        <li className="nav-item nav-item-managment" role="presentation">
                                             <button
                                                 className="nav-link"
                                                 id="managment-tab"
@@ -124,7 +134,7 @@ export default function Features() {
                                                 data-target="#managment"
                                                 type="button"
                                                 role="tab"
-                                                onClick={() => handleAnimation(`#managment`)}
+                                                onClick={(e) => setActiveTab(e.target)}
                                             >
                                                 Project management
                                             </button>
@@ -139,7 +149,7 @@ export default function Features() {
                                                 data-target="#tools"
                                                 type="button"
                                                 role="tab"
-                                                onClick={() => handleAnimation(`#tools`)}
+                                                onClick={(e) => setActiveTab(e.target)}
                                             >
                                                 Financial tools
                                             </button>
@@ -154,7 +164,7 @@ export default function Features() {
                                                 data-target="#communication"
                                                 type="button"
                                                 role="tab"
-                                                onClick={() => handleAnimation(`#communication`)}
+                                                onClick={(e) => setActiveTab(e.target)}
                                             >
                                                 Communication
                                             </button>

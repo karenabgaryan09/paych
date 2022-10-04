@@ -9,11 +9,12 @@
     }
     .swiper-wrapper {
       
-        @include mq(1200px){
+        @include mq(1100px){
             justify-content: center;
         }
     }
     .swiper-slide {
+        width: auto !important;
         @include mq(1200px){
             width: auto !important;
         }
@@ -35,6 +36,12 @@
         }
         .nav-item {
             margin: 0 auto;
+            &-managment {
+                @media screen and (min-width:768px) and (max-width: 1100px){
+                    // margin-left: -16px;
+
+                }
+            }
         }
         .nav-link {
             color: color(secondary, 0.7);
@@ -101,6 +108,7 @@
 ////////////////////////////////
 
 .features {
+    user-select: none;
     text-align: center;
     &-title {
         text-align: center;
@@ -130,7 +138,7 @@
         display: grid;
 
         grid-gap: 40px;
-        max-width: 400px;
+        // max-width: 400px;
         margin: 0 auto;
         [data-lazy-block] {
 

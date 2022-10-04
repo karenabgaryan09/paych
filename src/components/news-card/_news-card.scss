@@ -38,7 +38,8 @@
             & > .wrapper {
                 display: flex;
                 align-items: center;
-                gap: 10px;
+                flex-wrap: wrap;
+                gap: 0px 10px;
                 margin-bottom: 1.1rem;
             }
         }
@@ -52,7 +53,7 @@
         &-date {
             color: rgba(192, 192, 192, 1);
             font-weight: 500;
-            font-size: 1rem;
+            font-size: 0.8rem;
             white-space: nowrap;
         }
         &-title {
@@ -72,11 +73,25 @@
 
 
 
+@include mq(350px){
+    .news-card {
+        .card {
+            &-body {
+                & > .wrapper {
+                    flex-wrap: normal;
+                }
+            }
+        }
+    }
+}
 @include mq(992px){
     .news-card {
         .card {
             &-title {
                 font-size: 21px;
+            }
+            &-date {
+                font-size: 1rem;
             }
         }
     }

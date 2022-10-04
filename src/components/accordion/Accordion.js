@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import AccordionItem from "./AccordionItem";
 
-export default function Accordion({accordionItems}) {
-    const [active,setActive] = useState('')
+export default function Accordion({ accordionItems }) {
+    const [active, setActive] = useState("");
     const [isShown, setIsShown] = useState("");
     const [isCollapsing, setIsCollapsing] = useState(false);
 
-    useEffect(()=>{
+    useEffect(() => {
         if (isCollapsing) setIsShown(active);
-    },[isCollapsing])
+    }, [isCollapsing]);
 
     const getHeight = (element) => {
         let computedHeight = null;
@@ -26,14 +26,31 @@ export default function Accordion({accordionItems}) {
         return Math.ceil(el.offsetHeight + margin + border);
     };
     return (
-        <div className="accordion" id="accordionExample" >
-            {accordionItems.map((item, index) => (
-                <AccordionItem
-                    key={index}
-                    item={item}
-                    {...{ isShown, setActive, isCollapsing, setIsCollapsing, getHeight }}
-                />
-            ))}
+        <div className="accordion" id="accordionExample">
+            <div className="accordion-group">
+                {accordionItems.map((item, index) => {
+                    if(index > 4) return
+                    return (
+                        <AccordionItem
+                            key={index}
+                            item={item}
+                            {...{ isShown, setActive, isCollapsing, setIsCollapsing, getHeight }}
+                        />
+                    );
+                })}
+            </div>
+            <div className="accordion-group">
+                {accordionItems.map((item, index) => {
+                    if(index < 5) return
+                    return (
+                        <AccordionItem
+                            key={index}
+                            item={item}
+                            {...{ isShown, setActive, isCollapsing, setIsCollapsing, getHeight }}
+                        />
+                    );
+                })}
+            </div>
         </div>
     );
 }

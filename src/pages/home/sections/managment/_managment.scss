@@ -18,10 +18,7 @@
         justify-items: center;
     }
     &-info {
-        & > .wrapper {
-            max-width:635px;
-            margin: 0 auto;
-        }
+       
     }
     &-title {
         line-height: 124.52%;
@@ -37,13 +34,8 @@
     }
     //
     &-cover {
-        // transform: rotateZ(90deg);
-        // width: 50%;
-        // right: 24px;
-        // height: 100%;
-        // opacity: 0.1;
         width: 100%;
-        max-width: 350px;
+        // max-width: 350px;
     }
     &-bg {
 
@@ -52,16 +44,7 @@
         padding-top: 160%;
 
     }
-    // .phone-tablet {
-    //     display: none;
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     width: 100%;
-    //     height: 100%;
-    //     object-fit: contain;
-    //     object-position: right;
-    // }
+
     .phone-cover {
         
         position: absolute;
@@ -111,6 +94,8 @@
             margin-right: auto;
              & > .wrapper {
                 text-align: left;
+                    max-width:635px;
+                    margin: 0 auto;
              }
         }
         &-content {

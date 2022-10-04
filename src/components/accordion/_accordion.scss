@@ -20,6 +20,9 @@
     // }
     &-item {
         margin-bottom: 1rem;
+        // width: 50%;
+        // display: inline-block;
+        // vertical-align: top;
     }
     &-header {
         margin-bottom: 0 !important;
@@ -71,7 +74,7 @@
         background-size: 20px;
         transition: background-image .3s ease;
         background-image: url("../../assets/images/icons/arrow-down.svg");
-        &:not(.dropped) {
+        &:not(.collapsed) {
             background-image: url("../../assets/images/icons/arrow-up.svg");
         }
     }
@@ -144,10 +147,17 @@
     }
 }
 
-@media (min-width: 1500px) {
-    .dropdown {
+// @media (min-width: 1500px) {
+//     .dropdown {
+//         &-button {
+//             line-height: 34.87px;
+//         }
+//     }
+// }
+@media (min-width: 2000px) {
+    .accordion {
         &-button {
-            line-height: 34.87px;
+            font-size: 1.5rem;
         }
     }
 }

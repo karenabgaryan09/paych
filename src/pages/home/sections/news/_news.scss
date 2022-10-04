@@ -51,9 +51,7 @@
 
 @include mq(768px) {
     .news {
-        &-top-half {
-            min-height: 470px;
-        }
+        
         &-bottom-half {
         }
         .card-group {
@@ -62,8 +60,11 @@
     }
 }
 
-@include mq(768px) {
+@include mq(992px) {
     .news {
+        &-top-half {
+            min-height: 470px;
+        }
         .card-group {
             & > .card {
                 // max-width: 100%;
