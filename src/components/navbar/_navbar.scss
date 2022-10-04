@@ -104,7 +104,7 @@
 
         margin-bottom: 0;
         list-style: none;
-
+        height: 100vh;
         .nav-link {
             padding-left: 0;
             padding-right: 0;
@@ -169,12 +169,15 @@
 
 .navbar .collapse:not(.show) {
     display: none;
+
 }
 
 .navbar .collapsing {
-    height: 0px;
+    opacity: 0;
+    transform: translateY(50px);
+    // height: 0px;
     overflow: hidden;
-    transition: height 0.3s ease;
+    transition: transform 0.3s ease,opacity .3s ease;
 }
 
 @media (min-width: 440px) {
@@ -209,6 +212,7 @@
                 margin-top: 0;
                 margin-left: auto;
                 padding: 0;
+                height: auto;
 
                 .nav-link {
                     padding-right: 15px;

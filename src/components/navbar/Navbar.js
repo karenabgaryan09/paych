@@ -124,7 +124,7 @@ export default function Navbar() {
                     id="navbarSupportedContent"
                     onTransitionEnd={() => setIsCollapsing(false)}
                     // style={isShown && isCollapsing ? { height: getHeight() } : {}}
-                    style={isShown && isCollapsing ? { height: getHeight() } : {}}
+                    style={isShown && isCollapsing ? { transform: 'none',opacity: 1 } : {}}
                 >
                     <ul className="navbar-nav me-auto">
                         <span className="target"></span>
