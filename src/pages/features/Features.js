@@ -9,6 +9,12 @@ import Estimating from "./sections/estimating/Estimating";
 export default function Features() {
     const { fade } = useGlobalContext().animations;
     useEffect(() => FadeOnScreen.createObserver(), []);
+
+
+    useEffect(() => {
+        document.title = "features";
+    }, []);
+
     return (
         <>
             <motion.main {...fade}>

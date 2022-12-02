@@ -9,6 +9,11 @@ import Questions from "./sections/questions/Questions";
 export default function Pricing() {
     const { fade } = useGlobalContext().animations;
     useEffect(() => FadeOnScreen.createObserver(), []);
+
+    useEffect(() => {
+        document.title = "pricing";
+    }, []);
+
     return (
         <>
             <motion.main {...fade} className="pricing-page">

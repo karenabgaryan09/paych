@@ -4,7 +4,7 @@ const FadeOnScreen = (function () {
     let options = {
         root: null,
         threshold: 0,
-        rootMargin:  (window.innerWidth > 576 ? "-300px" : "0px"),
+        rootMargin:  (window.innerWidth > 576 ? "-200px" : "0px"),
     };
     const loadImages = (target) => {
         target.querySelectorAll("img[data-src]").forEach((img) => (img.src = img.dataset.src));
